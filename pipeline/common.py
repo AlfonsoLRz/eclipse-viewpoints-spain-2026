@@ -15,6 +15,7 @@ Row 0 is the northernmost row (standard north-up raster convention).
 from __future__ import annotations
 
 import json
+import os
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -26,13 +27,31 @@ import yaml
 from rasterio.transform import from_origin
 
 ROOT = Path(__file__).resolve().parent.parent
-CONFIG_PATH = ROOT / "config" / "zaragoza.yaml"
+DEFAULT_CONFIG = ROOT / "config" / "zaragoza.yaml"
 
-TILE_NAME_RE = re.compile(r"PNOA_2023_ARA_(\d+)-(\d+)_H30_NPC02\.laz$")
+# Fallback for configs written before the key existed. Zaragoza's PNOA delivery is 2023
+# Aragón NPC02; other provinces and survey years use their own codes, so a second city
+# supplies its own pattern rather than matching this one.
+DEFAULT_TILE_NAME_RE = r"PNOA_2023_ARA_(\d+)-(\d+)_H30_NPC02\.laz$"
+
+
+def config_path() -> Path:
+    """Which city to process. Set PNOA_CONFIG to point at another config.
+
+    An environment variable rather than a CLI flag because all eight pipeline scripts
+    call load_config() with no arguments, so this adds a second city without touching
+    any of them.
+    """
+    return Path(os.environ.get("PNOA_CONFIG") or DEFAULT_CONFIG)
 
 
 def load_config() -> dict:
-    with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+    p = config_path()
+    if not p.is_absolute():
+        p = ROOT / p
+    if not p.exists():
+        raise RuntimeError(f"Config not found: {p} (PNOA_CONFIG={os.environ.get('PNOA_CONFIG')})")
+    with open(p, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 
@@ -105,14 +124,27 @@ class TileRef:
 
 
 def list_tiles(cfg: dict) -> list[TileRef]:
-    tiles = []
+    """LAZ tiles for this city, with their grid position parsed from the filename.
+
+    The glob finds candidate files; the regex is what extracts easting and northing, so a
+    pattern that does not match the delivery's naming yields zero tiles rather than wrong
+    ones. Both come from config: a second province ships a different survey year and
+    product code, and the Zaragoza pattern matches none of its files.
+    """
+    pattern = re.compile(cfg["laz"].get("tile_name_regex", DEFAULT_TILE_NAME_RE))
+    tiles, seen = [], 0
     for path in sorted(ROOT.glob(cfg["laz"]["glob"])):
-        m = TILE_NAME_RE.search(path.name)
+        seen += 1
+        m = pattern.search(path.name)
         if not m:
             continue
         tiles.append(TileRef(path=path, easting_km=int(m.group(1)), northing_km=int(m.group(2))))
     if not tiles:
-        raise RuntimeError(f"No LAZ tiles matched {cfg['laz']['glob']} under {ROOT}")
+        raise RuntimeError(
+            f"No LAZ tiles matched {cfg['laz']['glob']} under {ROOT}. "
+            f"{seen} file(s) matched the glob but none matched tile_name_regex "
+            f"{pattern.pattern!r}; check the survey year and product code."
+        )
     return tiles
 
 

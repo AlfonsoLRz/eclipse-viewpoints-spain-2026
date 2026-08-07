@@ -24,7 +24,13 @@ UTC_OFFSET = 2
 
 def test_matches_cnig_raster_at_maximum():
     """Must agree with the official eclipse raster at maximum eclipse."""
-    meta_path = ROOT / "data" / "output" / "eclipse_metadata.json"
+    # Outputs are per-city since a second city was added, so read whichever one this
+    # checkout has generated. Without the glob the test skips silently and the agreement
+    # with the official product stops being checked at all.
+    meta_path = ROOT / "data" / "output" / "zaragoza" / "eclipse_metadata.json"
+    if not meta_path.exists():
+        found = sorted((ROOT / "data" / "output").glob("*/eclipse_metadata.json"))
+        meta_path = found[0] if found else meta_path
     if not meta_path.exists():
         pytest.skip("eclipse_metadata.json not generated yet")
 

@@ -18,16 +18,22 @@ data/intermediate/
 
 # The viewer's data products ARE committed - they are what GitHub Pages serves,
 # and regenerating them needs the multi-GB LiDAR block that is not in this repo.
-# The five shadow scales come to ~106 MB. The orthophoto tile set does not:
-# it was 671 MB, so the viewer reads the IGN WMTS instead (see package_tiles.py).
-viewer/public/data/tiles/rgb/
+# Paths are per-city (viewer/public/data/<city>/) so a second city cannot overwrite
+# the first. The orthophoto tile set is never committed: it was 671 MB, so the viewer
+# reads the IGN WMTS instead (see package_tiles.py).
+viewer/public/data/*/tiles/rgb/
 
 # 3D buildings (pipeline/export_buildings.py). Local experiment only. The viewer hides
 # its 3D control when this file is absent, which is the deployed case, so nothing in
 # the committed data advertises a feature the live site does not have.
-viewer/public/data/buildings.geojson
+viewer/public/data/*/buildings.geojson
+
+# Linares is a local experiment and is not deployed. Only Zaragoza is published, so its
+# data products stay out of the repository entirely rather than inflating the site.
+viewer/public/data/linares/
 
 viewer/dist/
+linares_run.sh
 
 # ---------------------------------------------------------------- environments
 .venv/

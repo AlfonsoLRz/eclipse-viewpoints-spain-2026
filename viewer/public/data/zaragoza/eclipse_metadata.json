@@ -13,9 +13,12 @@
       5110686.994688768
     ]
   },
+  "city": "Zaragoza",
+  "city_slug": "zaragoza",
   "solar_elevation_deg": 6.091,
   "solar_azimuth_deg": 284.526,
-  "inside_totality_path": true,
+  "is_total": true,
+  "obscuration": 1.0,
   "totality_duration_seconds": 84.1,
   "contact_times": {
     "C1_partial_begin": {

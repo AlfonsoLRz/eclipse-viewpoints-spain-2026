@@ -1,14 +1,20 @@
 import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 
-const DATA = './data'
+// Which city to show. Each one has its own directory under data/, written by the
+// pipeline with PNOA_CONFIG pointed at that city's config. Zaragoza is the default so
+// existing links keep working.
+const CITY = (new URLSearchParams(location.search).get('city') || 'zaragoza')
+  .replace(/[^a-z0-9_-]/gi, '')
+
+const DATA = `./data/${CITY}`
 
 // Directory the page lives in, without a trailing slash. MapLibre needs an
 // absolute path in a tile template, and on GitHub Pages the app is served from
 // /<repo>/ rather than the domain root. Deriving this from `location.pathname`
 // directly would break on /<repo>/index.html, which resolves to a directory
 // that does not exist; `new URL('.', ...)` strips the filename first.
-const BASE = new URL('.', location.href).pathname.replace(/\/$/, '')
+const BASE = `${new URL('.', location.href).pathname.replace(/\/$/, '')}/data/${CITY}`
 
 // IGN's public WMTS for PNOA orthophotography, the same imagery the offline
 // pipeline reads, served in GoogleMapsCompatible (EPSG:3857) tiles. It sends
@@ -324,19 +330,47 @@ function showZoneDetail (z) {
 function renderFacts () {
   const m = state.meta
   const c = m.contact_times
-  document.getElementById('eclipse-facts').innerHTML = `
-    <h2>The eclipse</h2>
+  // Not everywhere under this eclipse sees totality. Where C2 and C3 exist the interval
+  // between them is the whole event; where they do not, quoting a totality time would be
+  // inventing one, so the card leads with obscuration and the partial contacts instead.
+  const rows = m.is_total
+    ? `
     <div class="fact"><span>Totality begins (C2)</span><b>${c.C2_totality_begin.local}</b></div>
     <div class="fact"><span>Maximum</span><b>${c.maximum_eclipse.local}</b></div>
     <div class="fact"><span>Totality ends (C3)</span><b>${c.C3_totality_end.local}</b></div>
-    <div class="fact"><span>Duration</span><b>${m.totality_duration_seconds.toFixed(0)} s</b></div>
+    <div class="fact"><span>Duration</span><b>${m.totality_duration_seconds.toFixed(0)} s</b></div>`
+    : `
+    <div class="fact"><span>Partial begins (C1)</span><b>${c.C1_partial_begin.local}</b></div>
+    <div class="fact"><span>Maximum</span><b>${c.maximum_eclipse.local}</b></div>
+    <div class="fact"><span>Partial ends (C4)</span><b>${c.C4_partial_end.local}</b></div>
+    <div class="fact"><span>Sun covered at maximum</span><b>${(m.obscuration * 100).toFixed(1)}%</b></div>`
+
+  const lead = m.is_total
+    ? `The sun sits only ${m.solar_elevation_deg.toFixed(1)}° above the horizon, so even a
+       low wall or a single tree can hide it from hundreds of metres away.`
+    : `${m.city || 'This town'} is outside the path of totality, so the sun is never fully
+       covered here. It still sits only ${m.solar_elevation_deg.toFixed(1)}° above the
+       horizon at maximum, so a low wall or a single tree can hide the last sliver from
+       hundreds of metres away.`
+
+  document.getElementById('eclipse-facts').innerHTML = `
+    <h2>The eclipse</h2>${rows}
     <div class="fact"><span>Sun elevation</span><b>${m.solar_elevation_deg.toFixed(1)}°</b></div>
     <div class="fact"><span>Sun azimuth</span><b>${m.solar_azimuth_deg.toFixed(1)}° (WNW)</b></div>
-    <p class="hint" style="margin-top:10px;margin-bottom:0">
-      The sun sits only ${m.solar_elevation_deg.toFixed(1)}° above the horizon, so even a
-      low wall or a single tree can hide it from hundreds of metres away.
-    </p>
+    <p class="hint" style="margin-top:10px;margin-bottom:0">${lead}</p>
   `
+}
+
+// Page title and heading come from the data, so a second city does not need its own HTML.
+function renderIdentity () {
+  const m = state.meta
+  const name = m.city || 'Eclipse'
+  const kind = m.is_total ? 'Total eclipse visibility' : 'Eclipse visibility'
+  document.title = `${name} eclipse visibility, 12 August 2026`
+  const h1 = document.querySelector('#panel header h1')
+  const sub = document.querySelector('#panel header .sub')
+  if (h1) h1.textContent = kind
+  if (sub) sub.textContent = `${name} · 12 August 2026`
 }
 
 function renderLegend () {
@@ -551,6 +585,9 @@ const map = new maplibregl.Map({
     sources: {},
     layers: [{ id: 'bg', type: 'background', paint: { 'background-color': '#0d1017' } }],
   },
+  // Placeholder only. init() calls fitBounds with the block's own bounds from
+  // layers.json as soon as the data loads, so this is what shows for one frame rather
+  // than a hardcoded assumption about which city is being viewed.
   center: [-0.916, 41.663],
   zoom: 13,
   maxZoom: 18,
@@ -609,6 +646,7 @@ async function init () {
 
   state.ramp = document.getElementById('ramp').value || 'classes'
 
+  renderIdentity()
   renderFacts()
   renderSunCard()
   renderLegend()
@@ -637,7 +675,7 @@ async function init () {
   for (const name of Object.keys(RAMPS)) {
     map.addSource(`ov-${name}`, {
       type: 'raster',
-      tiles: [`${BASE}/data/tiles/${name}/{z}/{x}/{y}.png`],
+      tiles: [`${BASE}/tiles/${name}/{z}/{x}/{y}.png`],
       tileSize: layers.tile_size,
       minzoom: layers.minzoom,
       maxzoom: layers.maxzoom,

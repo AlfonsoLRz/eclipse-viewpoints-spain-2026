@@ -14,7 +14,11 @@ function tileNotFound () {
     name: 'tile-404',
     configureServer (server) {
       server.middlewares.use((req, res, next) => {
-        if (req.url && req.url.startsWith('/data/tiles/') && req.url.endsWith('.png')) {
+        // Tiles live under /data/<city>/tiles/ now that the viewer serves more than one
+        // city, so match the segment rather than a fixed prefix. Missing the match sends
+        // absent tiles through Vite's SPA fallback, which answers with index.html and a
+        // 200, and the browser then tries to decode HTML as a PNG.
+        if (req.url && /^\/data\/[^/]+\/tiles\//.test(req.url) && req.url.endsWith('.png')) {
           const file = path.join(process.cwd(), 'public', req.url.split('?')[0])
           if (!fs.existsSync(file)) {
             res.statusCode = 404

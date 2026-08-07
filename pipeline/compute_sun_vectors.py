@@ -23,8 +23,18 @@ from solar import parse_local, solar_position  # noqa: E402
 
 LOCAL_UTC_OFFSET_HOURS = 2  # CEST on 2026-08-12
 
+# The CNIG raster marks "no such contact here" with -1000, which matters for the totality
+# bands: outside the path of totality there is no C2 or C3. Left unchecked, -1000 hours is
+# not an error but valid datetime arithmetic. It rolls the date back six weeks, and
+# strftime("%H:%M:%S") then discards the date, so a city that never sees totality reports
+# a confident, plausible, entirely fictional time for it.
+NODATA_HOUR = -999.0
 
-def decimal_hour_to_times(date_str: str, decimal_hour: float) -> dict:
+
+def decimal_hour_to_times(date_str: str, decimal_hour: float) -> dict | None:
+    """Contact time as UTC and local strings, or None where the raster has no value."""
+    if decimal_hour is None or decimal_hour <= NODATA_HOUR:
+        return None
     base = datetime.strptime(date_str, "%Y-%m-%d").replace(tzinfo=timezone.utc)
     utc_dt = base + timedelta(hours=decimal_hour)
     local_dt = utc_dt + timedelta(hours=LOCAL_UTC_OFFSET_HOURS)
@@ -69,9 +79,14 @@ def main():
         "C4_partial_end": decimal_hour_to_times(date_str, values["c4_partial_end_utc_decimal_hour"]),
     }
 
+    # Whether totality happens here is decided by the presence of C2 and C3, not by the
+    # obscuration band. That band is continuous, not a flag: it reads 0.9715 at Linares,
+    # and rounding it to a boolean would claim totality for a 97% partial eclipse.
+    is_total = contacts["C2_totality_begin"] is not None and contacts["C3_totality_end"] is not None
     totality_seconds = (
-        values["c3_totality_end_utc_decimal_hour"] - values["c2_totality_begin_utc_decimal_hour"]
-    ) * 3600.0
+        (values["c3_totality_end_utc_decimal_hour"] - values["c2_totality_begin_utc_decimal_hour"])
+        * 3600.0
+    ) if is_total else None
 
     # Sun direction at each contact, so the viewer can show where to look at any
     # moment rather than only at maximum. Computed with the NOAA algorithm in
@@ -80,8 +95,13 @@ def main():
     to_wgs84 = pyproj.Transformer.from_crs(grid.crs, "EPSG:4326", always_xy=True)
     ref_lon, ref_lat = to_wgs84.transform(cx, cy)
 
+    # Contacts the raster has no value for are omitted rather than given a position. The
+    # viewer builds its moment selector from the keys present here, so a missing C2 simply
+    # never appears as something to look at.
     sun_track = {}
     for key, times in contacts.items():
+        if times is None:
+            continue
         dt = parse_local(date_str, times["local"], LOCAL_UTC_OFFSET_HOURS)
         az, el = solar_position(dt, ref_lat, ref_lon)
         sun_track[key] = {
@@ -112,10 +132,15 @@ def main():
         "timezone_local": cfg["eclipse"]["timezone_local"],
         "local_utc_offset_hours": LOCAL_UTC_OFFSET_HOURS,
         "reference_point": {"crs25830": [cx, cy], "epsg3857": [x3857, y3857]},
+        "city": cfg.get("city", {}).get("name", ""),
+        "city_slug": cfg.get("city", {}).get("slug", ""),
         "solar_elevation_deg": round(values["solar_elevation_deg_at_maximum"], 3),
         "solar_azimuth_deg": round(values["solar_azimuth_deg_at_maximum"], 3),
-        "inside_totality_path": bool(round(values["inside_totality_path_flag"])),
-        "totality_duration_seconds": round(totality_seconds, 1),
+        "is_total": is_total,
+        # Band 3 is a continuous obscuration fraction, not the flag its label suggests.
+        # Reported as measured so a 97% partial reads as a 97% partial.
+        "obscuration": round(values["inside_totality_path_flag"], 4),
+        "totality_duration_seconds": round(totality_seconds, 1) if is_total else None,
         "contact_times": contacts,
         "sun_at_contacts": sun_track,
         "sun_timeline": timeline,
@@ -129,6 +154,12 @@ def main():
             "treated as constant through C2-C3 (~{:.0f}s of totality); the resulting "
             "angular change is well under 0.1 degrees and does not materially affect "
             "visibility classification.".format(totality_seconds)
+            if is_total else
+            "Solar elevation/azimuth are taken at the instant of maximum eclipse. This "
+            "site is outside the path of totality ({:.2f}% obscuration at maximum), so "
+            "there is no C2-C3 interval; the geometry around maximum changes by well "
+            "under 0.1 degrees a minute either way.".format(
+                values["inside_totality_path_flag"] * 100)
         ),
     }
 

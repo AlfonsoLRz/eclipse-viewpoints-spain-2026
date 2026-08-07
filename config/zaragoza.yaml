@@ -2,6 +2,12 @@
 # The README covers the method; the original design document is kept outside
 # this repository, so comments below referring to "the plan" point at it.
 
+# Which city this config describes. The viewer reads these so nothing about the place is
+# hardcoded in the front end; `slug` also names the per-city output directories.
+city:
+  slug: "zaragoza"
+  name: "Zaragoza"
+
 crs: "EPSG:25830"          # ETRS89 / UTM zone 30N - all offline processing happens here
 resolution_m: 1.0          # DTM/DSM raster resolution (metres)
 
@@ -15,6 +21,8 @@ laz:
   # roughly nine of them live, so 399 km2 peaks near 29 GB. 169 km2 peaks near 12 GB,
   # which fits. Tiles outside this block were deleted; re-download from CNIG to extend.
   glob: "new_/PNOA_2023_ARA_*_H30_NPC02.laz"
+  # The glob selects files; this extracts easting and northing from each name.
+  tile_name_regex: "PNOA_2023_ARA_(\\d+)-(\\d+)_H30_NPC02\\.laz$"
   acquisition_year: 2023
   classes:
     unclassified: [1]
@@ -114,7 +122,8 @@ zones:
   # (surfaceKind / parkingFraction) so the web UI can down-weight or hide them.
   include_parking: true
 
+# City-scoped, so running a second city cannot overwrite this one's results in place.
 paths:
-  data_output: "data/output"
-  data_intermediate: "data/intermediate"
-  viewer_public_data: "viewer/public/data"
+  data_output: "data/output/zaragoza"
+  data_intermediate: "data/intermediate/zaragoza"
+  viewer_public_data: "viewer/public/data/zaragoza"

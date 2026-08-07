@@ -159,7 +159,19 @@ def build_walkable_mask(cfg, out_dir: Path, grid):
     if park_path.exists():
         parking, _ = read_raster(park_path)
 
-    if osm_pos_path.exists() and bool(zcfg.get("require_osm_public_space", True)):
+    require_public = bool(zcfg.get("require_osm_public_space", True))
+    if require_public and not osm_pos_path.exists():
+        # Falling through quietly here would drop the public-space restriction and hand
+        # back a LiDAR-only walkability map, which is how an earlier version came to
+        # recommend motorway verges and the surface of the Ebro. The config asked for
+        # OSM; if OSM is missing, say so rather than answering a different question.
+        raise RuntimeError(
+            f"require_osm_public_space is set but {osm_pos_path} is missing. "
+            f"Run pipeline/fetch_osm.py first, or set require_osm_public_space: false "
+            f"to deliberately fall back to LiDAR-only inference."
+        )
+
+    if osm_pos_path.exists() and require_public:
         osm_positive, _ = read_raster(osm_pos_path)
         # Parks and squares are irregular; allow a short spill so the paved edge
         # of a plaza is not shaved off by polygon generalisation in OSM.
