@@ -36,6 +36,30 @@ def load_config() -> dict:
         return yaml.safe_load(f)
 
 
+def fill_dtm_gaps(dtm: np.ndarray, max_fill_px: int) -> tuple[np.ndarray, np.ndarray]:
+    """Nearest-neighbour fill limited to `max_fill_px`. Returns (filled, filled_mask)
+    where filled_mask marks cells that were interpolated (lower confidence).
+
+    Two callers want opposite things from the cap. build_surfaces.py keeps it at 5 m so
+    the river and other genuine voids stay nodata: inventing ground under water would
+    hand the clearance analysis a flat, unobstructed surface and it would recommend
+    standing on the Ebro. package_tiles.py passes an unbounded cap when encoding terrain
+    tiles, because a mesh has no such notion of honesty available to it - every cell
+    needs some elevation or MapLibre renders a pit.
+    """
+    from scipy import ndimage
+
+    valid = ~np.isnan(dtm)
+    if valid.all():
+        return dtm, np.zeros_like(dtm, dtype=bool)
+    dist, (iy, ix) = ndimage.distance_transform_edt(~valid, return_indices=True)
+    nearest = dtm[iy, ix]
+    fillable = (~valid) & (dist <= max_fill_px)
+    out = dtm.copy()
+    out[fillable] = nearest[fillable]
+    return out, fillable
+
+
 def output_dir(cfg: dict) -> Path:
     p = ROOT / cfg["paths"]["data_output"]
     p.mkdir(parents=True, exist_ok=True)

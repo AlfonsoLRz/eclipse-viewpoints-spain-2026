@@ -65,6 +65,34 @@ deployed viewer does not need them because it reads the IGN WMTS live, but a ful
 copy does. Those tiles come to 671 MB, which is why they are not the default and not
 committed.
 
+## 3D terrain (local only)
+
+`package_tiles.py --with-terrain` builds Terrarium-encoded `raster-dem` tiles from
+`dsm_all_conservative.tif`, and the viewer grows a "3D terrain" toggle and a vertical
+exaggeration slider. Tilt the map and the buildings and trees that decide the answer stand
+up as real relief, with the orthophoto and the shadow overlay draped over them.
+
+The DSM is the conservative surface, the one the visibility scan actually ran on, so the
+3D view cannot contradict the shadow overlay: anything painted as blocked is blocked by
+geometry you can see.
+
+These tiles are **not committed and not deployed**. They are gitignored, and their metadata
+goes in `terrain.json` rather than `layers.json` on purpose. `layers.json` is committed and
+served in production, so a terrain block there would make the live site advertise tiles that
+do not exist and 404 on every one. The viewer loads `terrain.json` with the same optional
+try/catch idiom it uses for `osm_labels.json` and removes both controls when it is absent.
+
+Three things about the result are worth knowing before they surprise you:
+
+- Zooms stop at 17. That is 0.89 m/px at this latitude, already finer than the 1 m source,
+  so zoom 18 would quadruple the tile count to resample detail that was never measured.
+- The DSM has no elevation outside the 7 km block, and MapLibre treats absent DEM coverage
+  as sea level. Unmitigated that rings the city with a 200 m cliff, so tiles beyond the
+  block ease the nearest edge elevation down to zero over 2 km. Everything outside the
+  dashed outline is invented terrain, there so the horizon does not look broken.
+- Because the surface includes rooftops and canopy, the orthophoto stretches down building
+  walls, and MapLibre's meshing rounds sharp edges. Buildings read as mesas, not boxes.
+
 ## Viewer
 
 ```bash

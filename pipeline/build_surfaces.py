@@ -21,7 +21,9 @@ import numpy as np
 from scipy import ndimage
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import build_grid, list_tiles, load_config, output_dir, write_raster  # noqa: E402
+from common import (  # noqa: E402
+    build_grid, fill_dtm_gaps, list_tiles, load_config, output_dir, write_raster,
+)
 
 NODATA = -9999.0
 
@@ -73,20 +75,6 @@ def dilate_and_raise(layer: np.ndarray, dilation_cells: int, height_bonus: float
         filled = ndimage.grey_dilation(filled, size=size)
     out = np.where(filled <= NODATA, np.nan, filled + height_bonus)
     return out
-
-
-def fill_dtm_gaps(dtm: np.ndarray, max_fill_px: int) -> tuple[np.ndarray, np.ndarray]:
-    """Nearest-neighbour fill limited to `max_fill_px`. Returns (filled, filled_mask)
-    where filled_mask marks cells that were interpolated (lower confidence)."""
-    valid = ~np.isnan(dtm)
-    if valid.all():
-        return dtm, np.zeros_like(dtm, dtype=bool)
-    dist, (iy, ix) = ndimage.distance_transform_edt(~valid, return_indices=True)
-    nearest = dtm[iy, ix]
-    fillable = (~valid) & (dist <= max_fill_px)
-    out = dtm.copy()
-    out[fillable] = nearest[fillable]
-    return out, fillable
 
 
 def main():

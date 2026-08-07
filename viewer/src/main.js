@@ -30,6 +30,7 @@ const state = {
   pickingHome: false,
   activeZone: null,
   markers: [],
+  terrain: null,
 }
 
 async function loadJSON (name) {
@@ -532,6 +533,14 @@ const map = new maplibregl.Map({
 map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right')
 map.addControl(new maplibregl.ScaleControl({ maxWidth: 120 }), 'bottom-left')
 
+// MapLibre enables rotate and pitch by default. On a flat shadow map they only ever
+// produce a tilted plane and a map that is no longer north-up, so they stay off until
+// the 3D terrain toggle turns them on together with the terrain itself.
+map.dragRotate.disable()
+map.touchZoomRotate.disableRotation()
+map.touchPitch.disable()
+map.keyboard.disableRotation()
+
 // Exposed for the automated checks in verify.mjs; harmless in production.
 window.__map = map
 
@@ -660,6 +669,7 @@ async function init () {
   })
 
   await addPlaceLabels()
+  await addTerrain(b)
 
   // Show the sun ray from the centre of the block straight away, so the
   // direction to look is visible before anything is selected.
@@ -667,6 +677,66 @@ async function init () {
 
   renderResults()
   wireControls()
+}
+
+// Optional 3D relief from the conservative DSM, the same surface the shadow scan ran
+// on. The tiles are a local build (`package_tiles.py --with-terrain`) and are not
+// deployed, so terrain.json is usually absent and the controls remove themselves.
+async function addTerrain (bounds) {
+  try {
+    state.terrain = await loadJSON('terrain.json')
+  } catch {
+    state.terrain = null
+    return
+  }
+  const t = state.terrain
+  map.addSource('terrain-dem', {
+    type: 'raster-dem',
+    tiles: [`${BASE}/data/tiles/terrain/{z}/{x}/{y}.png`],
+    // raster-dem defaults to 512, and these are 256. Left unset every tile silently
+    // covers four times its real ground area, which misregisters the whole mesh
+    // without erroring.
+    tileSize: t.tile_size,
+    minzoom: t.minzoom,
+    maxzoom: t.maxzoom,
+    encoding: t.encoding,
+    bounds,
+  })
+  // Declaring the source fetches nothing. MapLibre only requests DEM tiles once
+  // setTerrain actually references it, so this costs a visitor who never opens the
+  // toggle exactly one failed request for terrain.json.
+
+  // Sky is a root style property in MapLibre, set through setSky. It is not a layer:
+  // `{type: 'sky'}` is a Mapbox GL construct and addLayer rejects it outright.
+  map.setSky({
+    'sky-color': '#1a2233',
+    'horizon-color': '#2a3346',
+    'fog-color': '#0d1017',
+    'sky-horizon-blend': 0.6,
+    'horizon-fog-blend': 0.5,
+    'fog-ground-blend': 0.4,
+  })
+}
+
+function setTerrainEnabled (on) {
+  if (!state.terrain) return
+  const exag = document.getElementById('exaggeration')
+  exag.disabled = !on
+  if (on) {
+    map.setTerrain({ source: 'terrain-dem', exaggeration: +exag.value })
+    map.dragRotate.enable()
+    map.touchZoomRotate.enableRotation()
+    map.touchPitch.enable()
+    map.keyboard.enableRotation()
+    if (map.getPitch() === 0) map.easeTo({ pitch: 55, duration: 600 })
+  } else {
+    map.setTerrain(null)
+    map.easeTo({ pitch: 0, bearing: 0, duration: 400 })
+    map.dragRotate.disable()
+    map.touchZoomRotate.disableRotation()
+    map.touchPitch.disable()
+    map.keyboard.disableRotation()
+  }
 }
 
 // Named parks and squares from OSM, used to describe zones in words.
@@ -731,6 +801,26 @@ function wireControls () {
       if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', v)
     }
   })
+
+  if (state.terrain) {
+    document.getElementById('show-terrain').addEventListener('change', (e) => {
+      setTerrainEnabled(e.target.checked)
+    })
+    const exag = document.getElementById('exaggeration')
+    exag.addEventListener('input', () => {
+      document.getElementById('exaggeration-v').textContent = exag.value
+      // Exaggeration is part of the terrain spec, not a paint property, so there is
+      // no setPaintProperty equivalent: the whole spec goes back in each time.
+      if (document.getElementById('show-terrain').checked) {
+        map.setTerrain({ source: 'terrain-dem', exaggeration: +exag.value })
+      }
+    })
+  } else {
+    // No local terrain build, which is the normal case for the deployed site.
+    for (const id of ['terrain-control', 'exaggeration-control']) {
+      document.getElementById(id)?.remove()
+    }
+  }
   document.getElementById('ramp').addEventListener('change', (e) => {
     state.ramp = e.target.value
     applyLayerVisibility()
