@@ -6,10 +6,14 @@
 # the CNIG raster has no C2/C3 contact for it, so the viewer reports a deep partial. The
 # sun is 6.0 degrees up at maximum, the same problem the whole project exists to answer.
 #
-# The download in new_jaen/ actually holds two separate clusters: 36 tiles around Jaén
-# city (E 427-433) and 30 tiles around Linares (E 441-447) that duplicate new_linares/
-# exactly. The glob below takes only the Jaén city column so this config does not silently
-# process Linares a second time under the wrong name.
+# new_jaen/ holds two disjoint clusters: the Jaén city block in the south (E 426-441,
+# N 4174-4186) and a northern group around Linares (E 441-447, N 4214-4219) that
+# duplicates new_linares/ byte for byte. The glob below takes only the southern block.
+# Globbing all of new_jaen/ would merge both into one 21 x 45 km bounding box that is
+# 77% empty, and the resulting "Jaén" map would be centred 30 km from the city.
+#
+# The southern cluster is fully covered: 180 tiles with no gaps over 15 x 12 km. That is
+# the largest solid rectangle in the download and is deliberately the whole of it.
 
 city:
   slug: "jaen"
@@ -19,8 +23,11 @@ crs: "EPSG:25830"          # ETRS89 / UTM zone 30N (H30 tiles)
 resolution_m: 1.0
 
 laz:
-  glob: "new_jaen/PNOA_2024_AND_4[23]*_H30_NPC01.laz"
-  tile_name_regex: "PNOA_2024_AND_(\\d+)-(\\d+)_H30_NPC01\\.laz$"
+  glob: "new_jaen/PNOA_2024_AND_*_H30_NPC01.laz"
+  # The glob is deliberately broad; this pattern is what selects the block. Eastings
+  # 426-440 and northings 4175-4186 are the southern cluster, so the Linares duplicates
+  # at E 441-446 / N 4215-4219 cannot match even though they sit in the same folder.
+  tile_name_regex: "PNOA_2024_AND_(4[23]\\d|440)-(41[78]\\d)_H30_NPC01\\.laz$"
   acquisition_year: 2024
   classes:
     unclassified: [1]
