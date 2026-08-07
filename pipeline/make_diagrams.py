@@ -36,13 +36,18 @@ CONTACTS = {
     "C4": "21:21:23",
 }
 
-INK = "#0d1017"
-FG = "#d8dee9"
-MUTED = "#8b949e"
-SUN = "#f2b134"
-GOOD = "#3fb950"
-BAD = "#8b1a1a"
-GRID = "#2a313c"
+# Light palette on a white card. GitHub renders README images against either a
+# light or a dark page, and an SVG cannot reliably switch on prefers-color-scheme
+# there, so a fixed white background is legible under both. Ink and accents are
+# darkened accordingly to keep contrast on white.
+INK = "#ffffff"          # background
+FG = "#1f2328"           # primary text and the ground line
+MUTED = "#6a737d"        # axis labels, secondary notes
+SUN = "#b26a00"          # sun track, rays, the 0-7 degree band
+GOOD = "#1a7f37"
+BAD = "#a40e26"
+GRID = "#e4e8ed"
+SHADE = "#f2f4f7"        # below-horizon fill and the obstacle body
 
 
 def load_contacts() -> dict[str, str]:
@@ -129,7 +134,7 @@ def sun_altitude_svg() -> str:
 
     # ground: below the horizon line
     y0 = py(0.0)
-    s.append(f'<rect x="{L}" y="{y0:.1f}" width="{pw}" height="{T + ph - y0:.1f}" fill="#161b22"/>')
+    s.append(f'<rect x="{L}" y="{y0:.1f}" width="{pw}" height="{T + ph - y0:.1f}" fill="{SHADE}"/>')
     s.append(f'<line x1="{L}" y1="{y0:.1f}" x2="{L + pw}" y2="{y0:.1f}" stroke="{FG}" stroke-width="1.5"/>')
     s.append(f'<text x="{L + 8}" y="{y0 + 16:.1f}" fill="{MUTED}" font-size="11">horizon</text>')
 
@@ -196,7 +201,7 @@ def shadow_geometry_svg() -> str:
 
     # building
     bx, bw, bh = 300.0, 74.0, 104.0
-    s.append(f'<rect x="{bx}" y="{GY - bh}" width="{bw}" height="{bh}" fill="#2f3846" stroke="{MUTED}"/>')
+    s.append(f'<rect x="{bx}" y="{GY - bh}" width="{bw}" height="{bh}" fill="{SHADE}" stroke="{MUTED}"/>')
     s.append(f'<text x="{bx + bw / 2}" y="{GY - bh - 10}" fill="{FG}" font-size="12" '
              f'text-anchor="middle">obstacle  z_i</text>')
 
