@@ -38,8 +38,7 @@ CONTACTS = {
 
 # Light palette on a white card. GitHub renders README images against either a
 # light or a dark page, and an SVG cannot reliably switch on prefers-color-scheme
-# there, so a fixed white background is legible under both. Ink and accents are
-# darkened accordingly to keep contrast on white.
+# there, so a fixed white background is legible under both.
 INK = "#ffffff"          # background
 FG = "#1f2328"           # primary text and the ground line
 MUTED = "#6a737d"        # axis labels, secondary notes
@@ -48,6 +47,17 @@ GOOD = "#1a7f37"
 BAD = "#a40e26"
 GRID = "#e4e8ed"
 SHADE = "#f2f4f7"        # below-horizon fill and the obstacle body
+
+# Only fonts already on the reader's machine can be used: GitHub serves these
+# SVGs from a sanitising CDN that blocks webfont fetches, and embedding a face
+# as a data URI would cost more than the drawing. Each stack therefore names
+# real macOS, Windows and Linux faces before falling back to a generic.
+# Grotesque for prose, monospace for anything numeric, which keeps the figures
+# reading like instrument output rather than a slide.
+SANS = ("'Avenir Next','Segoe UI Variable Display','Segoe UI',Inter,"
+        "'Helvetica Neue',Helvetica,Arial,sans-serif")
+MONO = ("ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,"
+        "'Liberation Mono',monospace")
 
 
 def load_contacts() -> dict[str, str]:
@@ -77,6 +87,13 @@ def sun_at(mins: float) -> tuple[float, float]:
     s = int(round((mins - int(mins)) * 60))
     dt = parse_local(DATE, f"{h:02d}:{m:02d}:{s:02d}", UTC_OFFSET)
     return solar_position(dt, LAT, LON)
+
+
+def header(w: int, h: int, label: str) -> str:
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" '
+            f'width="{w}" height="{h}" font-family="{SANS}" '
+            f'role="img" aria-label="{label}">'
+            f'<rect width="{w}" height="{h}" fill="{INK}"/>')
 
 
 # --------------------------------------------------------------- sun altitude
@@ -110,19 +127,15 @@ def sun_altitude_svg() -> str:
         t += 2.0
     path = "M " + " L ".join(f"{x:.1f},{y:.1f}" for x, y in track)
 
-    s: list[str] = []
-    s.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" '
-             f'width="{W}" height="{H}" font-family="ui-sans-serif,Segoe UI,Helvetica,Arial" '
-             f'role="img" aria-label="Solar altitude at Zaragoza through the eclipse of 12 August 2026">')
-    s.append(f'<rect width="{W}" height="{H}" fill="{INK}"/>')
+    s: list[str] = [header(
+        W, H, "Solar altitude at Zaragoza through the eclipse of 12 August 2026")]
 
-    # horizontal gridlines every 10 degrees
     for el in range(0, int(el_max) + 1, 10):
         y = py(el)
         s.append(f'<line x1="{L}" y1="{y:.1f}" x2="{L + pw}" y2="{y:.1f}" stroke="{GRID}" stroke-width="1"/>')
-        s.append(f'<text x="{L - 9}" y="{y + 4:.1f}" fill="{MUTED}" font-size="11" text-anchor="end">{el}°</text>')
+        s.append(f'<text x="{L - 9}" y="{y + 4:.1f}" fill="{MUTED}" font-size="11" '
+                 f'font-family="{MONO}" text-anchor="end">{el}°</text>')
 
-    # hour ticks
     for hh in range(17, 23):
         t = hh * 60.0
         if not (t0 <= t <= t1):
@@ -130,20 +143,18 @@ def sun_altitude_svg() -> str:
         x = px(t)
         s.append(f'<line x1="{x:.1f}" y1="{T}" x2="{x:.1f}" y2="{T + ph}" stroke="{GRID}" stroke-width="1"/>')
         s.append(f'<text x="{x:.1f}" y="{T + ph + 20}" fill="{MUTED}" font-size="11" '
-                 f'text-anchor="middle">{hh}:00</text>')
+                 f'font-family="{MONO}" text-anchor="middle">{hh}:00</text>')
 
-    # ground: below the horizon line
     y0 = py(0.0)
     s.append(f'<rect x="{L}" y="{y0:.1f}" width="{pw}" height="{T + ph - y0:.1f}" fill="{SHADE}"/>')
     s.append(f'<line x1="{L}" y1="{y0:.1f}" x2="{L + pw}" y2="{y0:.1f}" stroke="{FG}" stroke-width="1.5"/>')
-    s.append(f'<text x="{L + 8}" y="{y0 + 16:.1f}" fill="{MUTED}" font-size="11">horizon</text>')
+    s.append(f'<text x="{L + 8}" y="{y0 + 16:.1f}" fill="{MUTED}" font-size="11" '
+             f'letter-spacing="0.08em">HORIZON</text>')
 
-    # the band this project lives in: 0-7 degrees
     yb, yt = py(0.0), py(7.0)
     s.append(f'<rect x="{L}" y="{yt:.1f}" width="{pw}" height="{yb - yt:.1f}" '
-             f'fill="{SUN}" opacity="0.07"/>')
+             f'fill="{SUN}" opacity="0.10"/>')
 
-    # totality window
     x2, x3 = px(minutes(c["C2"])), px(minutes(c["C3"]))
     s.append(f'<rect x="{x2:.1f}" y="{T}" width="{max(x3 - x2, 2.0):.1f}" height="{ph}" '
              f'fill="{BAD}" opacity="0.55"/>')
@@ -151,7 +162,6 @@ def sun_altitude_svg() -> str:
     s.append(f'<path d="{path}" fill="none" stroke="{SUN}" stroke-width="2.5" '
              f'stroke-linejoin="round"/>')
 
-    # contact markers
     for label in ("C1", "max", "C4"):
         t = minutes(c[label])
         _, el = sun_at(t)
@@ -164,17 +174,17 @@ def sun_altitude_svg() -> str:
         anchor = {"C1": "start", "max": "end", "C4": "end"}[label]
         ox = {"C1": 8, "max": -10, "C4": -8}[label]
         s.append(f'<text x="{x + ox:.1f}" y="{y + dy:.1f}" fill="{FG}" font-size="12" '
-                 f'text-anchor="{anchor}">{txt} · {el:.1f}°</text>')
+                 f'text-anchor="{anchor}">{txt} <tspan font-family="{MONO}" '
+                 f'font-weight="600">{el:.1f}°</tspan></text>')
 
-    # callout for the totality band
     s.append(f'<text x="{x2:.1f}" y="{T - 11}" fill="{BAD}" font-size="12" font-weight="600" '
-             f'text-anchor="middle">totality · 84 s</text>')
-    s.append(f'<text x="{L + 10}" y="{py(3.4):.1f}" fill="{SUN}" font-size="11" '
-             f'text-anchor="start" opacity="0.9">the 0–7° band, where a wall or a tree decides the answer</text>')
+             f'text-anchor="middle">totality <tspan font-family="{MONO}">84 s</tspan></text>')
+    s.append(f'<text x="{L + 10}" y="{py(3.4):.1f}" fill="{SUN}" font-size="11.5" '
+             f'text-anchor="start">the 0–7° band, where a wall or a tree decides the answer</text>')
 
-    s.append(f'<text x="{L}" y="{H - 16}" fill="{MUTED}" font-size="11">'
-             f'Zaragoza (41.663 N, 0.916 W) · local time CEST · geometric altitude from pipeline/solar.py'
-             f'</text>')
+    s.append(f'<text x="{L}" y="{H - 16}" fill="{MUTED}" font-size="10.5">'
+             f'Zaragoza (41.663 N, 0.916 W) · local time CEST · '
+             f'geometric altitude from pipeline/solar.py</text>')
     s.append("</svg>")
     return "\n".join(s)
 
@@ -191,19 +201,20 @@ def shadow_geometry_svg() -> str:
     GY = 250            # ground line
     alpha = math.radians(16.0)   # exaggerated from 6.1 so the figure is readable
 
-    s: list[str] = []
-    s.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" '
-             f'width="{W}" height="{H}" font-family="ui-sans-serif,Segoe UI,Helvetica,Arial" '
-             f'role="img" aria-label="Geometry of the separable horizon test used by the shadow scan">')
-    s.append(f'<rect width="{W}" height="{H}" fill="{INK}"/>')
+    s: list[str] = [header(
+        W, H, "Geometry of the separable horizon test used by the shadow scan")]
 
     s.append(f'<line x1="40" y1="{GY}" x2="{W - 40}" y2="{GY}" stroke="{FG}" stroke-width="1.5"/>')
 
     # building
     bx, bw, bh = 300.0, 74.0, 104.0
     s.append(f'<rect x="{bx}" y="{GY - bh}" width="{bw}" height="{bh}" fill="{SHADE}" stroke="{MUTED}"/>')
-    s.append(f'<text x="{bx + bw / 2}" y="{GY - bh - 10}" fill="{FG}" font-size="12" '
-             f'text-anchor="middle">obstacle  z_i</text>')
+    # The label goes inside the box on two lines. Above the roof it collided with
+    # the sun ray, which arrives at the roof corner from the upper left.
+    s.append(f'<text x="{bx + bw / 2}" y="{GY - bh / 2 - 2}" fill="{FG}" font-size="11.5" '
+             f'text-anchor="middle">obstacle</text>')
+    s.append(f'<text x="{bx + bw / 2}" y="{GY - bh / 2 + 15}" fill="{FG}" font-size="12" '
+             f'font-family="{MONO}" font-weight="600" text-anchor="middle">z_i</text>')
 
     # grazing ray, from the building top down-sun (to the right = away from sun)
     top = (bx + bw, GY - bh)
@@ -222,9 +233,9 @@ def shadow_geometry_svg() -> str:
                  f'x2="{sx + 29 * math.cos(a):.1f}" y2="{sy + 29 * math.sin(a):.1f}" '
                  f'stroke="{SUN}" stroke-width="2" opacity="0.75"/>')
     s.append(f'<text x="{sx}" y="{sy - 34}" fill="{SUN}" font-size="13" text-anchor="middle" '
-             f'font-weight="600">sun · α = 6.1°</text>')
-    s.append(f'<text x="{sx}" y="{sy + 46}" fill="{MUTED}" font-size="11" text-anchor="middle">'
-             f'azimuth 284.5° (WNW)</text>')
+             f'font-weight="600">sun · <tspan font-family="{MONO}">α = 6.1°</tspan></text>')
+    s.append(f'<text x="{sx}" y="{sy + 46}" fill="{MUTED}" font-size="11" text-anchor="middle" '
+             f'font-family="{MONO}">azimuth 284.5° (WNW)</text>')
 
     # ray from sun to building top
     s.append(f'<line x1="{sx + 24:.1f}" y1="{sy + 10:.1f}" x2="{top[0]}" y2="{top[1]}" '
@@ -234,32 +245,34 @@ def shadow_geometry_svg() -> str:
     x_sh = top[0] + bh / math.tan(alpha)
     s.append(f'<line x1="{top[0]}" y1="{GY}" x2="{x_sh:.1f}" y2="{GY}" stroke="{BAD}" stroke-width="5"/>')
     s.append(f'<text x="{(top[0] + x_sh) / 2:.1f}" y="{GY + 20:.1f}" fill="{BAD}" font-size="12" '
-             f'text-anchor="middle">shadow · L = h / tan α</text>')
+             f'text-anchor="middle">shadow · <tspan font-family="{MONO}">L = h / tan α</tspan></text>')
 
     # blocked observer
     ox = top[0] + 78.0
     s.append(f'<circle cx="{ox:.1f}" cy="{GY - 15}" r="6" fill="{BAD}"/>')
     s.append(f'<line x1="{ox:.1f}" y1="{GY - 9}" x2="{ox:.1f}" y2="{GY}" stroke="{BAD}" stroke-width="3"/>')
-    s.append(f'<text x="{ox:.1f}" y="{GY - 30}" fill="{BAD}" font-size="12" text-anchor="middle">blocked</text>')
+    s.append(f'<text x="{ox:.1f}" y="{GY - 30}" fill="{BAD}" font-size="12" text-anchor="middle" '
+             f'font-weight="600">blocked</text>')
 
     # clear observer beyond the shadow, kept off the right edge
     cx2 = min(x_sh + 96.0, W - 96.0)
     s.append(f'<circle cx="{cx2:.1f}" cy="{GY - 15}" r="6" fill="{GOOD}"/>')
     s.append(f'<line x1="{cx2:.1f}" y1="{GY - 9}" x2="{cx2:.1f}" y2="{GY}" stroke="{GOOD}" stroke-width="3"/>')
-    s.append(f'<text x="{cx2:.1f}" y="{GY - 30}" fill="{GOOD}" font-size="12" text-anchor="middle">sun visible</text>')
+    s.append(f'<text x="{cx2:.1f}" y="{GY - 30}" fill="{GOOD}" font-size="12" text-anchor="middle" '
+             f'font-weight="600">sun visible</text>')
 
     # u axis: increases away from the sun
     ay = GY + 46
     s.append(f'<line x1="{bx}" y1="{ay}" x2="{W - 60}" y2="{ay}" stroke="{MUTED}" stroke-width="1"/>')
     s.append(f'<polygon points="{W - 60},{ay} {W - 70},{ay - 4} {W - 70},{ay + 4}" fill="{MUTED}"/>')
     s.append(f'<text x="{W - 76}" y="{ay - 8}" fill="{MUTED}" font-size="11" text-anchor="end">'
-             f'u increases away from the sun</text>')
+             f'<tspan font-family="{MONO}">u</tspan> increases away from the sun</text>')
 
-    s.append(f'<text x="40" y="{H - 14}" fill="{FG}" font-size="13">'
-             f'obstacle i blocks observer p  ⇔  z_i + u_i·tan α  &gt;  (z_p + eye) + u_p·tan α</text>')
+    s.append(f'<text x="40" y="{H - 14}" fill="{FG}" font-size="12.5" font-family="{MONO}">'
+             f'z_i + u_i·tan α  &gt;  (z_p + eye) + u_p·tan α   ⇒  i blocks p</text>')
     s.append(f'<text x="40" y="34" fill="{MUTED}" font-size="12">'
-             f'A running maximum of z + u·tan α decides visibility in one linear pass per row '
-             f'(angle exaggerated for legibility).</text>')
+             f'A running maximum of <tspan font-family="{MONO}">z + u·tan α</tspan> decides '
+             f'visibility in one linear pass per row (angle exaggerated for legibility).</text>')
     s.append("</svg>")
     return "\n".join(s)
 

@@ -1,38 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="ui-sans-serif,Segoe UI,Helvetica,Arial" role="img" aria-label="Solar altitude at Zaragoza through the eclipse of 12 August 2026">
-<rect width="880" height="420" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Avenir Next','Segoe UI Variable Display','Segoe UI',Inter,'Helvetica Neue',Helvetica,Arial,sans-serif" role="img" aria-label="Solar altitude at Zaragoza through the eclipse of 12 August 2026"><rect width="880" height="420" fill="#ffffff"/>
 <line x1="62" y1="321.6" x2="856" y2="321.6" stroke="#e4e8ed" stroke-width="1"/>
-<text x="53" y="325.6" fill="#6a737d" font-size="11" text-anchor="end">0°</text>
+<text x="53" y="325.6" fill="#6a737d" font-size="11" font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" text-anchor="end">0°</text>
 <line x1="62" y1="260.8" x2="856" y2="260.8" stroke="#e4e8ed" stroke-width="1"/>
-<text x="53" y="264.8" fill="#6a737d" font-size="11" text-anchor="end">10°</text>
+<text x="53" y="264.8" fill="#6a737d" font-size="11" font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" text-anchor="end">10°</text>
 <line x1="62" y1="200.1" x2="856" y2="200.1" stroke="#e4e8ed" stroke-width="1"/>
-<text x="53" y="204.1" fill="#6a737d" font-size="11" text-anchor="end">20°</text>
+<text x="53" y="204.1" fill="#6a737d" font-size="11" font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" text-anchor="end">20°</text>
 <line x1="62" y1="139.3" x2="856" y2="139.3" stroke="#e4e8ed" stroke-width="1"/>
-<text x="53" y="143.3" fill="#6a737d" font-size="11" text-anchor="end">30°</text>
+<text x="53" y="143.3" fill="#6a737d" font-size="11" font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" text-anchor="end">30°</text>
 <line x1="62" y1="78.6" x2="856" y2="78.6" stroke="#e4e8ed" stroke-width="1"/>
-<text x="53" y="82.6" fill="#6a737d" font-size="11" text-anchor="end">40°</text>
+<text x="53" y="82.6" fill="#6a737d" font-size="11" font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" text-anchor="end">40°</text>
 <line x1="62.0" y1="30" x2="62.0" y2="358" stroke="#e4e8ed" stroke-width="1"/>
-<text x="62.0" y="378" fill="#6a737d" font-size="11" text-anchor="middle">17:00</text>
+<text x="62.0" y="378" fill="#6a737d" font-size="11" font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" text-anchor="middle">17:00</text>
 <line x1="238.8" y1="30" x2="238.8" y2="358" stroke="#e4e8ed" stroke-width="1"/>
-<text x="238.8" y="378" fill="#6a737d" font-size="11" text-anchor="middle">18:00</text>
+<text x="238.8" y="378" fill="#6a737d" font-size="11" font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" text-anchor="middle">18:00</text>
 <line x1="415.7" y1="30" x2="415.7" y2="358" stroke="#e4e8ed" stroke-width="1"/>
-<text x="415.7" y="378" fill="#6a737d" font-size="11" text-anchor="middle">19:00</text>
+<text x="415.7" y="378" fill="#6a737d" font-size="11" font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" text-anchor="middle">19:00</text>
 <line x1="592.5" y1="30" x2="592.5" y2="358" stroke="#e4e8ed" stroke-width="1"/>
-<text x="592.5" y="378" fill="#6a737d" font-size="11" text-anchor="middle">20:00</text>
+<text x="592.5" y="378" fill="#6a737d" font-size="11" font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" text-anchor="middle">20:00</text>
 <line x1="769.4" y1="30" x2="769.4" y2="358" stroke="#e4e8ed" stroke-width="1"/>
-<text x="769.4" y="378" fill="#6a737d" font-size="11" text-anchor="middle">21:00</text>
+<text x="769.4" y="378" fill="#6a737d" font-size="11" font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" text-anchor="middle">21:00</text>
 <rect x="62" y="321.6" width="794" height="36.4" fill="#f2f4f7"/>
 <line x1="62" y1="321.6" x2="856" y2="321.6" stroke="#1f2328" stroke-width="1.5"/>
-<text x="70" y="337.6" fill="#6a737d" font-size="11">horizon</text>
-<rect x="62" y="279.0" width="794" height="42.5" fill="#b26a00" opacity="0.07"/>
+<text x="70" y="337.6" fill="#6a737d" font-size="11" letter-spacing="0.08em">HORIZON</text>
+<rect x="62" y="279.0" width="794" height="42.5" fill="#b26a00" opacity="0.10"/>
 <rect x="677.8" y="30" width="4.2" height="328" fill="#a40e26" opacity="0.55"/>
 <path d="M 62.0,51.8 L 67.9,53.9 L 73.8,56.0 L 79.7,58.1 L 85.6,60.2 L 91.5,62.3 L 97.4,64.4 L 103.3,66.6 L 109.2,68.7 L 115.1,70.8 L 120.9,73.0 L 126.8,75.2 L 132.7,77.3 L 138.6,79.5 L 144.5,81.7 L 150.4,83.8 L 156.3,86.0 L 162.2,88.2 L 168.1,90.4 L 174.0,92.6 L 179.9,94.8 L 185.8,97.0 L 191.7,99.2 L 197.6,101.4 L 203.5,103.6 L 209.4,105.8 L 215.3,108.0 L 221.2,110.3 L 227.1,112.5 L 233.0,114.7 L 238.8,117.0 L 244.7,119.2 L 250.6,121.4 L 256.5,123.7 L 262.4,125.9 L 268.3,128.1 L 274.2,130.4 L 280.1,132.6 L 286.0,134.9 L 291.9,137.1 L 297.8,139.4 L 303.7,141.7 L 309.6,143.9 L 315.5,146.2 L 321.4,148.4 L 327.3,150.7 L 333.2,153.0 L 339.1,155.2 L 345.0,157.5 L 350.9,159.8 L 356.7,162.0 L 362.6,164.3 L 368.5,166.6 L 374.4,168.8 L 380.3,171.1 L 386.2,173.4 L 392.1,175.6 L 398.0,177.9 L 403.9,180.2 L 409.8,182.4 L 415.7,184.7 L 421.6,187.0 L 427.5,189.3 L 433.4,191.5 L 439.3,193.8 L 445.2,196.1 L 451.1,198.3 L 457.0,200.6 L 462.9,202.9 L 468.8,205.1 L 474.6,207.4 L 480.5,209.7 L 486.4,211.9 L 492.3,214.2 L 498.2,216.5 L 504.1,218.7 L 510.0,221.0 L 515.9,223.3 L 521.8,225.5 L 527.7,227.8 L 533.6,230.0 L 539.5,232.3 L 545.4,234.5 L 551.3,236.8 L 557.2,239.0 L 563.1,241.3 L 569.0,243.5 L 574.9,245.8 L 580.8,248.0 L 586.7,250.3 L 592.5,252.5 L 598.4,254.7 L 604.3,257.0 L 610.2,259.2 L 616.1,261.4 L 622.0,263.7 L 627.9,265.9 L 633.8,268.1 L 639.7,270.3 L 645.6,272.5 L 651.5,274.8 L 657.4,277.0 L 663.3,279.2 L 669.2,281.4 L 675.1,283.6 L 681.0,285.8 L 686.9,288.0 L 692.8,290.2 L 698.7,292.4 L 704.5,294.6 L 710.4,296.7 L 716.3,298.9 L 722.2,301.1 L 728.1,303.3 L 734.0,305.4 L 739.9,307.6 L 745.8,309.8 L 751.7,311.9 L 757.6,314.1 L 763.5,316.2 L 769.4,318.3 L 775.3,320.5 L 781.2,322.6 L 787.1,324.8 L 793.0,326.9 L 798.9,329.0 L 804.8,331.1 L 810.7,333.2 L 816.6,335.3 L 822.4,337.4 L 828.3,339.5 L 834.2,341.6 L 840.1,343.7 L 846.0,345.8 L 851.9,347.9" fill="none" stroke="#b26a00" stroke-width="2.5" stroke-linejoin="round"/>
 <circle cx="517.6" cy="223.9" r="4.5" fill="#ffffff" stroke="#b26a00" stroke-width="2"/>
-<text x="525.6" y="209.9" fill="#1f2328" font-size="12" text-anchor="start">C1 partial begins · 16.1°</text>
+<text x="525.6" y="209.9" fill="#1f2328" font-size="12" text-anchor="start">C1 partial begins <tspan font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" font-weight="600">16.1°</tspan></text>
 <circle cx="679.9" cy="285.4" r="4.5" fill="#ffffff" stroke="#b26a00" stroke-width="2"/>
-<text x="669.9" y="273.4" fill="#1f2328" font-size="12" text-anchor="end">maximum · 6.0°</text>
+<text x="669.9" y="273.4" fill="#1f2328" font-size="12" text-anchor="end">maximum <tspan font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" font-weight="600">6.0°</tspan></text>
 <circle cx="832.4" cy="341.0" r="4.5" fill="#ffffff" stroke="#b26a00" stroke-width="2"/>
-<text x="824.4" y="361.0" fill="#1f2328" font-size="12" text-anchor="end">C4 partial ends · -3.2°</text>
-<text x="677.8" y="19" fill="#a40e26" font-size="12" font-weight="600" text-anchor="middle">totality · 84 s</text>
-<text x="72" y="300.9" fill="#b26a00" font-size="11" text-anchor="start" opacity="0.9">the 0–7° band, where a wall or a tree decides the answer</text>
-<text x="62" y="404" fill="#6a737d" font-size="11">Zaragoza (41.663 N, 0.916 W) · local time CEST · geometric altitude from pipeline/solar.py</text>
+<text x="824.4" y="361.0" fill="#1f2328" font-size="12" text-anchor="end">C4 partial ends <tspan font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace" font-weight="600">-3.2°</tspan></text>
+<text x="677.8" y="19" fill="#a40e26" font-size="12" font-weight="600" text-anchor="middle">totality <tspan font-family="ui-monospace,'SF Mono',SFMono-Regular,'JetBrains Mono',Menlo,Consolas,'Liberation Mono',monospace">84 s</tspan></text>
+<text x="72" y="300.9" fill="#b26a00" font-size="11.5" text-anchor="start">the 0–7° band, where a wall or a tree decides the answer</text>
+<text x="62" y="404" fill="#6a737d" font-size="10.5">Zaragoza (41.663 N, 0.916 W) · local time CEST · geometric altitude from pipeline/solar.py</text>
 </svg>
