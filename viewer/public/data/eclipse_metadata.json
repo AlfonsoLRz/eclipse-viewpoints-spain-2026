@@ -1,0 +1,155 @@
+{
+  "generated_by": "pipeline/compute_sun_vectors.py",
+  "eclipse_date": "2026-08-12",
+  "timezone_local": "Europe/Madrid",
+  "local_utc_offset_hours": 2,
+  "reference_point": {
+    "crs25830": [
+      673500.0,
+      4614500.0
+    ],
+    "epsg3857": [
+      -101972.7773204248,
+      5110686.994688768
+    ]
+  },
+  "solar_elevation_deg": 6.091,
+  "solar_azimuth_deg": 284.526,
+  "inside_totality_path": true,
+  "totality_duration_seconds": 84.1,
+  "contact_times": {
+    "C1_partial_begin": {
+      "utc": "17:34:34",
+      "local": "19:34:34"
+    },
+    "C2_totality_begin": {
+      "utc": "18:28:56",
+      "local": "20:28:56"
+    },
+    "maximum_eclipse": {
+      "utc": "18:29:39",
+      "local": "20:29:39"
+    },
+    "C3_totality_end": {
+      "utc": "18:30:21",
+      "local": "20:30:21"
+    },
+    "C4_partial_end": {
+      "utc": "19:21:23",
+      "local": "21:21:23"
+    }
+  },
+  "sun_at_contacts": {
+    "C1_partial_begin": {
+      "local": "19:34:34",
+      "azimuth_deg": 275.708,
+      "elevation_deg": 16.079
+    },
+    "C2_totality_begin": {
+      "local": "20:28:56",
+      "azimuth_deg": 284.412,
+      "elevation_deg": 6.082
+    },
+    "maximum_eclipse": {
+      "local": "20:29:39",
+      "azimuth_deg": 284.527,
+      "elevation_deg": 5.952
+    },
+    "C3_totality_end": {
+      "local": "20:30:21",
+      "azimuth_deg": 284.64,
+      "elevation_deg": 5.825
+    },
+    "C4_partial_end": {
+      "local": "21:21:23",
+      "azimuth_deg": 293.063,
+      "elevation_deg": -3.197
+    }
+  },
+  "sun_timeline": [
+    {
+      "offset_s": -180,
+      "local": "20:26:39",
+      "azimuth_deg": 284.044,
+      "elevation_deg": 6.496
+    },
+    {
+      "offset_s": -150,
+      "local": "20:27:09",
+      "azimuth_deg": 284.124,
+      "elevation_deg": 6.405
+    },
+    {
+      "offset_s": -120,
+      "local": "20:27:39",
+      "azimuth_deg": 284.205,
+      "elevation_deg": 6.314
+    },
+    {
+      "offset_s": -90,
+      "local": "20:28:09",
+      "azimuth_deg": 284.285,
+      "elevation_deg": 6.224
+    },
+    {
+      "offset_s": -60,
+      "local": "20:28:39",
+      "azimuth_deg": 284.366,
+      "elevation_deg": 6.133
+    },
+    {
+      "offset_s": -30,
+      "local": "20:29:09",
+      "azimuth_deg": 284.446,
+      "elevation_deg": 6.043
+    },
+    {
+      "offset_s": 0,
+      "local": "20:29:39",
+      "azimuth_deg": 284.527,
+      "elevation_deg": 5.952
+    },
+    {
+      "offset_s": 30,
+      "local": "20:30:09",
+      "azimuth_deg": 284.608,
+      "elevation_deg": 5.862
+    },
+    {
+      "offset_s": 60,
+      "local": "20:30:39",
+      "azimuth_deg": 284.688,
+      "elevation_deg": 5.771
+    },
+    {
+      "offset_s": 90,
+      "local": "20:31:09",
+      "azimuth_deg": 284.769,
+      "elevation_deg": 5.681
+    },
+    {
+      "offset_s": 120,
+      "local": "20:31:39",
+      "azimuth_deg": 284.85,
+      "elevation_deg": 5.59
+    },
+    {
+      "offset_s": 150,
+      "local": "20:32:09",
+      "azimuth_deg": 284.93,
+      "elevation_deg": 5.5
+    },
+    {
+      "offset_s": 180,
+      "local": "20:32:39",
+      "azimuth_deg": 285.011,
+      "elevation_deg": 5.41
+    }
+  ],
+  "raw_unconfirmed_bands": {
+    "band4": 5.149900913238525,
+    "band5": 19.12892723083496
+  },
+  "band_confidence_note": "Bands 1-2 and 6-10 were cross-checked against the plan document's own placeholder maximum-eclipse time (~20:29:45 local) and match closely. Bands 4-5 could not be confidently identified and are exposed as raw, unlabelled values only.\n",
+  "note": "Solar elevation/azimuth are taken at the instant of maximum eclipse and treated as constant through C2-C3 (~84s of totality); the resulting angular change is well under 0.1 degrees and does not materially affect visibility classification."
+}

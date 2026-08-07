@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zaragoza eclipse visibility — 12 August 2026</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <aside id="panel">
+        <header>
+          <h1>Total eclipse visibility</h1>
+          <p class="sub">Zaragoza · 12 August 2026</p>
+        </header>
+
+        <section id="eclipse-facts" class="card">
+          <div class="loading">Loading eclipse data…</div>
+        </section>
+
+        <section id="sun-card" class="card">
+          <h2>Where to look</h2>
+          <div id="sun-dial"></div>
+          <label class="field" style="margin-top:12px">
+            <span>Moment</span>
+            <select id="sun-moment"></select>
+          </label>
+          <div id="sun-readout" class="readout"></div>
+        </section>
+
+        <section class="card">
+          <h2>Your starting point</h2>
+          <p class="hint">Click the map to set your home location. It stays in your browser.</p>
+          <div class="row">
+            <button id="pick-home" class="btn">Set home from map</button>
+            <button id="clear-home" class="btn subtle">Clear</button>
+          </div>
+          <div id="home-readout" class="readout">No home set — zones ranked without distance.</div>
+        </section>
+
+        <section class="card">
+          <h2>What matters to you</h2>
+          <label class="slider">
+            <span>Clear western horizon <em id="w-clear-v">50</em></span>
+            <input type="range" id="w-clear" min="0" max="100" value="50" />
+          </label>
+          <label class="slider">
+            <span>Closer to home <em id="w-near-v">30</em></span>
+            <input type="range" id="w-near" min="0" max="100" value="30" />
+          </label>
+          <label class="slider">
+            <span>Higher ground <em id="w-high-v">10</em></span>
+            <input type="range" id="w-high" min="0" max="100" value="10" />
+          </label>
+          <label class="slider">
+            <span>Large open space <em id="w-area-v">25</em></span>
+            <input type="range" id="w-area" min="0" max="100" value="25" />
+          </label>
+          <label class="slider">
+            <span>Avoid trees <em id="w-veg-v">20</em></span>
+            <input type="range" id="w-veg" min="0" max="100" value="20" />
+          </label>
+
+          <label class="slider">
+            <span>Prefer parks over car parks <em id="w-park-v">40</em></span>
+            <input type="range" id="w-park" min="0" max="100" value="40" />
+          </label>
+
+          <label class="check">
+            <input type="checkbox" id="only-robust" />
+            <span>Only zones with 2°+ clearance</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="hide-parking" />
+            <span>Hide car parks entirely</span>
+          </label>
+        </section>
+
+        <section class="card">
+          <h2>Map layers</h2>
+          <label class="slider">
+            <span>Visibility overlay <em id="op-v">45</em>%</span>
+            <input type="range" id="op" min="0" max="100" value="45" />
+          </label>
+
+          <label class="field">
+            <span>Colour scale</span>
+            <select id="ramp">
+              <option value="classes">Clearance classes</option>
+              <option value="viridis">Viridis (continuous)</option>
+              <option value="traffic">Red → green</option>
+              <option value="binary">Visible / blocked</option>
+              <option value="mono">Shadow only (grey)</option>
+            </select>
+          </label>
+
+          <label class="check">
+            <input type="checkbox" id="show-clearance" checked />
+            <span>Visibility shading</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="show-rgb" checked />
+            <span>Orthophoto (RGB)</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="show-labels" />
+            <span>Street &amp; building names (OSM)</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" id="show-outline" checked />
+            <span>Analysed area outline</span>
+          </label>
+          <div id="legend"></div>
+        </section>
+
+        <section class="card">
+          <h2>Best places <span id="result-count" class="pill"></span></h2>
+          <div id="results"></div>
+        </section>
+
+        <footer id="provenance"></footer>
+      </aside>
+
+      <main id="map-wrap">
+        <div id="map"></div>
+        <div id="inspect" class="hidden"></div>
+      </main>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

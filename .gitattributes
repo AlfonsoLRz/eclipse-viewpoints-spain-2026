@@ -1,0 +1,11 @@
+# Normalise text to LF in the repository; check out native on Windows.
+* text=auto
+
+# The tile pyramid is ~26k PNGs. Marking them binary explicitly keeps git from
+# sniffing every one of them on add and diff.
+*.png binary
+*.jpg binary
+
+# Generated; noisy in review and never hand-edited.
+viewer/package-lock.json linguist-generated=true
+viewer/public/data/** linguist-generated=true

@@ -1,0 +1,41 @@
+name: tests
+
+# The shadow scan is the part of this project that can be silently wrong: every
+# sign convention in it has produced a plausible-looking but incorrect map at
+# least once. tests/ pins those conventions against an analytical shadow length,
+# an independent brute-force ray march, and the official CNIG solar geometry.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pipeline/**'
+      - 'tests/**'
+      - 'config/**'
+      - 'requirements.txt'
+      - '.github/workflows/tests.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run tests
+        # test_matches_cnig_raster_at_maximum skips here by design: it reads
+        # data/output/eclipse_metadata.json, which is a pipeline product and
+        # needs the LiDAR block. The synthetic and analytical checks do not.
+        run: python -m pytest tests/ -q

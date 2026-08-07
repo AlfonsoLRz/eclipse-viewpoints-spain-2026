@@ -1,0 +1,36 @@
+# ---------------------------------------------------------------- source data
+# The PNOA LiDAR block and orthophoto mosaic are several GB and are freely
+# redistributed by the CNIG. See the README for download instructions.
+*.laz
+*.tif
+*.tiff
+*.gpkg
+*.zip
+PNOA_MA_OF_*.xml
+
+# ---------------------------------------------------------------- private
+# Internal design document; kept locally, deliberately not published.
+zaragoza_eclipse_visibility_web_plan.md
+
+# ---------------------------------------------------------------- generated
+data/output/
+data/intermediate/
+
+# The viewer's data products ARE committed - they are what GitHub Pages serves,
+# and regenerating them needs the multi-GB LiDAR block that is not in this repo.
+# The five shadow scales come to ~106 MB. The orthophoto tile set does not:
+# it was 671 MB, so the viewer reads the IGN WMTS instead (see package_tiles.py).
+viewer/public/data/tiles/rgb/
+
+viewer/dist/
+
+# ---------------------------------------------------------------- environments
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.log
+
+# docs/overview.png is committed deliberately (README illustration)
+!docs/overview.png

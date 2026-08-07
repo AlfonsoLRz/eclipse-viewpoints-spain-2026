@@ -1,0 +1,116 @@
+# Configuration for the Zaragoza urban eclipse-visibility pipeline.
+# The README covers the method; the original design document is kept outside
+# this repository, so comments below referring to "the plan" point at it.
+
+crs: "EPSG:25830"          # ETRS89 / UTM zone 30N - all offline processing happens here
+resolution_m: 1.0          # DTM/DSM raster resolution (metres)
+
+# LAZ tiles are named PNOA_2023_ARA_<easting_km>-<northing_km>_H30_NPC02.laz
+# and tile exactly on 1 km boundaries with no gaps, so the coverage is the
+# rectangle [min_easting_km*1000, (max_easting_km+1)*1000] x
+#           [min_northing_km*1000, (max_northing_km+1)*1000]
+laz:
+  glob: "PNOA_2023_ARA_*_H30_NPC02.laz"
+  acquisition_year: 2023
+  classes:
+    unclassified: [1]
+    ground: [2]
+    vegetation_low: [3]
+    vegetation_medium: [4]
+    vegetation_high: [5]
+    building: [6]
+    low_point_noise: [7]
+    bridge: [17]
+    overlap: [12]
+
+orthophoto:
+  files:
+    - "PNOA_MA_OF_ETRS89_HU30_h25_0354_4.tif"
+    - "PNOA_MA_OF_ETRS89_HU30_h25_0355_3.tif"
+    - "PNOA_MA_OF_ETRS89_HU30_h25_0383_2.tif"
+    - "PNOA_MA_OF_ETRS89_HU30_h25_0384_1.tif"
+  mosaic_date: "2025-07-14"     # PNOA Maxima Actualidad mosaic metadata date
+  note: >
+    Orthophoto coverage is larger than the LAZ coverage (per-tile extents
+    exceed the 7x7 km LiDAR block). The web app must clip RGB display to the
+    LAZ footprint only - never show orthophoto beyond the processed area.
+
+eclipse:
+  date: "2026-08-12"
+  raster: "10bands_2026_3857_COG.tiff"
+  timezone_local: "Europe/Madrid"   # UTC+2 (CEST) on 2026-08-12
+  band_meaning:
+    1: "solar_elevation_deg_at_maximum"
+    2: "solar_azimuth_deg_at_maximum"
+    3: "inside_totality_path_flag"
+    4: "unconfirmed_auxiliary_value"
+    5: "unconfirmed_auxiliary_value"
+    6: "c1_partial_begin_utc_decimal_hour"
+    7: "maximum_eclipse_utc_decimal_hour"
+    8: "c4_partial_end_utc_decimal_hour"
+    9: "c2_totality_begin_utc_decimal_hour"
+    10: "c3_totality_end_utc_decimal_hour"
+  band_confidence: >
+    Bands 1-2 and 6-10 were cross-checked against the plan document's own
+    placeholder maximum-eclipse time (~20:29:45 local) and match closely.
+    Bands 4-5 could not be confidently identified and are exposed as raw,
+    unlabelled values only.
+
+observer:
+  eye_height_m: 1.70
+  eye_height_range_m: [1.2, 2.0]
+
+visibility:
+  effective_elevation_offsets_deg: [0.0, 0.5, 1.0, 2.0]
+  clearance_classes:
+    - {min: -999, max: 0.0, label: "blocked"}
+    - {min: 0.0, max: 0.5, label: "fragile"}
+    - {min: 0.5, max: 1.0, label: "acceptable"}
+    - {min: 1.0, max: 2.0, label: "good"}
+    - {min: 2.0, max: 999, label: "excellent"}
+  conservative_model:
+    vegetation_dilation_cells: 2      # ~2 m horizontal dilation
+    vegetation_height_bonus_m: 1.0    # raise canopy slightly
+    building_dilation_cells: 1        # ~1 m safety margin on building edges
+  max_ray_search_m: 600
+
+zones:
+  # 400 m2 survives the width opening but is barely a tennis court; 750 m2 is
+  # the smallest area that comfortably holds a group without anyone drifting
+  # into the shadowed margin.
+  min_area_m2: 750
+  max_area_m2: 200000         # larger blobs are open countryside; they get split
+  morphology_opening_iterations: 1
+  min_clearance_class: "acceptable"
+
+  # Urban context. Distance to the nearest building is not enough: farm plots,
+  # motorway verges and riverbanks all sit close to some isolated structure.
+  # Local building density is what separates a city square from a field.
+  urban_context_radius_m: 250
+  min_built_fraction: 0.08    # >=8% of a 250 m window must be roofed
+
+  # Water rejection - the Ebro otherwise scores as perfect flat open ground.
+  water_max_point_density: 2.5
+  water_buffer_m: 8
+  min_point_density: 3.0
+
+  # Removes slivers left by mask intersections. This was 25 m, which was doing
+  # the job OSM already does: roads and rail are excluded by the negative mask,
+  # so a 25 m opening mostly deleted legitimate park edges and narrow plazas and
+  # halved the usable area. 6 m still admits a reasonable standing space.
+  min_usable_width_m: 6
+
+  # OpenStreetMap (see pipeline/fetch_osm.py). The negative mask is always
+  # applied; the positive one restricts candidates to space that is actually
+  # meant to be stood in. Turn it off to fall back to LiDAR-only inference.
+  require_osm_public_space: true
+  osm_positive_buffer_m: 15
+  # Car parks are open and usually accessible but make poor recommendations
+  # next to a park of equal clearance. They are kept as candidates and tagged
+  # (surfaceKind / parkingFraction) so the web UI can down-weight or hide them.
+  include_parking: true
+
+paths:
+  data_output: "data/output"
+  data_intermediate: "data/intermediate"
+  viewer_public_data: "viewer/public/data"

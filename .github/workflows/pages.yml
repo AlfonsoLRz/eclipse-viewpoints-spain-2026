@@ -1,0 +1,74 @@
+name: Deploy viewer to GitHub Pages
+
+# The viewer is a static Vite build. Its data products (five shadow tile sets
+# plus the zone/eclipse JSON) are committed under viewer/public/data because
+# regenerating them needs the multi-GB PNOA LiDAR block, which is not in this
+# repository - so CI copies them rather than computing them.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'viewer/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; queue instead of cancelling, so a finished build
+# is not discarded half-way through publishing.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: viewer/package-lock.json
+
+      - uses: actions/configure-pages@v5
+
+      - name: Install dependencies
+        working-directory: viewer
+        run: npm ci
+
+      - name: Build
+        working-directory: viewer
+        # vite.config.js sets base: './', so the bundle is path-independent and
+        # works at /<repo>/ without knowing the repository name at build time.
+        run: npm run build
+
+      - name: Check the data products made it into the build
+        working-directory: viewer
+        run: |
+          test -f dist/data/layers.json
+          test -f dist/data/candidates.json
+          test -f dist/data/laz_coverage.geojson
+          for ramp in classes viridis traffic binary mono; do
+            test -d "dist/data/tiles/$ramp" || { echo "missing tiles: $ramp"; exit 1; }
+          done
+          echo "tiles: $(find dist/data/tiles -name '*.png' | wc -l) png, $(du -sh dist | cut -f1) total"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: viewer/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

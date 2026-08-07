@@ -1,0 +1,17 @@
+# Offline pipeline dependencies. Developed and validated on Python 3.12.7.
+# Lower bounds are the versions the results in the README were produced with;
+# nothing here depends on the newest APIs, so later releases are expected to work.
+
+numpy>=2.0
+scipy>=1.13
+rasterio>=1.4
+pyproj>=3.6
+PyYAML>=6.0
+pillow>=10.0
+
+# LAZ reading. laspy needs the lazrs backend for compressed .laz input.
+laspy>=2.5
+lazrs>=0.6
+
+# tests/
+pytest>=8.0

@@ -1,0 +1,1281 @@
+{
+  "generated_by": "pipeline/extract_zones.py",
+  "crs": "EPSG:25830",
+  "cell_area_m2": 1.0,
+  "min_area_m2": 750.0,
+  "min_clearance_class": "acceptable",
+  "access_model": "lidar_derived_unverified",
+  "access_note": "Walkable areas are inferred from LiDAR surfaces (open, near-flat, well-sampled ground with no building or canopy above). They are NOT verified against OpenStreetMap or municipal open data, so some zones may be private land, roadway or otherwise inaccessible.",
+  "count": 47,
+  "zones": [
+    {
+      "id": "zone-001",
+      "representativePoint": [
+        -0.907346,
+        41.656735
+      ],
+      "representativePointUTM": [
+        674241.5,
+        4613780.5
+      ],
+      "areaM2": 3151.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.94,
+      "excellentFraction": 0.957,
+      "visibleFraction": 1.0,
+      "groundElevationM": 210.1,
+      "localProminenceM": 0.93,
+      "vegetationRisk": 0.427,
+      "dataConfidence": 0.543,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.35,
+      "parkingFraction": 0.623,
+      "surfaceKind": "car park",
+      "placeName": null
+    },
+    {
+      "id": "zone-002",
+      "representativePoint": [
+        -0.956136,
+        41.676239
+      ],
+      "representativePointUTM": [
+        670127.5,
+        4615848.5
+      ],
+      "areaM2": 2987.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.92,
+      "excellentFraction": 0.936,
+      "visibleFraction": 1.0,
+      "groundElevationM": 205.3,
+      "localProminenceM": -0.37,
+      "vegetationRisk": 0.319,
+      "dataConfidence": 0.761,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.28,
+      "parkingFraction": 0.733,
+      "surfaceKind": "car park",
+      "placeName": null
+    },
+    {
+      "id": "zone-003",
+      "representativePoint": [
+        -0.907105,
+        41.658622
+      ],
+      "representativePointUTM": [
+        674256.5,
+        4613990.5
+      ],
+      "areaM2": 985.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.96,
+      "excellentFraction": 0.965,
+      "visibleFraction": 1.0,
+      "groundElevationM": 207.8,
+      "localProminenceM": 2.06,
+      "vegetationRisk": 0.036,
+      "dataConfidence": 0.592,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 4.74,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "Jardines de Lisboa"
+    },
+    {
+      "id": "zone-004",
+      "representativePoint": [
+        -0.925023,
+        41.638061
+      ],
+      "representativePointUTM": [
+        672819.5,
+        4611671.5
+      ],
+      "areaM2": 961.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.88,
+      "excellentFraction": 0.902,
+      "visibleFraction": 1.0,
+      "groundElevationM": 246.2,
+      "localProminenceM": -0.66,
+      "vegetationRisk": 0.36,
+      "dataConfidence": 0.765,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 8.66,
+      "parkingFraction": 0.842,
+      "surfaceKind": "car park",
+      "placeName": "Anillo Verde Valdefierro"
+    },
+    {
+      "id": "zone-005",
+      "representativePoint": [
+        -0.888444,
+        41.68095
+      ],
+      "representativePointUTM": [
+        675749.5,
+        4616507.5
+      ],
+      "areaM2": 948.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.94,
+      "excellentFraction": 0.957,
+      "visibleFraction": 1.0,
+      "groundElevationM": 197.8,
+      "localProminenceM": -0.86,
+      "vegetationRisk": 0.071,
+      "dataConfidence": 0.805,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.69,
+      "parkingFraction": 0.012,
+      "surfaceKind": "open space",
+      "placeName": "Glorieta de la Bullonera"
+    },
+    {
+      "id": "zone-006",
+      "representativePoint": [
+        -0.953343,
+        41.674541
+      ],
+      "representativePointUTM": [
+        670364.5,
+        4615665.5
+      ],
+      "areaM2": 794.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.99,
+      "excellentFraction": 0.994,
+      "visibleFraction": 1.0,
+      "groundElevationM": 205.0,
+      "localProminenceM": -0.14,
+      "vegetationRisk": 0.025,
+      "dataConfidence": 0.695,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.59,
+      "parkingFraction": 0.332,
+      "surfaceKind": "open space",
+      "placeName": null
+    },
+    {
+      "id": "zone-007",
+      "representativePoint": [
+        -0.913369,
+        41.66251
+      ],
+      "representativePointUTM": [
+        673724.5,
+        4614409.5
+      ],
+      "areaM2": 21334.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.85,
+      "excellentFraction": 0.884,
+      "visibleFraction": 1.0,
+      "groundElevationM": 199.7,
+      "localProminenceM": -0.07,
+      "vegetationRisk": 0.051,
+      "dataConfidence": 0.862,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 10.21,
+      "parkingFraction": 1.0,
+      "surfaceKind": "car park",
+      "placeName": null
+    },
+    {
+      "id": "zone-008",
+      "representativePoint": [
+        -0.875336,
+        41.681357
+      ],
+      "representativePointUTM": [
+        676839.5,
+        4616579.5
+      ],
+      "areaM2": 6794.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.76,
+      "excellentFraction": 0.811,
+      "visibleFraction": 1.0,
+      "groundElevationM": 204.4,
+      "localProminenceM": 0.05,
+      "vegetationRisk": 0.183,
+      "dataConfidence": 0.686,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.56,
+      "parkingFraction": 0.012,
+      "surfaceKind": "open space",
+      "placeName": "Pumptrack Parque Goya"
+    },
+    {
+      "id": "zone-009",
+      "representativePoint": [
+        -0.888279,
+        41.684549
+      ],
+      "representativePointUTM": [
+        675753.5,
+        4616907.5
+      ],
+      "areaM2": 6558.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.83,
+      "excellentFraction": 0.874,
+      "visibleFraction": 1.0,
+      "groundElevationM": 199.6,
+      "localProminenceM": 0.21,
+      "vegetationRisk": 0.019,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 13.68,
+      "parkingFraction": 0.497,
+      "surfaceKind": "open space",
+      "placeName": "Jardín Zen"
+    },
+    {
+      "id": "zone-010",
+      "representativePoint": [
+        -0.924208,
+        41.638406
+      ],
+      "representativePointUTM": [
+        672886.5,
+        4611711.5
+      ],
+      "areaM2": 5725.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.69,
+      "excellentFraction": 0.742,
+      "visibleFraction": 1.0,
+      "groundElevationM": 245.5,
+      "localProminenceM": 0.07,
+      "vegetationRisk": 0.109,
+      "dataConfidence": 0.756,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.42,
+      "parkingFraction": 0.895,
+      "surfaceKind": "car park",
+      "placeName": "Anillo Verde Valdefierro"
+    },
+    {
+      "id": "zone-011",
+      "representativePoint": [
+        -0.909692,
+        41.660687
+      ],
+      "representativePointUTM": [
+        674035.5,
+        4614214.5
+      ],
+      "areaM2": 4670.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.8,
+      "excellentFraction": 0.838,
+      "visibleFraction": 1.0,
+      "groundElevationM": 201.0,
+      "localProminenceM": -0.79,
+      "vegetationRisk": 0.029,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 14.45,
+      "parkingFraction": 1.0,
+      "surfaceKind": "car park",
+      "placeName": null
+    },
+    {
+      "id": "zone-012",
+      "representativePoint": [
+        -0.948151,
+        41.634883
+      ],
+      "representativePointUTM": [
+        670901.5,
+        4611272.5
+      ],
+      "areaM2": 3856.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.63,
+      "excellentFraction": 0.706,
+      "visibleFraction": 1.0,
+      "groundElevationM": 249.3,
+      "localProminenceM": -0.92,
+      "vegetationRisk": 0.007,
+      "dataConfidence": 0.695,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.59,
+      "parkingFraction": 0.755,
+      "surfaceKind": "car park",
+      "placeName": "Rosales del Canal"
+    },
+    {
+      "id": "zone-013",
+      "representativePoint": [
+        -0.95495,
+        41.678415
+      ],
+      "representativePointUTM": [
+        670220.5,
+        4616092.5
+      ],
+      "areaM2": 3245.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.67,
+      "excellentFraction": 0.72,
+      "visibleFraction": 1.0,
+      "groundElevationM": 204.2,
+      "localProminenceM": 0.42,
+      "vegetationRisk": 0.03,
+      "dataConfidence": 0.753,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.2,
+      "parkingFraction": 0.843,
+      "surfaceKind": "car park",
+      "placeName": null
+    },
+    {
+      "id": "zone-014",
+      "representativePoint": [
+        -0.924508,
+        41.64251
+      ],
+      "representativePointUTM": [
+        672850.5,
+        4612166.5
+      ],
+      "areaM2": 2732.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.79,
+      "excellentFraction": 0.819,
+      "visibleFraction": 1.0,
+      "groundElevationM": 232.6,
+      "localProminenceM": -0.48,
+      "vegetationRisk": 0.136,
+      "dataConfidence": 0.576,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.63,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "Anillo Verde Valdefierro"
+    },
+    {
+      "id": "zone-015",
+      "representativePoint": [
+        -0.911546,
+        41.662053
+      ],
+      "representativePointUTM": [
+        673877.5,
+        4614362.5
+      ],
+      "areaM2": 2070.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.72,
+      "excellentFraction": 0.779,
+      "visibleFraction": 1.0,
+      "groundElevationM": 197.9,
+      "localProminenceM": -0.37,
+      "vegetationRisk": 0.083,
+      "dataConfidence": 0.583,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.67,
+      "parkingFraction": 1.0,
+      "surfaceKind": "car park",
+      "placeName": null
+    },
+    {
+      "id": "zone-016",
+      "representativePoint": [
+        -0.917944,
+        41.658792
+      ],
+      "representativePointUTM": [
+        673353.5,
+        4613987.5
+      ],
+      "areaM2": 2034.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.81,
+      "excellentFraction": 0.864,
+      "visibleFraction": 1.0,
+      "groundElevationM": 204.3,
+      "localProminenceM": -1.28,
+      "vegetationRisk": 0.226,
+      "dataConfidence": 0.69,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.56,
+      "parkingFraction": 0.595,
+      "surfaceKind": "car park",
+      "placeName": null
+    },
+    {
+      "id": "zone-017",
+      "representativePoint": [
+        -0.910532,
+        41.66108
+      ],
+      "representativePointUTM": [
+        673964.5,
+        4614256.5
+      ],
+      "areaM2": 1868.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.58,
+      "excellentFraction": 0.673,
+      "visibleFraction": 1.0,
+      "groundElevationM": 198.7,
+      "localProminenceM": -1.62,
+      "vegetationRisk": 0.112,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 13.21,
+      "parkingFraction": 1.0,
+      "surfaceKind": "car park",
+      "placeName": null
+    },
+    {
+      "id": "zone-018",
+      "representativePoint": [
+        -0.883954,
+        41.680858
+      ],
+      "representativePointUTM": [
+        676123.5,
+        4616506.5
+      ],
+      "areaM2": 1863.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.53,
+      "excellentFraction": 0.604,
+      "visibleFraction": 1.0,
+      "groundElevationM": 198.1,
+      "localProminenceM": -1.57,
+      "vegetationRisk": 0.151,
+      "dataConfidence": 0.696,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.57,
+      "parkingFraction": 0.44,
+      "surfaceKind": "open space",
+      "placeName": null
+    },
+    {
+      "id": "zone-019",
+      "representativePoint": [
+        -0.954737,
+        41.677169
+      ],
+      "representativePointUTM": [
+        670241.5,
+        4615954.5
+      ],
+      "areaM2": 1782.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.67,
+      "excellentFraction": 0.704,
+      "visibleFraction": 1.0,
+      "groundElevationM": 205.2,
+      "localProminenceM": 0.21,
+      "vegetationRisk": 0.065,
+      "dataConfidence": 0.841,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 7.63,
+      "parkingFraction": 0.574,
+      "surfaceKind": "car park",
+      "placeName": null
+    },
+    {
+      "id": "zone-020",
+      "representativePoint": [
+        -0.887517,
+        41.681032
+      ],
+      "representativePointUTM": [
+        675826.5,
+        4616518.5
+      ],
+      "areaM2": 1766.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.72,
+      "excellentFraction": 0.776,
+      "visibleFraction": 1.0,
+      "groundElevationM": 198.2,
+      "localProminenceM": -0.63,
+      "vegetationRisk": 0.037,
+      "dataConfidence": 0.605,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.85,
+      "parkingFraction": 0.725,
+      "surfaceKind": "car park",
+      "placeName": "Sala Deportiva Río"
+    },
+    {
+      "id": "zone-021",
+      "representativePoint": [
+        -0.932835,
+        41.654693
+      ],
+      "representativePointUTM": [
+        672124.5,
+        4613502.5
+      ],
+      "areaM2": 1753.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.82,
+      "excellentFraction": 0.861,
+      "visibleFraction": 1.0,
+      "groundElevationM": 225.7,
+      "localProminenceM": 2.35,
+      "vegetationRisk": 0.001,
+      "dataConfidence": 0.675,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.41,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "Parque de Miralbueno"
+    },
+    {
+      "id": "zone-022",
+      "representativePoint": [
+        -0.92384,
+        41.636761
+      ],
+      "representativePointUTM": [
+        672921.5,
+        4611529.5
+      ],
+      "areaM2": 1721.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.63,
+      "excellentFraction": 0.727,
+      "visibleFraction": 1.0,
+      "groundElevationM": 250.0,
+      "localProminenceM": 2.06,
+      "vegetationRisk": 0.048,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 17.17,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": null
+    },
+    {
+      "id": "zone-023",
+      "representativePoint": [
+        -0.92214,
+        41.632127
+      ],
+      "representativePointUTM": [
+        673075.5,
+        4611018.5
+      ],
+      "areaM2": 1670.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.72,
+      "excellentFraction": 0.789,
+      "visibleFraction": 1.0,
+      "groundElevationM": 249.7,
+      "localProminenceM": 1.24,
+      "vegetationRisk": 0.002,
+      "dataConfidence": 0.65,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.21,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "Zaragoza Club de Fútbol Femenino"
+    },
+    {
+      "id": "zone-024",
+      "representativePoint": [
+        -0.907496,
+        41.65989
+      ],
+      "representativePointUTM": [
+        674220.5,
+        4614130.5
+      ],
+      "areaM2": 1432.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.84,
+      "excellentFraction": 0.876,
+      "visibleFraction": 1.0,
+      "groundElevationM": 203.3,
+      "localProminenceM": 0.47,
+      "vegetationRisk": 0.01,
+      "dataConfidence": 0.998,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 14.66,
+      "parkingFraction": 0.347,
+      "surfaceKind": "open space",
+      "placeName": "Jardines de Lisboa"
+    },
+    {
+      "id": "zone-025",
+      "representativePoint": [
+        -0.948093,
+        41.632567
+      ],
+      "representativePointUTM": [
+        670912.5,
+        4611015.5
+      ],
+      "areaM2": 1333.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "good",
+      "meanClearanceClass": 3.86,
+      "excellentFraction": 0.857,
+      "visibleFraction": 1.0,
+      "groundElevationM": 248.1,
+      "localProminenceM": -1.82,
+      "vegetationRisk": 0.063,
+      "dataConfidence": 0.669,
+      "mainEdgeObstacle": "none",
+      "pointDensity": 5.36,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "Rosales del Canal"
+    },
+    {
+      "id": "zone-026",
+      "representativePoint": [
+        -0.9018,
+        41.657787
+      ],
+      "representativePointUTM": [
+        674700.5,
+        4613908.5
+      ],
+      "areaM2": 1083.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.78,
+      "excellentFraction": 0.809,
+      "visibleFraction": 1.0,
+      "groundElevationM": 201.4,
+      "localProminenceM": -2.57,
+      "vegetationRisk": 0.034,
+      "dataConfidence": 0.467,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 3.74,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "Paseo del Agua"
+    },
+    {
+      "id": "zone-027",
+      "representativePoint": [
+        -0.898824,
+        41.657327
+      ],
+      "representativePointUTM": [
+        674949.5,
+        4613863.5
+      ],
+      "areaM2": 1036.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.78,
+      "excellentFraction": 0.836,
+      "visibleFraction": 1.0,
+      "groundElevationM": 199.8,
+      "localProminenceM": -2.81,
+      "vegetationRisk": 0.471,
+      "dataConfidence": 0.533,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 4.27,
+      "parkingFraction": 1.0,
+      "surfaceKind": "car park",
+      "placeName": "Parque de la Aljafería"
+    },
+    {
+      "id": "zone-028",
+      "representativePoint": [
+        -0.924611,
+        41.649402
+      ],
+      "representativePointUTM": [
+        672823.5,
+        4612931.5
+      ],
+      "areaM2": 1034.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.61,
+      "excellentFraction": 0.655,
+      "visibleFraction": 1.0,
+      "groundElevationM": 224.4,
+      "localProminenceM": -1.75,
+      "vegetationRisk": 0.366,
+      "dataConfidence": 0.971,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 11.76,
+      "parkingFraction": 0.864,
+      "surfaceKind": "car park",
+      "placeName": "Oliver"
+    },
+    {
+      "id": "zone-029",
+      "representativePoint": [
+        -0.889495,
+        41.683005
+      ],
+      "representativePointUTM": [
+        675656.5,
+        4616733.5
+      ],
+      "areaM2": 925.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.71,
+      "excellentFraction": 0.791,
+      "visibleFraction": 1.0,
+      "groundElevationM": 198.1,
+      "localProminenceM": 0.01,
+      "vegetationRisk": 0.049,
+      "dataConfidence": 0.82,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 7.02,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "Jardín Zen"
+    },
+    {
+      "id": "zone-030",
+      "representativePoint": [
+        -0.93534,
+        41.663501
+      ],
+      "representativePointUTM": [
+        671892.5,
+        4614475.5
+      ],
+      "areaM2": 915.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.5,
+      "excellentFraction": 0.577,
+      "visibleFraction": 1.0,
+      "groundElevationM": 205.5,
+      "localProminenceM": -0.72,
+      "vegetationRisk": 0.121,
+      "dataConfidence": 0.851,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 7.12,
+      "parkingFraction": 0.615,
+      "surfaceKind": "car park",
+      "placeName": null
+    },
+    {
+      "id": "zone-031",
+      "representativePoint": [
+        -0.941292,
+        41.661023
+      ],
+      "representativePointUTM": [
+        671403.5,
+        4614188.5
+      ],
+      "areaM2": 831.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.83,
+      "excellentFraction": 0.862,
+      "visibleFraction": 1.0,
+      "groundElevationM": 217.9,
+      "localProminenceM": 0.82,
+      "vegetationRisk": 0.076,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 12.65,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "pistas polideportivas"
+    },
+    {
+      "id": "zone-032",
+      "representativePoint": [
+        -0.903112,
+        41.656955
+      ],
+      "representativePointUTM": [
+        674593.5,
+        4613813.5
+      ],
+      "areaM2": 817.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.81,
+      "excellentFraction": 0.837,
+      "visibleFraction": 1.0,
+      "groundElevationM": 210.1,
+      "localProminenceM": 1.58,
+      "vegetationRisk": 0.065,
+      "dataConfidence": 0.804,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.53,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "Paseo del Agua"
+    },
+    {
+      "id": "zone-033",
+      "representativePoint": [
+        -0.950939,
+        41.674192
+      ],
+      "representativePointUTM": [
+        670565.5,
+        4615631.5
+      ],
+      "areaM2": 764.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.73,
+      "excellentFraction": 0.784,
+      "visibleFraction": 1.0,
+      "groundElevationM": 204.0,
+      "localProminenceM": -0.52,
+      "vegetationRisk": 0.037,
+      "dataConfidence": 0.732,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.77,
+      "parkingFraction": 0.097,
+      "surfaceKind": "open space",
+      "placeName": null
+    },
+    {
+      "id": "zone-034",
+      "representativePoint": [
+        -0.911553,
+        41.658099
+      ],
+      "representativePointUTM": [
+        673887.5,
+        4613923.5
+      ],
+      "areaM2": 3880.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.23,
+      "excellentFraction": 0.372,
+      "visibleFraction": 1.0,
+      "groundElevationM": 203.4,
+      "localProminenceM": -1.78,
+      "vegetationRisk": 0.015,
+      "dataConfidence": 0.589,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.71,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "Parque Castillo Palomar"
+    },
+    {
+      "id": "zone-035",
+      "representativePoint": [
+        -0.924748,
+        41.648134
+      ],
+      "representativePointUTM": [
+        672815.5,
+        4612790.5
+      ],
+      "areaM2": 2698.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.01,
+      "excellentFraction": 0.258,
+      "visibleFraction": 1.0,
+      "groundElevationM": 225.0,
+      "localProminenceM": -1.11,
+      "vegetationRisk": 0.004,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 12.84,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": null
+    },
+    {
+      "id": "zone-036",
+      "representativePoint": [
+        -0.954655,
+        41.675222
+      ],
+      "representativePointUTM": [
+        670253.5,
+        4615738.5
+      ],
+      "areaM2": 1816.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.13,
+      "excellentFraction": 0.28,
+      "visibleFraction": 1.0,
+      "groundElevationM": 206.0,
+      "localProminenceM": 0.32,
+      "vegetationRisk": 0.003,
+      "dataConfidence": 0.768,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.37,
+      "parkingFraction": 0.508,
+      "surfaceKind": "car park",
+      "placeName": null
+    },
+    {
+      "id": "zone-037",
+      "representativePoint": [
+        -0.891445,
+        41.690984
+      ],
+      "representativePointUTM": [
+        675472.5,
+        4617615.5
+      ],
+      "areaM2": 1725.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.57,
+      "excellentFraction": 0.667,
+      "visibleFraction": 1.0,
+      "groundElevationM": 235.9,
+      "localProminenceM": 3.07,
+      "vegetationRisk": 0.023,
+      "dataConfidence": 0.695,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.57,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": null
+    },
+    {
+      "id": "zone-038",
+      "representativePoint": [
+        -0.895185,
+        41.677993
+      ],
+      "representativePointUTM": [
+        675196.5,
+        4616165.5
+      ],
+      "areaM2": 1676.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.37,
+      "excellentFraction": 0.513,
+      "visibleFraction": 1.0,
+      "groundElevationM": 197.4,
+      "localProminenceM": -0.11,
+      "vegetationRisk": 0.136,
+      "dataConfidence": 0.721,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.79,
+      "parkingFraction": 0.391,
+      "surfaceKind": "open space",
+      "placeName": "Parque de la Tolerancia"
+    },
+    {
+      "id": "zone-039",
+      "representativePoint": [
+        -0.940197,
+        41.660715
+      ],
+      "representativePointUTM": [
+        671495.5,
+        4614156.5
+      ],
+      "areaM2": 1459.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.46,
+      "excellentFraction": 0.59,
+      "visibleFraction": 1.0,
+      "groundElevationM": 219.0,
+      "localProminenceM": 1.86,
+      "vegetationRisk": 0.027,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 13.2,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "pistas polideportivas"
+    },
+    {
+      "id": "zone-040",
+      "representativePoint": [
+        -0.911887,
+        41.638489
+      ],
+      "representativePointUTM": [
+        673912.5,
+        4611745.5
+      ],
+      "areaM2": 1260.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.9,
+      "excellentFraction": 0.12,
+      "visibleFraction": 1.0,
+      "groundElevationM": 233.6,
+      "localProminenceM": -0.71,
+      "vegetationRisk": 0.0,
+      "dataConfidence": 0.686,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.51,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "Campo de Fútbol García Traid"
+    },
+    {
+      "id": "zone-041",
+      "representativePoint": [
+        -0.94052,
+        41.660397
+      ],
+      "representativePointUTM": [
+        671469.5,
+        4614120.5
+      ],
+      "areaM2": 1087.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.57,
+      "excellentFraction": 0.692,
+      "visibleFraction": 1.0,
+      "groundElevationM": 218.8,
+      "localProminenceM": 1.92,
+      "vegetationRisk": 0.199,
+      "dataConfidence": 0.998,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 13.41,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "pistas polideportivas"
+    },
+    {
+      "id": "zone-042",
+      "representativePoint": [
+        -0.889926,
+        41.676411
+      ],
+      "representativePointUTM": [
+        675638.5,
+        4616000.5
+      ],
+      "areaM2": 1027.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.09,
+      "excellentFraction": 0.303,
+      "visibleFraction": 1.0,
+      "groundElevationM": 199.3,
+      "localProminenceM": 0.97,
+      "vegetationRisk": 0.475,
+      "dataConfidence": 0.654,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 5.25,
+      "parkingFraction": 0.987,
+      "surfaceKind": "car park",
+      "placeName": "Cancha Baloncesto Actur Norte"
+    },
+    {
+      "id": "zone-043",
+      "representativePoint": [
+        -0.932516,
+        41.64215
+      ],
+      "representativePointUTM": [
+        672184.5,
+        4612110.5
+      ],
+      "areaM2": 990.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.23,
+      "excellentFraction": 0.342,
+      "visibleFraction": 1.0,
+      "groundElevationM": 242.7,
+      "localProminenceM": 1.55,
+      "vegetationRisk": 0.248,
+      "dataConfidence": 0.673,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.42,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "Parque Alto Carabinas"
+    },
+    {
+      "id": "zone-044",
+      "representativePoint": [
+        -0.947344,
+        41.636859
+      ],
+      "representativePointUTM": [
+        670963.5,
+        4611493.5
+      ],
+      "areaM2": 982.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.16,
+      "excellentFraction": 0.373,
+      "visibleFraction": 1.0,
+      "groundElevationM": 249.9,
+      "localProminenceM": 0.34,
+      "vegetationRisk": 0.074,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 13.99,
+      "parkingFraction": 0.618,
+      "surfaceKind": "car park",
+      "placeName": "Parque Norte"
+    },
+    {
+      "id": "zone-045",
+      "representativePoint": [
+        -0.935177,
+        41.659959
+      ],
+      "representativePointUTM": [
+        671915.5,
+        4614082.5
+      ],
+      "areaM2": 964.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.6,
+      "excellentFraction": 0.089,
+      "visibleFraction": 1.0,
+      "groundElevationM": 208.7,
+      "localProminenceM": -0.09,
+      "vegetationRisk": 0.019,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 13.28,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "Campo de Béisbol Miralbueno"
+    },
+    {
+      "id": "zone-046",
+      "representativePoint": [
+        -0.911675,
+        41.662497
+      ],
+      "representativePointUTM": [
+        673865.5,
+        4614411.5
+      ],
+      "areaM2": 779.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.5,
+      "excellentFraction": 0.63,
+      "visibleFraction": 1.0,
+      "groundElevationM": 197.7,
+      "localProminenceM": -0.31,
+      "vegetationRisk": 0.059,
+      "dataConfidence": 0.576,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.61,
+      "parkingFraction": 1.0,
+      "surfaceKind": "car park",
+      "placeName": null
+    },
+    {
+      "id": "zone-047",
+      "representativePoint": [
+        -0.94697,
+        41.640346
+      ],
+      "representativePointUTM": [
+        670985.5,
+        4611881.5
+      ],
+      "areaM2": 764.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.31,
+      "excellentFraction": 0.483,
+      "visibleFraction": 1.0,
+      "groundElevationM": 242.7,
+      "localProminenceM": -0.1,
+      "vegetationRisk": 0.425,
+      "dataConfidence": 0.716,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.82,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "placeName": "Hospital Viamed Montecanal"
+    }
+  ]
+}
