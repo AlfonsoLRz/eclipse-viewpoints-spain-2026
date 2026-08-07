@@ -28,6 +28,50 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import ROOT, build_grid, list_tiles, load_config, output_dir, read_raster  # noqa: E402
 from fetch_osm import _rings, overpass  # noqa: E402
 
+
+def stitch_rings(el):
+    """Yield closed coordinate rings for a way or multipolygon relation.
+
+    `_rings` in fetch_osm yields each relation member as its own ring, which is fine when
+    it only has to burn a mask: the fragments rasterise to the same cells either way. Here
+    it silently loses buildings. OSM splits a large outline across many ways, so the
+    Basilica del Pilar arrives as 58 separate two-point fragments, none of them a closed
+    polygon and every one of them discarded as degenerate. The building simply vanished.
+
+    So walk the fragments and join them end to end into closed rings, matching each
+    fragment's endpoints against the ring being built, reversing where the way was
+    digitised in the opposite direction.
+    """
+    if el["type"] == "way":
+        yield from _rings(el)
+        return
+
+    segs = [list(r) for r in _rings(el) if len(r) >= 2]
+    while segs:
+        ring = segs.pop(0)
+        if ring[0] == ring[-1] and len(ring) >= 4:
+            yield ring
+            continue
+        joined = True
+        while joined and ring[0] != ring[-1]:
+            joined = False
+            for i, s in enumerate(segs):
+                if s[0] == ring[-1]:
+                    ring += s[1:]
+                elif s[-1] == ring[-1]:
+                    ring += s[-2::-1]
+                elif s[-1] == ring[0]:
+                    ring = s[:-1] + ring
+                elif s[0] == ring[0]:
+                    ring = s[:0:-1] + ring
+                else:
+                    continue
+                segs.pop(i)
+                joined = True
+                break
+        if len(ring) >= 4 and ring[0] == ring[-1]:
+            yield ring
+
 # Below this a "building" is a shed, a bin store or a digitising artefact. It carries no
 # useful shadow at a 6 deg sun and only adds polygons for the browser to draw.
 MIN_HEIGHT_M = 2.0
@@ -76,7 +120,7 @@ def main() -> None:
     skipped_small = skipped_low = 0
     for el in data["elements"]:
         tags = el.get("tags", {})
-        for ring in _rings(el):
+        for ring in stitch_rings(el):
             if len(ring) < 4:
                 continue
             xs, ys = to_utm.transform([p[0] for p in ring], [p[1] for p in ring])
