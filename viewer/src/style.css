@@ -149,6 +149,45 @@ header .sub { margin: 0 0 16px; color: var(--muted); font-size: 13px; }
 .zone-lines div { margin-bottom: 2px; }
 .zone-why { margin-top: 6px; font-size: 12px; color: #b9c4d6; font-style: italic; }
 
+/* Sits above MapLibre's own bottom-right stack: the zoom control is roughly 58 px
+   tall and the attribution bar another 24, so anything under ~100 px overlaps them. */
+#view3d {
+  position: absolute;
+  right: 14px;
+  bottom: 112px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+#view3d.hidden { display: none; }
+#toggle-3d {
+  background: rgba(23, 27, 36, .95);
+  border: 1px solid var(--line);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font: 600 12.5px/1 inherit;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .45);
+}
+#toggle-3d:hover { border-color: var(--accent); }
+#toggle-3d[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1a1400;
+}
+#view3d-hint {
+  font-size: 11px;
+  color: var(--muted);
+  background: rgba(16, 19, 26, .85);
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+#view3d-hint.hidden { display: none; }
+
 #inspect {
   position: absolute;
   right: 14px;

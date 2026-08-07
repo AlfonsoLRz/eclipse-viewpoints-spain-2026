@@ -22,11 +22,10 @@ data/intermediate/
 # it was 671 MB, so the viewer reads the IGN WMTS instead (see package_tiles.py).
 viewer/public/data/tiles/rgb/
 
-# 3D terrain (package_tiles.py --with-terrain). Local experiment only. The metadata
-# lives in its own file rather than in layers.json precisely so that the committed
-# layers.json cannot advertise terrain tiles that the deployed site does not have.
-viewer/public/data/tiles/terrain/
-viewer/public/data/terrain.json
+# 3D buildings (pipeline/export_buildings.py). Local experiment only. The viewer hides
+# its 3D control when this file is absent, which is the deployed case, so nothing in
+# the committed data advertises a feature the live site does not have.
+viewer/public/data/buildings.geojson
 
 viewer/dist/
 

@@ -110,14 +110,6 @@
             <input type="checkbox" id="show-outline" checked />
             <span>Analysed area outline</span>
           </label>
-          <label class="check" id="terrain-control">
-            <input type="checkbox" id="show-terrain" />
-            <span>3D terrain (drag right button to tilt)</span>
-          </label>
-          <label class="slider" id="exaggeration-control">
-            <span>Vertical exaggeration <em id="exaggeration-v">1.5</em>&times;</span>
-            <input type="range" id="exaggeration" min="1" max="5" step="0.5" value="1.5" disabled />
-          </label>
           <div id="legend"></div>
         </section>
 
@@ -132,6 +124,10 @@
       <main id="map-wrap">
         <div id="map"></div>
         <div id="inspect" class="hidden"></div>
+        <div id="view3d" class="hidden">
+          <button id="toggle-3d" type="button" aria-pressed="false">3D buildings</button>
+          <span id="view3d-hint">right-drag to tilt</span>
+        </div>
       </main>
     </div>
     <script type="module" src="./src/main.js"></script>

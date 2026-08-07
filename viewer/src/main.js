@@ -30,7 +30,7 @@ const state = {
   pickingHome: false,
   activeZone: null,
   markers: [],
-  terrain: null,
+  buildings: null,
 }
 
 async function loadJSON (name) {
@@ -535,7 +535,7 @@ map.addControl(new maplibregl.ScaleControl({ maxWidth: 120 }), 'bottom-left')
 
 // MapLibre enables rotate and pitch by default. On a flat shadow map they only ever
 // produce a tilted plane and a map that is no longer north-up, so they stay off until
-// the 3D terrain toggle turns them on together with the terrain itself.
+// the 3D buildings toggle turns them on together with the extrusions.
 map.dragRotate.disable()
 map.touchZoomRotate.disableRotation()
 map.touchPitch.disable()
@@ -669,7 +669,7 @@ async function init () {
   })
 
   await addPlaceLabels()
-  await addTerrain(b)
+  await addBuildings()
 
   // Show the sun ray from the centre of the block straight away, so the
   // direction to look is visible before anything is selected.
@@ -679,32 +679,48 @@ async function init () {
   wireControls()
 }
 
-// Optional 3D relief from the conservative DSM, the same surface the shadow scan ran
-// on. The tiles are a local build (`package_tiles.py --with-terrain`) and are not
-// deployed, so terrain.json is usually absent and the controls remove themselves.
-async function addTerrain (bounds) {
+// Optional 3D buildings: OSM footprints extruded to their LiDAR-measured height.
+//
+// The first version of this extruded the DSM as a MapLibre heightmap instead. MapLibre
+// meshes a heightmap, so every building came out as a rounded mound with the orthophoto
+// stretched down its sides. Footprint polygons have real corners, and building_height.tif
+// supplies a measured height per footprint, so the two together give straight walls at
+// the right height. Trees are no longer 3D, but the shadow overlay still shows exactly
+// where they block, which is the part that decides the answer.
+//
+// buildings.geojson is a local build (`pipeline/export_buildings.py`) and is not
+// deployed, so it is usually absent and the control removes itself.
+async function addBuildings () {
   try {
-    state.terrain = await loadJSON('terrain.json')
+    state.buildings = await loadJSON('buildings.geojson')
   } catch {
-    state.terrain = null
+    state.buildings = null
     return
   }
-  const t = state.terrain
-  map.addSource('terrain-dem', {
-    type: 'raster-dem',
-    tiles: [`${BASE}/data/tiles/terrain/{z}/{x}/{y}.png`],
-    // raster-dem defaults to 512, and these are 256. Left unset every tile silently
-    // covers four times its real ground area, which misregisters the whole mesh
-    // without erroring.
-    tileSize: t.tile_size,
-    minzoom: t.minzoom,
-    maxzoom: t.maxzoom,
-    encoding: t.encoding,
-    bounds,
+  document.getElementById('view3d').classList.remove('hidden')
+
+  map.addSource('buildings', { type: 'geojson', data: state.buildings })
+  map.addLayer({
+    id: 'buildings-3d',
+    type: 'fill-extrusion',
+    source: 'buildings',
+    layout: { visibility: 'none' },
+    paint: {
+      // Tint by height so the skyline reads at a glance without competing with the
+      // clearance ramp, whose greens and ambers mean something specific.
+      'fill-extrusion-color': [
+        'interpolate', ['linear'], ['get', 'h'],
+        3, '#4a5468',
+        12, '#6b788f',
+        30, '#93a1b8',
+        60, '#c2cddd',
+      ],
+      'fill-extrusion-height': ['get', 'h'],
+      'fill-extrusion-base': 0,
+      'fill-extrusion-opacity': 0.92,
+      'fill-extrusion-vertical-gradient': true,
+    },
   })
-  // Declaring the source fetches nothing. MapLibre only requests DEM tiles once
-  // setTerrain actually references it, so this costs a visitor who never opens the
-  // toggle exactly one failed request for terrain.json.
 
   // Sky is a root style property in MapLibre, set through setSky. It is not a layer:
   // `{type: 'sky'}` is a Mapbox GL construct and addLayer rejects it outright.
@@ -718,19 +734,21 @@ async function addTerrain (bounds) {
   })
 }
 
-function setTerrainEnabled (on) {
-  if (!state.terrain) return
-  const exag = document.getElementById('exaggeration')
-  exag.disabled = !on
+function set3DEnabled (on) {
+  if (!state.buildings) return
+  const btn = document.getElementById('toggle-3d')
+  btn.setAttribute('aria-pressed', on ? 'true' : 'false')
+  document.getElementById('view3d-hint').classList.toggle('hidden', !on)
+  if (map.getLayer('buildings-3d')) {
+    map.setLayoutProperty('buildings-3d', 'visibility', on ? 'visible' : 'none')
+  }
   if (on) {
-    map.setTerrain({ source: 'terrain-dem', exaggeration: +exag.value })
     map.dragRotate.enable()
     map.touchZoomRotate.enableRotation()
     map.touchPitch.enable()
     map.keyboard.enableRotation()
-    if (map.getPitch() === 0) map.easeTo({ pitch: 55, duration: 600 })
+    if (map.getPitch() === 0) map.easeTo({ pitch: 60, duration: 600 })
   } else {
-    map.setTerrain(null)
     map.easeTo({ pitch: 0, bearing: 0, duration: 400 })
     map.dragRotate.disable()
     map.touchZoomRotate.disableRotation()
@@ -802,25 +820,13 @@ function wireControls () {
     }
   })
 
-  if (state.terrain) {
-    document.getElementById('show-terrain').addEventListener('change', (e) => {
-      setTerrainEnabled(e.target.checked)
-    })
-    const exag = document.getElementById('exaggeration')
-    exag.addEventListener('input', () => {
-      document.getElementById('exaggeration-v').textContent = exag.value
-      // Exaggeration is part of the terrain spec, not a paint property, so there is
-      // no setPaintProperty equivalent: the whole spec goes back in each time.
-      if (document.getElementById('show-terrain').checked) {
-        map.setTerrain({ source: 'terrain-dem', exaggeration: +exag.value })
-      }
-    })
-  } else {
-    // No local terrain build, which is the normal case for the deployed site.
-    for (const id of ['terrain-control', 'exaggeration-control']) {
-      document.getElementById(id)?.remove()
-    }
-  }
+  // The 3D control lives over the map rather than in the sidebar: it changes how the
+  // map is being looked at, not what is drawn on it. addBuildings unhides it, so when
+  // there is no local buildings.geojson it stays hidden and nothing else is needed.
+  document.getElementById('toggle-3d').addEventListener('click', () => {
+    const on = document.getElementById('toggle-3d').getAttribute('aria-pressed') !== 'true'
+    set3DEnabled(on)
+  })
   document.getElementById('ramp').addEventListener('change', (e) => {
     state.ramp = e.target.value
     applyLayerVisibility()

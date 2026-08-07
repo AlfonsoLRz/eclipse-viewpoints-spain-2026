@@ -29,7 +29,7 @@ from rasterio.warp import Resampling, calculate_default_transform, reproject
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import (  # noqa: E402
-    ROOT, build_grid, fill_dtm_gaps, list_tiles, load_config, output_dir, read_raster,
+    ROOT, build_grid, list_tiles, load_config, output_dir, read_raster,
     save_json,
 )
 
@@ -176,92 +176,6 @@ def _laz_bounds_3857(grid):
         xs.append(a)
         ys.append(b)
     return min(xs), min(ys), max(xs), max(ys)
-
-
-def encode_terrarium(elev_m: np.ndarray) -> np.ndarray:
-    """Elevation in metres -> Terrarium RGB, shape (H, W, 3) uint8.
-
-    MapLibre decodes raster-dem tiles as (R*256 + G + B/256) - 32768, so the inverse is a
-    24-bit fixed-point integer at 1/256 m split across the three channels. The step is
-    3.9 mm, four orders of magnitude finer than the 1 m source grid, so the encoding is
-    lossless in every sense that matters here.
-    """
-    v = np.clip(elev_m.astype(np.float64) + 32768.0, 0.0, 65536.0 - 1.0 / 256.0)
-    n = np.round(v * 256.0).astype(np.uint32)
-    return np.dstack([
-        ((n >> 16) & 0xFF).astype(np.uint8),
-        ((n >> 8) & 0xFF).astype(np.uint8),
-        (n & 0xFF).astype(np.uint8),
-    ])
-
-
-def write_terrain_tiles(grid, dsm, out_root: Path, zooms, apron_width_m=2000.0):
-    """Terrarium raster-dem tiles from a gap-filled DSM on the native grid.
-
-    `dsm` must contain no nodata: MapLibre meshes whatever it decodes, so a sentinel left
-    in place becomes a spike thousands of metres deep. Callers fill it first.
-
-    Outside the block the DSM has nothing to say, and MapLibre treats absent DEM coverage
-    as elevation zero. Since the city sits 190-350 m up, that would ring the analysed area
-    with a sheer 200 m wall visible from anywhere in a pitched view. The apron holds the
-    nearest edge elevation and eases it to zero over `apron_width_m` with a smoothstep,
-    turning the wall into a shallow ramp. Everything it writes beyond the block edge is
-    invented: it exists so the horizon does not look broken, and carries no survey data.
-    """
-    import pyproj
-
-    to_utm = pyproj.Transformer.from_crs(WEB_MERCATOR, grid.crs, always_xy=True)
-    minx, miny, maxx, maxy = _laz_bounds_3857(grid)
-    origin = 20037508.342789244
-    # Web-mercator units run ~1/cos(lat) longer than ground metres at this latitude, so
-    # pad generously when choosing which tiles to visit. Overshooting only costs a few
-    # tiles that turn out to be entirely zero; undershooting would clip the apron.
-    pad = apron_width_m * 1.5
-    minx, miny, maxx, maxy = minx - pad, miny - pad, maxx + pad, maxy + pad
-
-    total = 0
-    for z in zooms:
-        n = 2 ** z
-        size = 2 * origin / n
-        x0 = max(0, int((minx + origin) / size))
-        x1 = min(n - 1, int((maxx + origin) / size))
-        y0 = max(0, int((origin - maxy) / size))
-        y1 = min(n - 1, int((origin - miny) / size))
-        written = 0
-        for tx in range(x0, x1 + 1):
-            for ty in range(y0, y1 + 1):
-                left, bottom, right, top = tile_bounds_3857(tx, ty, z)
-                xs = np.linspace(left, right, TILE_SIZE, endpoint=False) + size / (2 * TILE_SIZE)
-                ys = np.linspace(top, bottom, TILE_SIZE, endpoint=False) - size / (2 * TILE_SIZE)
-                gx, gy = np.meshgrid(xs, ys)
-                ux, uy = to_utm.transform(gx, gy)
-
-                col = np.floor((ux - grid.left) / grid.resolution).astype(np.int64)
-                row = np.floor((grid.top - uy) / grid.resolution).astype(np.int64)
-                inside = (col >= 0) & (col < grid.width) & (row >= 0) & (row < grid.height)
-                # Clamping is what makes the apron follow the block edge: an outside pixel
-                # samples the nearest real cell, then the taper scales it down.
-                elev = dsm[np.clip(row, 0, grid.height - 1),
-                           np.clip(col, 0, grid.width - 1)].astype(np.float64)
-
-                if apron_width_m > 0:
-                    dx = np.maximum(0.0, np.maximum(grid.left - ux, ux - grid.right))
-                    dy = np.maximum(0.0, np.maximum(grid.bottom - uy, uy - grid.top))
-                    t = np.clip(1.0 - np.hypot(dx, dy) / apron_width_m, 0.0, 1.0)
-                    elev = np.where(inside, elev, elev * (t * t * (3.0 - 2.0 * t)))
-                elif not inside.any():
-                    continue
-
-                if not inside.any() and not (elev > 0).any():
-                    continue
-
-                d = out_root / str(z) / str(tx)
-                d.mkdir(parents=True, exist_ok=True)
-                Image.fromarray(encode_terrarium(elev), "RGB").save(d / f"{ty}.png", optimize=True)
-                written += 1
-        print(f"  zoom {z}: {written} tiles")
-        total += written
-    return total
 
 
 def write_rgb_zoom(srcs, grid, out_root: Path, z):
@@ -473,9 +387,6 @@ def main():
     ap.add_argument("--with-rgb", action="store_true",
                     help="also build local orthophoto tiles (671 MB); the "
                          "deployed viewer uses the IGN WMTS instead")
-    ap.add_argument("--with-terrain", action="store_true",
-                    help="also build Terrarium raster-dem tiles for the 3D view; "
-                         "local only, they are gitignored and not deployed")
     args = ap.parse_args()
 
     t0 = time.time()
@@ -496,37 +407,6 @@ def main():
     else:
         print("Skipping orthophoto tiles; viewer reads the IGN WMTS "
               "(pass --with-rgb for an offline copy)")
-
-    if args.with_terrain:
-        # Stop at 17. That is 0.89 m/px at this latitude, already finer than the 1 m
-        # source, so zoom 18 would quadruple the tile count to resample data that does
-        # not exist. MapLibre overzooms past maxzoom exactly as it does for the ramps.
-        terrain_zooms = [12, 13, 14, 15, 16, 17]
-        print("Writing terrain (raster-dem) tiles from the conservative DSM...")
-        dsm, _ = read_raster(out_dir / "dsm_all_conservative.tif")
-        dsm = np.where(dsm <= NODATA, np.nan, dsm)
-        # Unbounded fill, unlike build_surfaces: see fill_dtm_gaps in common.py for why
-        # the two callers want opposite things from the cap.
-        dsm, _ = fill_dtm_gaps(dsm, max_fill_px=10 ** 9)
-        write_terrain_tiles(grid, dsm, web_dir / "tiles" / "terrain", terrain_zooms)
-        # Deliberately NOT layers.json: that file is committed and served in production,
-        # where these tiles do not exist. A separate gitignored file means the deployed
-        # viewer simply never sees a terrain option.
-        save_json(web_dir / "terrain.json", {
-            "generated_by": "pipeline/package_tiles.py --with-terrain",
-            "source": "dsm_all_conservative.tif",
-            "tile_size": TILE_SIZE,
-            "minzoom": min(terrain_zooms),
-            "maxzoom": max(terrain_zooms),
-            "encoding": "terrarium",
-            "min_elev_m": round(float(np.nanmin(dsm)), 3),
-            "max_elev_m": round(float(np.nanmax(dsm)), 3),
-            "apron_note": (
-                "Elevation outside the LiDAR block is synthetic: the nearest edge value "
-                "eased to zero, so the horizon does not fall off a cliff. It is not survey data."
-            ),
-        })
-        print(f"Wrote {web_dir / 'terrain.json'}")
 
     clearance, _ = read_raster(out_dir / "clearance_class.tif")
     walkable = None
