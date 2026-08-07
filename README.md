@@ -1,3 +1,14 @@
+> [!WARNING]
+> **Check the spot in person before eclipse day.** The obstacles in this model come from a
+> LiDAR survey flown in 2023, three years before the eclipse. Trees grow, get pruned and
+> get felled, and Zaragoza has been unusually busy with the chainsaws lately. Buildings go
+> up and come down. Anything built or planted since the survey is invisible to the model,
+> and a tree that has put on three years of growth may now block a sightline the map shows
+> as clear. Temporary obstacles are not modelled at all, so a crane, a marquee, a stage or
+> a parked lorry can take out an otherwise perfect spot on the day.
+>
+> Treat the map as a shortlist to go and inspect, not a guarantee.
+
 # Zaragoza urban eclipse visibility
 
 Where in Zaragoza can you actually see the total eclipse of 12 August 2026?
@@ -14,16 +25,6 @@ places you can actually stand: parks, squares, gardens and other open public spa
 
 ![overview](docs/overview.png)
 
-> [!WARNING]
-> **Check the spot in person before eclipse day.** The obstacles in this model come from a
-> LiDAR survey flown in 2023, three years before the eclipse. Trees grow, get pruned and
-> get felled. Buildings go up and come down. Anything built or planted since the survey is
-> invisible to the model, and a tree that has put on three years of growth may now block a
-> sightline the map shows as clear. Temporary obstacles are not modelled at all, so a crane,
-> a marquee, a stage or a parked lorry can take out an otherwise perfect spot on the day.
->
-> Treat the map as a shortlist to go and inspect, not a guarantee.
-
 ## Why this is hard
 
 The eclipse happens as the sun is going down. Totality lasts 84 s and arrives with the sun
@@ -35,6 +36,13 @@ observing, and none of the eclipse happens there.
 At 6.1° a 10 m building casts a 94 m shadow. That is why the answer is decided by
 individual buildings and trees rather than by terrain, and why the model needs a 1 m
 surface rather than a coarse elevation map.
+
+![Geometry of the horizon test: a sun ray grazing a building, the shadow it casts, and an
+observer inside it](docs/shadow-geometry.svg)
+
+Standing anywhere in that shadow means no eclipse. The map is the same test run over every
+square metre of the city, for the sun's exact position at each contact time. The angle
+above is drawn steeper than the real 6.1°, which would be too shallow to read.
 
 ## Reading the map
 
