@@ -28,9 +28,11 @@ viewer/public/data/*/tiles/rgb/
 # the committed data advertises a feature the live site does not have.
 viewer/public/data/*/buildings.geojson
 
-# Linares is a local experiment and is not deployed. Only Zaragoza is published, so its
-# data products stay out of the repository entirely rather than inflating the site.
+# Linares and Jaén are local experiments and are not deployed. Only Zaragoza is
+# published, so their data products stay out of the repository rather than inflating
+# a site that does not serve them.
 viewer/public/data/linares/
+viewer/public/data/jaen/
 
 viewer/dist/
 linares_run.sh

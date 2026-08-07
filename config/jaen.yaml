@@ -1,0 +1,107 @@
+# Configuration for Jaén. Run with:
+#
+#     PNOA_CONFIG=config/jaen.yaml python pipeline/build_surfaces.py
+#
+# Like Linares, Jaén is outside the path of totality: the eclipse reaches 96.59% here and
+# the CNIG raster has no C2/C3 contact for it, so the viewer reports a deep partial. The
+# sun is 6.0 degrees up at maximum, the same problem the whole project exists to answer.
+#
+# The download in new_jaen/ actually holds two separate clusters: 36 tiles around Jaén
+# city (E 427-433) and 30 tiles around Linares (E 441-447) that duplicate new_linares/
+# exactly. The glob below takes only the Jaén city column so this config does not silently
+# process Linares a second time under the wrong name.
+
+city:
+  slug: "jaen"
+  name: "Jaén"
+
+crs: "EPSG:25830"          # ETRS89 / UTM zone 30N (H30 tiles)
+resolution_m: 1.0
+
+laz:
+  glob: "new_jaen/PNOA_2024_AND_4[23]*_H30_NPC01.laz"
+  tile_name_regex: "PNOA_2024_AND_(\\d+)-(\\d+)_H30_NPC01\\.laz$"
+  acquisition_year: 2024
+  classes:
+    unclassified: [1]
+    ground: [2]
+    vegetation_low: [3]
+    vegetation_medium: [4]
+    vegetation_high: [5]
+    building: [6]
+    low_point_noise: [7]
+    bridge: [17]
+    overlap: [12]
+
+# No local orthophoto tiles. The viewer reads imagery live from the IGN WMTS, which covers
+# the block; only `package_tiles.py --with-rgb` would need these files, and it is not used.
+orthophoto:
+  files: []
+  mosaic_date: "unknown"
+  note: >
+    Imagery is served live by the IGN rather than built into local tiles, so no
+    orthophoto files are staged for this city.
+
+eclipse:
+  date: "2026-08-12"
+  raster: "10bands_2026_3857_COG.tiff"
+  timezone_local: "Europe/Madrid"   # UTC+2 (CEST) on 2026-08-12
+  band_meaning:
+    1: "solar_elevation_deg_at_maximum"
+    2: "solar_azimuth_deg_at_maximum"
+    3: "inside_totality_path_flag"
+    4: "unconfirmed_auxiliary_value"
+    5: "unconfirmed_auxiliary_value"
+    6: "c1_partial_begin_utc_decimal_hour"
+    7: "maximum_eclipse_utc_decimal_hour"
+    8: "c4_partial_end_utc_decimal_hour"
+    9: "c2_totality_begin_utc_decimal_hour"
+    10: "c3_totality_end_utc_decimal_hour"
+  band_confidence: >
+    Bands 9 and 10 are -1000 here, the raster's nodata value, because Jaén lies outside
+    the path of totality and has no C2 or C3 contact. Band 3, labelled as a flag, is
+    really a continuous obscuration fraction and reads 0.9659.
+
+observer:
+  eye_height_m: 1.70
+  eye_height_range_m: [1.2, 2.0]
+
+visibility:
+  effective_elevation_offsets_deg: [0.0, 0.5, 1.0, 2.0]
+  clearance_classes:
+    - {min: -999, max: 0.0, label: "blocked"}
+    - {min: 0.0, max: 0.5, label: "fragile"}
+    - {min: 0.5, max: 1.0, label: "acceptable"}
+    - {min: 1.0, max: 2.0, label: "good"}
+    - {min: 2.0, max: 999, label: "excellent"}
+  conservative_model:
+    vegetation_dilation_cells: 2
+    vegetation_height_bonus_m: 1.0
+    building_dilation_cells: 1
+  max_ray_search_m: 600
+
+zones:
+  min_area_m2: 750
+  max_area_m2: 200000
+  morphology_opening_iterations: 1
+  min_clearance_class: "acceptable"
+
+  # Jaén is built up a hillside, so the terrain itself does more of the blocking here than
+  # in either of the other two cities. The thresholds are unchanged so the three maps stay
+  # comparable; the unverified-access tier carries the open ground around the city.
+  urban_context_radius_m: 250
+  min_built_fraction: 0.08
+
+  water_max_point_density: 2.5
+  water_buffer_m: 8
+  min_point_density: 3.0
+  min_usable_width_m: 6
+
+  require_osm_public_space: true
+  osm_positive_buffer_m: 15
+  include_parking: true
+
+paths:
+  data_output: "data/output/jaen"
+  data_intermediate: "data/intermediate/jaen"
+  viewer_public_data: "viewer/public/data/jaen"
