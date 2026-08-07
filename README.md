@@ -11,6 +11,18 @@ the city and publishing the result as a static web map over PNOA orthophotograph
 
 ![overview](docs/overview.png)
 
+## Why this is hard
+
+The eclipse happens as the sun is going down. Totality lasts 84 s and arrives with the sun
+barely clear of the rooftops — everything to the left of the marked band is comfortable
+observing, and none of the eclipse happens there.
+
+![Solar altitude at Zaragoza through the eclipse of 12 August 2026](docs/sun-altitude.svg)
+
+At 6.1° a 10 m building casts a 94 m shadow. That is why the answer is decided by
+individual buildings and trees rather than by terrain, and why the model needs a 1 m
+surface rather than a coarse elevation map.
+
 ## What is in the box
 
 ```
@@ -28,6 +40,27 @@ shadow tile sets (~106 MB) and the zone/eclipse JSON — because rebuilding them
 needs the multi-GB LiDAR block, which is not. That is what GitHub Pages serves.
 
 ## Pipeline
+
+```mermaid
+flowchart TD
+  LAZ["PNOA LiDAR 2023<br/>49 tiles · 388 M points"] --> BS[build_surfaces.py]
+  BS --> DTM["DTM · DSM<br/>buildings + vegetation<br/>1 m"]
+  CNIG["CNIG eclipse raster<br/>contact times"] --> SUN[compute_sun_vectors.py]
+  SUN --> GEO["α = 6.1°<br/>azimuth 284.5°"]
+  DTM --> VIS[compute_visibility.py]
+  GEO --> VIS
+  VIS --> CLR["clearance classes<br/>blocked → excellent"]
+  OSM["OpenStreetMap<br/>Overpass API"] --> FO[fetch_osm.py]
+  FO --> MASK["public space<br/>+ hard exclusions"]
+  CLR --> EZ[extract_zones.py]
+  MASK --> EZ
+  EZ --> ZONES["ranked candidate zones"]
+  CLR --> PT[package_tiles.py]
+  ZONES --> PT
+  PT --> OUT["XYZ tiles · 5 colour scales<br/>+ JSON"]
+  OUT --> V["viewer/ · MapLibre<br/>GitHub Pages"]
+  IGN["IGN PNOA WMTS"] -.live.-> V
+```
 
 Run in order, from the repository root, with the virtualenv active:
 
@@ -94,6 +127,8 @@ Tiles reach zoom 18 (~0.45 m/px at this latitude), close to the native 1 m
 resolution of the shadow model.
 
 ## How visibility is computed
+
+![Geometry of the separable horizon test used by the shadow scan](docs/shadow-geometry.svg)
 
 For a fixed solar elevation `α`, the horizon test is separable, so a full ray trace is
 unnecessary. The DSM is resampled onto axes aligned with the solar azimuth, where `u`
