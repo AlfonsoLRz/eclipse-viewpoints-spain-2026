@@ -1,0 +1,142 @@
+{
+  "generated_by": "pipeline/compute_sun_vectors.py",
+  "eclipse_date": "2026-08-12",
+  "timezone_local": "Europe/Madrid",
+  "local_utc_offset_hours": 2,
+  "reference_point": {
+    "crs25830": [
+      444000.0,
+      4216500.0
+    ],
+    "epsg3857": [
+      -405052.711990568,
+      4592793.496190634
+    ]
+  },
+  "city": "Linares",
+  "city_slug": "linares",
+  "solar_elevation_deg": 6.07,
+  "solar_azimuth_deg": 284.163,
+  "is_total": false,
+  "obscuration": 0.9715,
+  "totality_duration_seconds": null,
+  "contact_times": {
+    "C1_partial_begin": {
+      "utc": "17:40:42",
+      "local": "19:40:42"
+    },
+    "C2_totality_begin": null,
+    "maximum_eclipse": {
+      "utc": "18:35:54",
+      "local": "20:35:54"
+    },
+    "C3_totality_end": null,
+    "C4_partial_end": {
+      "utc": "19:27:36",
+      "local": "21:27:36"
+    }
+  },
+  "sun_at_contacts": {
+    "C1_partial_begin": {
+      "local": "19:40:42",
+      "azimuth_deg": 276.014,
+      "elevation_deg": 16.622
+    },
+    "maximum_eclipse": {
+      "local": "20:35:54",
+      "azimuth_deg": 284.165,
+      "elevation_deg": 5.93
+    },
+    "C4_partial_end": {
+      "local": "21:27:36",
+      "azimuth_deg": 292.092,
+      "elevation_deg": -3.74
+    }
+  },
+  "sun_timeline": [
+    {
+      "offset_s": -180,
+      "local": "20:32:54",
+      "azimuth_deg": 283.718,
+      "elevation_deg": 6.503
+    },
+    {
+      "offset_s": -150,
+      "local": "20:33:24",
+      "azimuth_deg": 283.792,
+      "elevation_deg": 6.407
+    },
+    {
+      "offset_s": -120,
+      "local": "20:33:54",
+      "azimuth_deg": 283.867,
+      "elevation_deg": 6.312
+    },
+    {
+      "offset_s": -90,
+      "local": "20:34:24",
+      "azimuth_deg": 283.941,
+      "elevation_deg": 6.216
+    },
+    {
+      "offset_s": -60,
+      "local": "20:34:54",
+      "azimuth_deg": 284.016,
+      "elevation_deg": 6.121
+    },
+    {
+      "offset_s": -30,
+      "local": "20:35:24",
+      "azimuth_deg": 284.09,
+      "elevation_deg": 6.025
+    },
+    {
+      "offset_s": 0,
+      "local": "20:35:54",
+      "azimuth_deg": 284.165,
+      "elevation_deg": 5.93
+    },
+    {
+      "offset_s": 30,
+      "local": "20:36:24",
+      "azimuth_deg": 284.239,
+      "elevation_deg": 5.834
+    },
+    {
+      "offset_s": 60,
+      "local": "20:36:54",
+      "azimuth_deg": 284.314,
+      "elevation_deg": 5.739
+    },
+    {
+      "offset_s": 90,
+      "local": "20:37:24",
+      "azimuth_deg": 284.389,
+      "elevation_deg": 5.643
+    },
+    {
+      "offset_s": 120,
+      "local": "20:37:54",
+      "azimuth_deg": 284.463,
+      "elevation_deg": 5.548
+    },
+    {
+      "offset_s": 150,
+      "local": "20:38:24",
+      "azimuth_deg": 284.538,
+      "elevation_deg": 5.453
+    },
+    {
+      "offset_s": 180,
+      "local": "20:38:54",
+      "azimuth_deg": 284.613,
+      "elevation_deg": 5.357
+    }
+  ],
+  "raw_unconfirmed_bands": {
+    "band4": 5.447021484375,
+    "band5": 19.196834564208984
+  },
+  "band_confidence_note": "Bands 9 and 10 are -1000 here, the raster's nodata value, because Linares lies outside the path of totality and has no C2 or C3 contact. Band 3, labelled as a flag, is really a continuous obscuration fraction and reads 0.9715.\n",
+  "note": "Solar elevation/azimuth are taken at the instant of maximum eclipse. This site is outside the path of totality (97.15% obscuration at maximum), so there is no C2-C3 interval; the geometry around maximum changes by well under 0.1 degrees a minute either way."
+}

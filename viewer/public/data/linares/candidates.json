@@ -1,0 +1,6044 @@
+{
+  "generated_by": "pipeline/extract_zones.py",
+  "crs": "EPSG:25830",
+  "cell_area_m2": 1.0,
+  "min_area_m2": 750.0,
+  "min_clearance_class": "acceptable",
+  "access_model": "lidar_derived_unverified",
+  "access_note": "Walkable areas are inferred from LiDAR surfaces (open, near-flat, well-sampled ground with no building or canopy above). They are NOT verified against OpenStreetMap or municipal open data, so some zones may be private land, roadway or otherwise inaccessible.",
+  "count": 208,
+  "zones": [
+    {
+      "id": "zone-001",
+      "representativePoint": [
+        -3.614805,
+        38.09404
+      ],
+      "representativePointUTM": [
+        446090.5,
+        4216427.5
+      ],
+      "areaM2": 158673.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.91,
+      "excellentFraction": 0.929,
+      "visibleFraction": 1.0,
+      "groundElevationM": 449.3,
+      "localProminenceM": -0.68,
+      "vegetationRisk": 0.067,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 15.28,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-002",
+      "representativePoint": [
+        -3.634352,
+        38.084842
+      ],
+      "representativePointUTM": [
+        444369.5,
+        4215418.5
+      ],
+      "areaM2": 121628.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.97,
+      "excellentFraction": 0.978,
+      "visibleFraction": 1.0,
+      "groundElevationM": 440.3,
+      "localProminenceM": 0.7,
+      "vegetationRisk": 0.139,
+      "dataConfidence": 0.861,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 10.83,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-003",
+      "representativePoint": [
+        -3.641272,
+        38.102902
+      ],
+      "representativePointUTM": [
+        443776.5,
+        4217426.5
+      ],
+      "areaM2": 109937.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.92,
+      "excellentFraction": 0.934,
+      "visibleFraction": 1.0,
+      "groundElevationM": 419.8,
+      "localProminenceM": 0.87,
+      "vegetationRisk": 0.032,
+      "dataConfidence": 0.663,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.31,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.001,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-004",
+      "representativePoint": [
+        -3.631776,
+        38.078295
+      ],
+      "representativePointUTM": [
+        444590.5,
+        4214690.5
+      ],
+      "areaM2": 109784.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.91,
+      "excellentFraction": 0.926,
+      "visibleFraction": 1.0,
+      "groundElevationM": 458.8,
+      "localProminenceM": 0.66,
+      "vegetationRisk": 0.035,
+      "dataConfidence": 0.778,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.26,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-005",
+      "representativePoint": [
+        -3.62659,
+        38.083866
+      ],
+      "representativePointUTM": [
+        445049.5,
+        4215305.5
+      ],
+      "areaM2": 109233.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.88,
+      "excellentFraction": 0.904,
+      "visibleFraction": 1.0,
+      "groundElevationM": 448.2,
+      "localProminenceM": 1.16,
+      "vegetationRisk": 0.101,
+      "dataConfidence": 0.849,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 9.54,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.014,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-006",
+      "representativePoint": [
+        -3.635225,
+        38.086902
+      ],
+      "representativePointUTM": [
+        444294.5,
+        4215647.5
+      ],
+      "areaM2": 103542.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.89,
+      "excellentFraction": 0.916,
+      "visibleFraction": 1.0,
+      "groundElevationM": 434.7,
+      "localProminenceM": 0.45,
+      "vegetationRisk": 0.162,
+      "dataConfidence": 0.663,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.33,
+      "parkingFraction": 0.003,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.014,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-007",
+      "representativePoint": [
+        -3.646163,
+        38.098721
+      ],
+      "representativePointUTM": [
+        443344.5,
+        4216965.5
+      ],
+      "areaM2": 101770.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.98,
+      "excellentFraction": 0.982,
+      "visibleFraction": 1.0,
+      "groundElevationM": 401.9,
+      "localProminenceM": 0.66,
+      "vegetationRisk": 0.172,
+      "dataConfidence": 0.833,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 9.72,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.025,
+      "accessKind": "unverified",
+      "placeName": "La Zarzuela"
+    },
+    {
+      "id": "zone-008",
+      "representativePoint": [
+        -3.635677,
+        38.115289
+      ],
+      "representativePointUTM": [
+        444276.5,
+        4218797.5
+      ],
+      "areaM2": 100839.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.89,
+      "excellentFraction": 0.912,
+      "visibleFraction": 1.0,
+      "groundElevationM": 451.4,
+      "localProminenceM": 0.89,
+      "vegetationRisk": 0.057,
+      "dataConfidence": 0.706,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.67,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-009",
+      "representativePoint": [
+        -3.61133,
+        38.093076
+      ],
+      "representativePointUTM": [
+        446394.5,
+        4216318.5
+      ],
+      "areaM2": 97307.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 4.0,
+      "excellentFraction": 0.997,
+      "visibleFraction": 1.0,
+      "groundElevationM": 452.2,
+      "localProminenceM": 0.41,
+      "vegetationRisk": 0.084,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 14.74,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-010",
+      "representativePoint": [
+        -3.645278,
+        38.083692
+      ],
+      "representativePointUTM": [
+        443410.5,
+        4215297.5
+      ],
+      "areaM2": 87442.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.96,
+      "excellentFraction": 0.964,
+      "visibleFraction": 1.0,
+      "groundElevationM": 399.1,
+      "localProminenceM": -0.77,
+      "vegetationRisk": 0.092,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 13.05,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-011",
+      "representativePoint": [
+        -3.635337,
+        38.081349
+      ],
+      "representativePointUTM": [
+        444280.5,
+        4215031.5
+      ],
+      "areaM2": 72804.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.97,
+      "excellentFraction": 0.973,
+      "visibleFraction": 1.0,
+      "groundElevationM": 439.6,
+      "localProminenceM": -0.54,
+      "vegetationRisk": 0.146,
+      "dataConfidence": 0.947,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 12.48,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-012",
+      "representativePoint": [
+        -3.648378,
+        38.087416
+      ],
+      "representativePointUTM": [
+        443141.5,
+        4215712.5
+      ],
+      "areaM2": 71393.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.93,
+      "excellentFraction": 0.944,
+      "visibleFraction": 1.0,
+      "groundElevationM": 387.4,
+      "localProminenceM": -0.59,
+      "vegetationRisk": 0.17,
+      "dataConfidence": 0.563,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.73,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-013",
+      "representativePoint": [
+        -3.668303,
+        38.102833
+      ],
+      "representativePointUTM": [
+        441406.5,
+        4217435.5
+      ],
+      "areaM2": 70071.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.96,
+      "excellentFraction": 0.964,
+      "visibleFraction": 1.0,
+      "groundElevationM": 388.0,
+      "localProminenceM": 3.55,
+      "vegetationRisk": 0.255,
+      "dataConfidence": 0.692,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.56,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-014",
+      "representativePoint": [
+        -3.616436,
+        38.08455
+      ],
+      "representativePointUTM": [
+        445940.5,
+        4215375.5
+      ],
+      "areaM2": 62960.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.88,
+      "excellentFraction": 0.906,
+      "visibleFraction": 1.0,
+      "groundElevationM": 447.6,
+      "localProminenceM": 1.31,
+      "vegetationRisk": 0.01,
+      "dataConfidence": 0.997,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 14.77,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-015",
+      "representativePoint": [
+        -3.64033,
+        38.083864
+      ],
+      "representativePointUTM": [
+        443844.5,
+        4215313.5
+      ],
+      "areaM2": 60781.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.92,
+      "excellentFraction": 0.935,
+      "visibleFraction": 1.0,
+      "groundElevationM": 423.4,
+      "localProminenceM": -0.35,
+      "vegetationRisk": 0.103,
+      "dataConfidence": 0.937,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 11.59,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.039,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-016",
+      "representativePoint": [
+        -3.668428,
+        38.081499
+      ],
+      "representativePointUTM": [
+        441378.5,
+        4215068.5
+      ],
+      "areaM2": 51678.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.91,
+      "excellentFraction": 0.931,
+      "visibleFraction": 1.0,
+      "groundElevationM": 355.4,
+      "localProminenceM": -5.05,
+      "vegetationRisk": 0.13,
+      "dataConfidence": 0.77,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 8.05,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-017",
+      "representativePoint": [
+        -3.647834,
+        38.083895
+      ],
+      "representativePointUTM": [
+        443186.5,
+        4215321.5
+      ],
+      "areaM2": 46496.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.97,
+      "excellentFraction": 0.974,
+      "visibleFraction": 1.0,
+      "groundElevationM": 381.9,
+      "localProminenceM": -1.5,
+      "vegetationRisk": 0.209,
+      "dataConfidence": 0.998,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 13.04,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-018",
+      "representativePoint": [
+        -3.661182,
+        38.083442
+      ],
+      "representativePointUTM": [
+        442015.5,
+        4215279.5
+      ],
+      "areaM2": 42537.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.92,
+      "excellentFraction": 0.933,
+      "visibleFraction": 1.0,
+      "groundElevationM": 359.1,
+      "localProminenceM": 0.71,
+      "vegetationRisk": 0.073,
+      "dataConfidence": 0.948,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 11.18,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-019",
+      "representativePoint": [
+        -3.629277,
+        38.07674
+      ],
+      "representativePointUTM": [
+        444808.5,
+        4214516.5
+      ],
+      "areaM2": 40391.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.92,
+      "excellentFraction": 0.935,
+      "visibleFraction": 1.0,
+      "groundElevationM": 474.9,
+      "localProminenceM": 7.27,
+      "vegetationRisk": 0.005,
+      "dataConfidence": 0.518,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.14,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-020",
+      "representativePoint": [
+        -3.64838,
+        38.088966
+      ],
+      "representativePointUTM": [
+        443142.5,
+        4215884.5
+      ],
+      "areaM2": 36995.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.89,
+      "excellentFraction": 0.915,
+      "visibleFraction": 1.0,
+      "groundElevationM": 393.3,
+      "localProminenceM": 0.75,
+      "vegetationRisk": 0.156,
+      "dataConfidence": 0.603,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.89,
+      "parkingFraction": 0.084,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.113,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-021",
+      "representativePoint": [
+        -3.657831,
+        38.083542
+      ],
+      "representativePointUTM": [
+        442309.5,
+        4215288.5
+      ],
+      "areaM2": 33199.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.99,
+      "excellentFraction": 0.99,
+      "visibleFraction": 1.0,
+      "groundElevationM": 361.3,
+      "localProminenceM": -0.49,
+      "vegetationRisk": 0.128,
+      "dataConfidence": 0.996,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 11.02,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-022",
+      "representativePoint": [
+        -3.632581,
+        38.080418
+      ],
+      "representativePointUTM": [
+        444521.5,
+        4214926.5
+      ],
+      "areaM2": 32819.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.95,
+      "excellentFraction": 0.958,
+      "visibleFraction": 1.0,
+      "groundElevationM": 445.4,
+      "localProminenceM": -1.32,
+      "vegetationRisk": 0.118,
+      "dataConfidence": 0.748,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.05,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-023",
+      "representativePoint": [
+        -3.61482,
+        38.09176
+      ],
+      "representativePointUTM": [
+        446087.5,
+        4216174.5
+      ],
+      "areaM2": 27413.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.99,
+      "excellentFraction": 0.988,
+      "visibleFraction": 1.0,
+      "groundElevationM": 463.8,
+      "localProminenceM": 1.49,
+      "vegetationRisk": 0.085,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 21.68,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-024",
+      "representativePoint": [
+        -3.618402,
+        38.101394
+      ],
+      "representativePointUTM": [
+        445780.5,
+        4217245.5
+      ],
+      "areaM2": 22081.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.9,
+      "excellentFraction": 0.927,
+      "visibleFraction": 1.0,
+      "groundElevationM": 433.2,
+      "localProminenceM": -3.38,
+      "vegetationRisk": 0.038,
+      "dataConfidence": 0.998,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 11.5,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.001,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-025",
+      "representativePoint": [
+        -3.657468,
+        38.107995
+      ],
+      "representativePointUTM": [
+        442360.5,
+        4218001.5
+      ],
+      "areaM2": 22079.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.91,
+      "excellentFraction": 0.929,
+      "visibleFraction": 1.0,
+      "groundElevationM": 409.1,
+      "localProminenceM": 3.26,
+      "vegetationRisk": 0.143,
+      "dataConfidence": 0.578,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 4.63,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-026",
+      "representativePoint": [
+        -3.657908,
+        38.104946
+      ],
+      "representativePointUTM": [
+        442319.5,
+        4217663.5
+      ],
+      "areaM2": 21775.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.91,
+      "excellentFraction": 0.929,
+      "visibleFraction": 1.0,
+      "groundElevationM": 403.2,
+      "localProminenceM": 5.33,
+      "vegetationRisk": 0.217,
+      "dataConfidence": 0.661,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.31,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-027",
+      "representativePoint": [
+        -3.654411,
+        38.098999
+      ],
+      "representativePointUTM": [
+        442621.5,
+        4217001.5
+      ],
+      "areaM2": 19544.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.93,
+      "excellentFraction": 0.943,
+      "visibleFraction": 1.0,
+      "groundElevationM": 388.3,
+      "localProminenceM": 3.05,
+      "vegetationRisk": 0.154,
+      "dataConfidence": 0.887,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 12.95,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-028",
+      "representativePoint": [
+        -3.629152,
+        38.082086
+      ],
+      "representativePointUTM": [
+        444823.5,
+        4215109.5
+      ],
+      "areaM2": 18319.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.96,
+      "excellentFraction": 0.968,
+      "visibleFraction": 1.0,
+      "groundElevationM": 454.4,
+      "localProminenceM": 0.15,
+      "vegetationRisk": 0.082,
+      "dataConfidence": 0.98,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 12.86,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-029",
+      "representativePoint": [
+        -3.654636,
+        38.105055
+      ],
+      "representativePointUTM": [
+        442606.5,
+        4217673.5
+      ],
+      "areaM2": 17610.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.87,
+      "excellentFraction": 0.902,
+      "visibleFraction": 1.0,
+      "groundElevationM": 407.3,
+      "localProminenceM": 2.09,
+      "vegetationRisk": 0.091,
+      "dataConfidence": 0.701,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.64,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-030",
+      "representativePoint": [
+        -3.610407,
+        38.09181
+      ],
+      "representativePointUTM": [
+        446474.5,
+        4216177.5
+      ],
+      "areaM2": 17477.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "excellent",
+      "meanClearanceClass": 4.0,
+      "excellentFraction": 1.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 465.0,
+      "localProminenceM": 3.05,
+      "vegetationRisk": 0.142,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 21.0,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-031",
+      "representativePoint": [
+        -3.621752,
+        38.08217
+      ],
+      "representativePointUTM": [
+        445472.5,
+        4215114.5
+      ],
+      "areaM2": 16294.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.91,
+      "excellentFraction": 0.921,
+      "visibleFraction": 1.0,
+      "groundElevationM": 448.4,
+      "localProminenceM": 1.23,
+      "vegetationRisk": 0.169,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 16.78,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-032",
+      "representativePoint": [
+        -3.663536,
+        38.089016
+      ],
+      "representativePointUTM": [
+        441813.5,
+        4215899.5
+      ],
+      "areaM2": 15513.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.95,
+      "excellentFraction": 0.962,
+      "visibleFraction": 1.0,
+      "groundElevationM": 351.7,
+      "localProminenceM": -1.1,
+      "vegetationRisk": 0.422,
+      "dataConfidence": 0.622,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 4.99,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Vega Santa María"
+    },
+    {
+      "id": "zone-033",
+      "representativePoint": [
+        -3.641559,
+        38.084866
+      ],
+      "representativePointUTM": [
+        443737.5,
+        4215425.5
+      ],
+      "areaM2": 14858.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.99,
+      "excellentFraction": 0.994,
+      "visibleFraction": 1.0,
+      "groundElevationM": 410.6,
+      "localProminenceM": -0.3,
+      "vegetationRisk": 0.024,
+      "dataConfidence": 0.998,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 12.69,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-034",
+      "representativePoint": [
+        -3.618105,
+        38.09998
+      ],
+      "representativePointUTM": [
+        445805.5,
+        4217088.5
+      ],
+      "areaM2": 14840.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.96,
+      "excellentFraction": 0.969,
+      "visibleFraction": 1.0,
+      "groundElevationM": 471.4,
+      "localProminenceM": 8.52,
+      "vegetationRisk": 0.027,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 11.62,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-035",
+      "representativePoint": [
+        -3.645824,
+        38.087412
+      ],
+      "representativePointUTM": [
+        443365.5,
+        4215710.5
+      ],
+      "areaM2": 14500.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.91,
+      "excellentFraction": 0.927,
+      "visibleFraction": 1.0,
+      "groundElevationM": 404.1,
+      "localProminenceM": 1.13,
+      "vegetationRisk": 0.099,
+      "dataConfidence": 0.761,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 6.52,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.035,
+      "accessKind": "unverified",
+      "placeName": "Hospital San Agustin"
+    },
+    {
+      "id": "zone-036",
+      "representativePoint": [
+        -3.629445,
+        38.083066
+      ],
+      "representativePointUTM": [
+        444798.5,
+        4215218.5
+      ],
+      "areaM2": 13774.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.99,
+      "excellentFraction": 0.993,
+      "visibleFraction": 1.0,
+      "groundElevationM": 449.8,
+      "localProminenceM": -1.72,
+      "vegetationRisk": 0.154,
+      "dataConfidence": 0.995,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 11.7,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-037",
+      "representativePoint": [
+        -3.621809,
+        38.099609
+      ],
+      "representativePointUTM": [
+        445480.5,
+        4217049.5
+      ],
+      "areaM2": 12639.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.94,
+      "excellentFraction": 0.958,
+      "visibleFraction": 1.0,
+      "groundElevationM": 460.4,
+      "localProminenceM": 7.14,
+      "vegetationRisk": 0.03,
+      "dataConfidence": 0.813,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 8.16,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Parque de Ciudad Jardín"
+    },
+    {
+      "id": "zone-038",
+      "representativePoint": [
+        -3.668861,
+        38.08649
+      ],
+      "representativePointUTM": [
+        441344.5,
+        4215622.5
+      ],
+      "areaM2": 12547.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.99,
+      "excellentFraction": 0.99,
+      "visibleFraction": 1.0,
+      "groundElevationM": 342.1,
+      "localProminenceM": -0.71,
+      "vegetationRisk": 0.329,
+      "dataConfidence": 0.588,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.19,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-039",
+      "representativePoint": [
+        -3.638372,
+        38.081603
+      ],
+      "representativePointUTM": [
+        444014.5,
+        4215061.5
+      ],
+      "areaM2": 12252.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.98,
+      "excellentFraction": 0.982,
+      "visibleFraction": 1.0,
+      "groundElevationM": 443.8,
+      "localProminenceM": 8.13,
+      "vegetationRisk": 0.13,
+      "dataConfidence": 0.521,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.19,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-040",
+      "representativePoint": [
+        -3.625324,
+        38.083827
+      ],
+      "representativePointUTM": [
+        445160.5,
+        4215300.5
+      ],
+      "areaM2": 11459.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.96,
+      "excellentFraction": 0.969,
+      "visibleFraction": 1.0,
+      "groundElevationM": 442.3,
+      "localProminenceM": -0.85,
+      "vegetationRisk": 0.164,
+      "dataConfidence": 0.966,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 13.22,
+      "parkingFraction": 0.034,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.15,
+      "accessKind": "unverified",
+      "placeName": "Plaza Poeta Federico García Lorca"
+    },
+    {
+      "id": "zone-041",
+      "representativePoint": [
+        -3.658915,
+        38.073514
+      ],
+      "representativePointUTM": [
+        442206.5,
+        4214176.5
+      ],
+      "areaM2": 10118.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.94,
+      "excellentFraction": 0.946,
+      "visibleFraction": 1.0,
+      "groundElevationM": 407.7,
+      "localProminenceM": 1.71,
+      "vegetationRisk": 0.004,
+      "dataConfidence": 0.718,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.76,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-042",
+      "representativePoint": [
+        -3.672578,
+        38.115093
+      ],
+      "representativePointUTM": [
+        441041.5,
+        4218798.5
+      ],
+      "areaM2": 9085.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.97,
+      "excellentFraction": 0.98,
+      "visibleFraction": 1.0,
+      "groundElevationM": 415.1,
+      "localProminenceM": 2.61,
+      "vegetationRisk": 0.023,
+      "dataConfidence": 0.643,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.18,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-043",
+      "representativePoint": [
+        -3.659912,
+        38.075293
+      ],
+      "representativePointUTM": [
+        442120.5,
+        4214374.5
+      ],
+      "areaM2": 8985.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.99,
+      "excellentFraction": 0.99,
+      "visibleFraction": 1.0,
+      "groundElevationM": 413.3,
+      "localProminenceM": 1.51,
+      "vegetationRisk": 0.002,
+      "dataConfidence": 0.574,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.6,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-044",
+      "representativePoint": [
+        -3.641891,
+        38.107153
+      ],
+      "representativePointUTM": [
+        443725.5,
+        4217898.5
+      ],
+      "areaM2": 8666.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.97,
+      "excellentFraction": 0.975,
+      "visibleFraction": 1.0,
+      "groundElevationM": 427.2,
+      "localProminenceM": 0.8,
+      "vegetationRisk": 0.183,
+      "dataConfidence": 0.745,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.03,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-045",
+      "representativePoint": [
+        -3.67268,
+        38.090055
+      ],
+      "representativePointUTM": [
+        441012.5,
+        4216020.5
+      ],
+      "areaM2": 8374.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.94,
+      "excellentFraction": 0.957,
+      "visibleFraction": 1.0,
+      "groundElevationM": 347.1,
+      "localProminenceM": 2.77,
+      "vegetationRisk": 0.136,
+      "dataConfidence": 0.664,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.34,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-046",
+      "representativePoint": [
+        -3.66492,
+        38.083159
+      ],
+      "representativePointUTM": [
+        441687.5,
+        4215250.5
+      ],
+      "areaM2": 7672.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.94,
+      "excellentFraction": 0.958,
+      "visibleFraction": 1.0,
+      "groundElevationM": 351.3,
+      "localProminenceM": -5.17,
+      "vegetationRisk": 0.024,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 12.3,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-047",
+      "representativePoint": [
+        -3.672336,
+        38.088624
+      ],
+      "representativePointUTM": [
+        441041.5,
+        4215861.5
+      ],
+      "areaM2": 7059.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.99,
+      "excellentFraction": 0.992,
+      "visibleFraction": 1.0,
+      "groundElevationM": 341.8,
+      "localProminenceM": -0.31,
+      "vegetationRisk": 0.343,
+      "dataConfidence": 0.715,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.8,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-048",
+      "representativePoint": [
+        -3.646859,
+        38.080638
+      ],
+      "representativePointUTM": [
+        443269.5,
+        4214959.5
+      ],
+      "areaM2": 6787.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 4.0,
+      "excellentFraction": 0.997,
+      "visibleFraction": 1.0,
+      "groundElevationM": 400.8,
+      "localProminenceM": 2.0,
+      "vegetationRisk": 0.295,
+      "dataConfidence": 0.751,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 6.15,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-049",
+      "representativePoint": [
+        -3.672634,
+        38.087523
+      ],
+      "representativePointUTM": [
+        441014.5,
+        4215739.5
+      ],
+      "areaM2": 6535.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.92,
+      "excellentFraction": 0.933,
+      "visibleFraction": 1.0,
+      "groundElevationM": 341.5,
+      "localProminenceM": -0.3,
+      "vegetationRisk": 0.193,
+      "dataConfidence": 0.685,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.53,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-050",
+      "representativePoint": [
+        -3.646251,
+        38.077703
+      ],
+      "representativePointUTM": [
+        443320.5,
+        4214633.5
+      ],
+      "areaM2": 6370.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.91,
+      "excellentFraction": 0.931,
+      "visibleFraction": 1.0,
+      "groundElevationM": 420.3,
+      "localProminenceM": 2.43,
+      "vegetationRisk": 0.021,
+      "dataConfidence": 0.706,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.66,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-051",
+      "representativePoint": [
+        -3.619401,
+        38.100803
+      ],
+      "representativePointUTM": [
+        445692.5,
+        4217180.5
+      ],
+      "areaM2": 6105.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "excellent",
+      "meanClearanceClass": 4.0,
+      "excellentFraction": 1.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 467.2,
+      "localProminenceM": 9.32,
+      "vegetationRisk": 0.02,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 12.2,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Parque de Ciudad Jardín"
+    },
+    {
+      "id": "zone-052",
+      "representativePoint": [
+        -3.661964,
+        38.08926
+      ],
+      "representativePointUTM": [
+        441951.5,
+        4215925.5
+      ],
+      "areaM2": 6024.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.88,
+      "excellentFraction": 0.906,
+      "visibleFraction": 1.0,
+      "groundElevationM": 356.8,
+      "localProminenceM": -0.96,
+      "vegetationRisk": 0.254,
+      "dataConfidence": 0.688,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.54,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Vega Santa María"
+    },
+    {
+      "id": "zone-053",
+      "representativePoint": [
+        -3.645204,
+        38.088289
+      ],
+      "representativePointUTM": [
+        443420.5,
+        4215807.5
+      ],
+      "areaM2": 5227.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 4.0,
+      "excellentFraction": 0.996,
+      "visibleFraction": 1.0,
+      "groundElevationM": 405.8,
+      "localProminenceM": 1.45,
+      "vegetationRisk": 0.292,
+      "dataConfidence": 0.782,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 6.85,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.074,
+      "accessKind": "unverified",
+      "placeName": "Hospital San Agustin"
+    },
+    {
+      "id": "zone-054",
+      "representativePoint": [
+        -3.653868,
+        38.08415
+      ],
+      "representativePointUTM": [
+        442657.5,
+        4215353.5
+      ],
+      "areaM2": 4236.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.99,
+      "excellentFraction": 0.993,
+      "visibleFraction": 1.0,
+      "groundElevationM": 373.2,
+      "localProminenceM": 2.26,
+      "vegetationRisk": 0.086,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 14.36,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-055",
+      "representativePoint": [
+        -3.665693,
+        38.090464
+      ],
+      "representativePointUTM": [
+        441625.5,
+        4216061.5
+      ],
+      "areaM2": 4197.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.99,
+      "excellentFraction": 0.99,
+      "visibleFraction": 1.0,
+      "groundElevationM": 346.4,
+      "localProminenceM": -2.56,
+      "vegetationRisk": 0.616,
+      "dataConfidence": 0.625,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.02,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Vega Santa María"
+    },
+    {
+      "id": "zone-056",
+      "representativePoint": [
+        -3.645351,
+        38.081628
+      ],
+      "representativePointUTM": [
+        443402.5,
+        4215068.5
+      ],
+      "areaM2": 3481.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "excellent",
+      "meanClearanceClass": 4.0,
+      "excellentFraction": 1.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 402.3,
+      "localProminenceM": 2.5,
+      "vegetationRisk": 0.058,
+      "dataConfidence": 0.816,
+      "mainEdgeObstacle": "none",
+      "pointDensity": 10.01,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-057",
+      "representativePoint": [
+        -3.656233,
+        38.108921
+      ],
+      "representativePointUTM": [
+        442469.5,
+        4218103.5
+      ],
+      "areaM2": 3451.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.92,
+      "excellentFraction": 0.939,
+      "visibleFraction": 1.0,
+      "groundElevationM": 418.6,
+      "localProminenceM": 7.68,
+      "vegetationRisk": 0.026,
+      "dataConfidence": 0.607,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.86,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-058",
+      "representativePoint": [
+        -3.664437,
+        38.081432
+      ],
+      "representativePointUTM": [
+        441728.5,
+        4215058.5
+      ],
+      "areaM2": 3335.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.97,
+      "excellentFraction": 0.978,
+      "visibleFraction": 1.0,
+      "groundElevationM": 391.7,
+      "localProminenceM": 10.33,
+      "vegetationRisk": 0.046,
+      "dataConfidence": 0.678,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.71,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-059",
+      "representativePoint": [
+        -3.656406,
+        38.116815
+      ],
+      "representativePointUTM": [
+        442460.5,
+        4218979.5
+      ],
+      "areaM2": 3317.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.95,
+      "excellentFraction": 0.957,
+      "visibleFraction": 1.0,
+      "groundElevationM": 435.9,
+      "localProminenceM": 4.99,
+      "vegetationRisk": 0.247,
+      "dataConfidence": 0.848,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 7.76,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-060",
+      "representativePoint": [
+        -3.665368,
+        38.081012
+      ],
+      "representativePointUTM": [
+        441646.5,
+        4215012.5
+      ],
+      "areaM2": 3101.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 4.0,
+      "excellentFraction": 0.997,
+      "visibleFraction": 1.0,
+      "groundElevationM": 406.3,
+      "localProminenceM": 17.54,
+      "vegetationRisk": 0.012,
+      "dataConfidence": 0.713,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.71,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-061",
+      "representativePoint": [
+        -3.64965,
+        38.08557
+      ],
+      "representativePointUTM": [
+        443028.5,
+        4215508.5
+      ],
+      "areaM2": 3025.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 4.0,
+      "excellentFraction": 0.999,
+      "visibleFraction": 1.0,
+      "groundElevationM": 389.1,
+      "localProminenceM": 3.24,
+      "vegetationRisk": 0.199,
+      "dataConfidence": 0.535,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.28,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-062",
+      "representativePoint": [
+        -3.65895,
+        38.10029
+      ],
+      "representativePointUTM": [
+        442224.5,
+        4217147.5
+      ],
+      "areaM2": 3011.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.92,
+      "excellentFraction": 0.938,
+      "visibleFraction": 1.0,
+      "groundElevationM": 383.9,
+      "localProminenceM": 1.91,
+      "vegetationRisk": 0.111,
+      "dataConfidence": 0.66,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.31,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-063",
+      "representativePoint": [
+        -3.632927,
+        38.10073
+      ],
+      "representativePointUTM": [
+        444506.5,
+        4217180.5
+      ],
+      "areaM2": 2913.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.93,
+      "excellentFraction": 0.94,
+      "visibleFraction": 1.0,
+      "groundElevationM": 415.0,
+      "localProminenceM": 3.1,
+      "vegetationRisk": 0.232,
+      "dataConfidence": 0.556,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 4.45,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Jardines de la Estación de Madrid"
+    },
+    {
+      "id": "zone-064",
+      "representativePoint": [
+        -3.642373,
+        38.108845
+      ],
+      "representativePointUTM": [
+        443684.5,
+        4218086.5
+      ],
+      "areaM2": 2853.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.9,
+      "excellentFraction": 0.919,
+      "visibleFraction": 1.0,
+      "groundElevationM": 431.4,
+      "localProminenceM": 0.92,
+      "vegetationRisk": 0.343,
+      "dataConfidence": 0.735,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.98,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-065",
+      "representativePoint": [
+        -3.663626,
+        38.08761
+      ],
+      "representativePointUTM": [
+        441804.5,
+        4215743.5
+      ],
+      "areaM2": 2846.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.92,
+      "excellentFraction": 0.929,
+      "visibleFraction": 1.0,
+      "groundElevationM": 352.6,
+      "localProminenceM": -1.52,
+      "vegetationRisk": 0.115,
+      "dataConfidence": 0.606,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.85,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-066",
+      "representativePoint": [
+        -3.641849,
+        38.08537
+      ],
+      "representativePointUTM": [
+        443712.5,
+        4215481.5
+      ],
+      "areaM2": 2840.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.99,
+      "excellentFraction": 0.995,
+      "visibleFraction": 1.0,
+      "groundElevationM": 411.7,
+      "localProminenceM": 0.61,
+      "vegetationRisk": 0.02,
+      "dataConfidence": 0.62,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.06,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-067",
+      "representativePoint": [
+        -3.620868,
+        38.078714
+      ],
+      "representativePointUTM": [
+        445547.5,
+        4214730.5
+      ],
+      "areaM2": 2725.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "excellent",
+      "meanClearanceClass": 4.0,
+      "excellentFraction": 1.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 428.5,
+      "localProminenceM": -4.49,
+      "vegetationRisk": 0.001,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 19.14,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-068",
+      "representativePoint": [
+        -3.657984,
+        38.115896
+      ],
+      "representativePointUTM": [
+        442321.5,
+        4218878.5
+      ],
+      "areaM2": 2705.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.92,
+      "excellentFraction": 0.937,
+      "visibleFraction": 1.0,
+      "groundElevationM": 426.3,
+      "localProminenceM": -0.65,
+      "vegetationRisk": 0.144,
+      "dataConfidence": 0.71,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.71,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-069",
+      "representativePoint": [
+        -3.64451,
+        38.079425
+      ],
+      "representativePointUTM": [
+        443474.5,
+        4214823.5
+      ],
+      "areaM2": 2684.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.98,
+      "excellentFraction": 0.987,
+      "visibleFraction": 1.0,
+      "groundElevationM": 415.6,
+      "localProminenceM": 1.27,
+      "vegetationRisk": 0.206,
+      "dataConfidence": 0.848,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 7.14,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-070",
+      "representativePoint": [
+        -3.656445,
+        38.100746
+      ],
+      "representativePointUTM": [
+        442444.5,
+        4217196.5
+      ],
+      "areaM2": 2544.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.93,
+      "excellentFraction": 0.947,
+      "visibleFraction": 1.0,
+      "groundElevationM": 390.6,
+      "localProminenceM": 2.31,
+      "vegetationRisk": 0.066,
+      "dataConfidence": 0.675,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.42,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-071",
+      "representativePoint": [
+        -3.637788,
+        38.077397
+      ],
+      "representativePointUTM": [
+        444062.5,
+        4214594.5
+      ],
+      "areaM2": 2515.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.99,
+      "excellentFraction": 0.99,
+      "visibleFraction": 1.0,
+      "groundElevationM": 432.6,
+      "localProminenceM": -2.59,
+      "vegetationRisk": 0.53,
+      "dataConfidence": 0.658,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.27,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-072",
+      "representativePoint": [
+        -3.670326,
+        38.115817
+      ],
+      "representativePointUTM": [
+        441239.5,
+        4218877.5
+      ],
+      "areaM2": 2486.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.9,
+      "excellentFraction": 0.929,
+      "visibleFraction": 1.0,
+      "groundElevationM": 419.5,
+      "localProminenceM": 2.24,
+      "vegetationRisk": 0.039,
+      "dataConfidence": 0.644,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.16,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-073",
+      "representativePoint": [
+        -3.666256,
+        38.094661
+      ],
+      "representativePointUTM": [
+        441579.5,
+        4216527.5
+      ],
+      "areaM2": 2473.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.98,
+      "excellentFraction": 0.986,
+      "visibleFraction": 1.0,
+      "groundElevationM": 356.1,
+      "localProminenceM": 1.56,
+      "vegetationRisk": 0.097,
+      "dataConfidence": 0.595,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.76,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-074",
+      "representativePoint": [
+        -3.657965,
+        38.102359
+      ],
+      "representativePointUTM": [
+        442312.5,
+        4217376.5
+      ],
+      "areaM2": 2448.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.88,
+      "excellentFraction": 0.902,
+      "visibleFraction": 1.0,
+      "groundElevationM": 390.8,
+      "localProminenceM": -0.94,
+      "vegetationRisk": 0.006,
+      "dataConfidence": 0.517,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.14,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-075",
+      "representativePoint": [
+        -3.617841,
+        38.114627
+      ],
+      "representativePointUTM": [
+        445839.5,
+        4218713.5
+      ],
+      "areaM2": 2356.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.92,
+      "excellentFraction": 0.927,
+      "visibleFraction": 1.0,
+      "groundElevationM": 443.2,
+      "localProminenceM": 0.44,
+      "vegetationRisk": 0.049,
+      "dataConfidence": 0.998,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 10.65,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-076",
+      "representativePoint": [
+        -3.654223,
+        38.08175
+      ],
+      "representativePointUTM": [
+        442624.5,
+        4215087.5
+      ],
+      "areaM2": 2351.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "excellent",
+      "meanClearanceClass": 4.0,
+      "excellentFraction": 1.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 366.5,
+      "localProminenceM": -0.04,
+      "vegetationRisk": 0.033,
+      "dataConfidence": 0.866,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 10.95,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-077",
+      "representativePoint": [
+        -3.654297,
+        38.116872
+      ],
+      "representativePointUTM": [
+        442645.5,
+        4218984.5
+      ],
+      "areaM2": 2311.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.97,
+      "excellentFraction": 0.977,
+      "visibleFraction": 1.0,
+      "groundElevationM": 439.8,
+      "localProminenceM": 7.46,
+      "vegetationRisk": 0.108,
+      "dataConfidence": 0.551,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 4.42,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-078",
+      "representativePoint": [
+        -3.664353,
+        38.10117
+      ],
+      "representativePointUTM": [
+        441751.5,
+        4217248.5
+      ],
+      "areaM2": 2263.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.89,
+      "excellentFraction": 0.912,
+      "visibleFraction": 1.0,
+      "groundElevationM": 372.8,
+      "localProminenceM": -0.19,
+      "vegetationRisk": 0.066,
+      "dataConfidence": 0.615,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 4.93,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-079",
+      "representativePoint": [
+        -3.641979,
+        38.111938
+      ],
+      "representativePointUTM": [
+        443721.5,
+        4218429.5
+      ],
+      "areaM2": 2224.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.88,
+      "excellentFraction": 0.905,
+      "visibleFraction": 1.0,
+      "groundElevationM": 436.7,
+      "localProminenceM": 0.53,
+      "vegetationRisk": 0.281,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 12.98,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-080",
+      "representativePoint": [
+        -3.672237,
+        38.096511
+      ],
+      "representativePointUTM": [
+        441056.5,
+        4216736.5
+      ],
+      "areaM2": 2148.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.93,
+      "excellentFraction": 0.95,
+      "visibleFraction": 1.0,
+      "groundElevationM": 354.5,
+      "localProminenceM": -1.07,
+      "vegetationRisk": 0.092,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 14.79,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-081",
+      "representativePoint": [
+        -3.628465,
+        38.103107
+      ],
+      "representativePointUTM": [
+        444899.5,
+        4217441.5
+      ],
+      "areaM2": 2105.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.93,
+      "excellentFraction": 0.941,
+      "visibleFraction": 1.0,
+      "groundElevationM": 420.1,
+      "localProminenceM": 2.53,
+      "vegetationRisk": 0.043,
+      "dataConfidence": 0.714,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.72,
+      "parkingFraction": 0.884,
+      "surfaceKind": "car park",
+      "walkableFraction": 0.982,
+      "accessKind": "public",
+      "placeName": "Parque Pocico de Don Ramón"
+    },
+    {
+      "id": "zone-082",
+      "representativePoint": [
+        -3.669568,
+        38.113956
+      ],
+      "representativePointUTM": [
+        441304.5,
+        4218670.5
+      ],
+      "areaM2": 1990.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.92,
+      "excellentFraction": 0.932,
+      "visibleFraction": 1.0,
+      "groundElevationM": 419.1,
+      "localProminenceM": 1.76,
+      "vegetationRisk": 0.055,
+      "dataConfidence": 0.639,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.13,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-083",
+      "representativePoint": [
+        -3.671312,
+        38.105096
+      ],
+      "representativePointUTM": [
+        441144.5,
+        4217688.5
+      ],
+      "areaM2": 1901.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.9,
+      "excellentFraction": 0.921,
+      "visibleFraction": 1.0,
+      "groundElevationM": 389.7,
+      "localProminenceM": 5.07,
+      "vegetationRisk": 0.131,
+      "dataConfidence": 0.79,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.5,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-084",
+      "representativePoint": [
+        -3.643029,
+        38.086021
+      ],
+      "representativePointUTM": [
+        443609.5,
+        4215554.5
+      ],
+      "areaM2": 1871.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.88,
+      "excellentFraction": 0.906,
+      "visibleFraction": 1.0,
+      "groundElevationM": 402.3,
+      "localProminenceM": -3.4,
+      "vegetationRisk": 0.187,
+      "dataConfidence": 0.687,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.62,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Hospital San Agustin"
+    },
+    {
+      "id": "zone-085",
+      "representativePoint": [
+        -3.670856,
+        38.115156
+      ],
+      "representativePointUTM": [
+        441192.5,
+        4218804.5
+      ],
+      "areaM2": 1830.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.94,
+      "excellentFraction": 0.952,
+      "visibleFraction": 1.0,
+      "groundElevationM": 416.9,
+      "localProminenceM": 1.24,
+      "vegetationRisk": 0.026,
+      "dataConfidence": 0.638,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.11,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-086",
+      "representativePoint": [
+        -3.625615,
+        38.092514
+      ],
+      "representativePointUTM": [
+        445141.5,
+        4216264.5
+      ],
+      "areaM2": 1824.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.88,
+      "excellentFraction": 0.904,
+      "visibleFraction": 1.0,
+      "groundElevationM": 437.1,
+      "localProminenceM": 0.49,
+      "vegetationRisk": 0.819,
+      "dataConfidence": 0.693,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 5.63,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.274,
+      "accessKind": "unverified",
+      "placeName": "EUP Linares"
+    },
+    {
+      "id": "zone-087",
+      "representativePoint": [
+        -3.666804,
+        38.099849
+      ],
+      "representativePointUTM": [
+        441535.5,
+        4217103.5
+      ],
+      "areaM2": 1782.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.89,
+      "excellentFraction": 0.912,
+      "visibleFraction": 1.0,
+      "groundElevationM": 372.2,
+      "localProminenceM": 1.48,
+      "vegetationRisk": 0.03,
+      "dataConfidence": 0.65,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.2,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-088",
+      "representativePoint": [
+        -3.659086,
+        38.102723
+      ],
+      "representativePointUTM": [
+        442214.5,
+        4217417.5
+      ],
+      "areaM2": 1781.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.97,
+      "excellentFraction": 0.978,
+      "visibleFraction": 1.0,
+      "groundElevationM": 391.8,
+      "localProminenceM": 2.1,
+      "vegetationRisk": 0.166,
+      "dataConfidence": 0.761,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.22,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-089",
+      "representativePoint": [
+        -3.661156,
+        38.099548
+      ],
+      "representativePointUTM": [
+        442030.5,
+        4217066.5
+      ],
+      "areaM2": 1781.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.94,
+      "excellentFraction": 0.955,
+      "visibleFraction": 1.0,
+      "groundElevationM": 378.1,
+      "localProminenceM": 0.95,
+      "vegetationRisk": 0.051,
+      "dataConfidence": 0.667,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.36,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-090",
+      "representativePoint": [
+        -3.644605,
+        38.086328
+      ],
+      "representativePointUTM": [
+        443471.5,
+        4215589.5
+      ],
+      "areaM2": 1775.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.96,
+      "excellentFraction": 0.965,
+      "visibleFraction": 1.0,
+      "groundElevationM": 405.0,
+      "localProminenceM": 2.34,
+      "vegetationRisk": 0.184,
+      "dataConfidence": 0.598,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.79,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.122,
+      "accessKind": "unverified",
+      "placeName": "Hospital San Agustin"
+    },
+    {
+      "id": "zone-091",
+      "representativePoint": [
+        -3.661206,
+        38.106307
+      ],
+      "representativePointUTM": [
+        442031.5,
+        4217816.5
+      ],
+      "areaM2": 1733.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.96,
+      "excellentFraction": 0.969,
+      "visibleFraction": 1.0,
+      "groundElevationM": 404.0,
+      "localProminenceM": 6.65,
+      "vegetationRisk": 0.046,
+      "dataConfidence": 0.788,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.35,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-092",
+      "representativePoint": [
+        -3.670382,
+        38.093177
+      ],
+      "representativePointUTM": [
+        441216.5,
+        4216365.5
+      ],
+      "areaM2": 1677.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.89,
+      "excellentFraction": 0.915,
+      "visibleFraction": 1.0,
+      "groundElevationM": 349.6,
+      "localProminenceM": 1.37,
+      "vegetationRisk": 0.691,
+      "dataConfidence": 0.712,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.87,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-093",
+      "representativePoint": [
+        -3.667999,
+        38.098283
+      ],
+      "representativePointUTM": [
+        441429.5,
+        4216930.5
+      ],
+      "areaM2": 1567.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.96,
+      "excellentFraction": 0.969,
+      "visibleFraction": 1.0,
+      "groundElevationM": 367.7,
+      "localProminenceM": -0.11,
+      "vegetationRisk": 0.087,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 13.52,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-094",
+      "representativePoint": [
+        -3.658645,
+        38.099273
+      ],
+      "representativePointUTM": [
+        442250.5,
+        4217034.5
+      ],
+      "areaM2": 1531.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.95,
+      "excellentFraction": 0.965,
+      "visibleFraction": 1.0,
+      "groundElevationM": 382.2,
+      "localProminenceM": 2.95,
+      "vegetationRisk": 0.105,
+      "dataConfidence": 0.596,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.29,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-095",
+      "representativePoint": [
+        -3.639898,
+        38.111445
+      ],
+      "representativePointUTM": [
+        443903.5,
+        4218373.5
+      ],
+      "areaM2": 1485.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.93,
+      "excellentFraction": 0.948,
+      "visibleFraction": 1.0,
+      "groundElevationM": 436.5,
+      "localProminenceM": 0.55,
+      "vegetationRisk": 0.284,
+      "dataConfidence": 0.997,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 10.54,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-096",
+      "representativePoint": [
+        -3.638698,
+        38.082359
+      ],
+      "representativePointUTM": [
+        443986.5,
+        4215145.5
+      ],
+      "areaM2": 806.0,
+      "minClearanceClass": "excellent",
+      "minClearanceDeg": 2.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.98,
+      "excellentFraction": 0.985,
+      "visibleFraction": 1.0,
+      "groundElevationM": 433.1,
+      "localProminenceM": 3.66,
+      "vegetationRisk": 0.53,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 13.61,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 1.0,
+      "accessKind": "public",
+      "placeName": null
+    },
+    {
+      "id": "zone-097",
+      "representativePoint": [
+        -3.657229,
+        38.079976
+      ],
+      "representativePointUTM": [
+        442359.5,
+        4214892.5
+      ],
+      "areaM2": 146487.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.85,
+      "excellentFraction": 0.885,
+      "visibleFraction": 1.0,
+      "groundElevationM": 362.0,
+      "localProminenceM": -1.09,
+      "vegetationRisk": 0.066,
+      "dataConfidence": 0.726,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 7.2,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-098",
+      "representativePoint": [
+        -3.630105,
+        38.106739
+      ],
+      "representativePointUTM": [
+        444758.5,
+        4217845.5
+      ],
+      "areaM2": 144138.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.82,
+      "excellentFraction": 0.855,
+      "visibleFraction": 1.0,
+      "groundElevationM": 430.4,
+      "localProminenceM": 0.98,
+      "vegetationRisk": 0.094,
+      "dataConfidence": 0.632,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 5.06,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.006,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-099",
+      "representativePoint": [
+        -3.649232,
+        38.098893
+      ],
+      "representativePointUTM": [
+        443075.5,
+        4216986.5
+      ],
+      "areaM2": 106986.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.86,
+      "excellentFraction": 0.889,
+      "visibleFraction": 1.0,
+      "groundElevationM": 393.7,
+      "localProminenceM": 0.08,
+      "vegetationRisk": 0.216,
+      "dataConfidence": 0.82,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 8.62,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-100",
+      "representativePoint": [
+        -3.639267,
+        38.109673
+      ],
+      "representativePointUTM": [
+        443957.5,
+        4218176.5
+      ],
+      "areaM2": 96688.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.86,
+      "excellentFraction": 0.881,
+      "visibleFraction": 1.0,
+      "groundElevationM": 426.3,
+      "localProminenceM": -0.02,
+      "vegetationRisk": 0.083,
+      "dataConfidence": 0.728,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 7.02,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-101",
+      "representativePoint": [
+        -3.613511,
+        38.087945
+      ],
+      "representativePointUTM": [
+        446199.5,
+        4215750.5
+      ],
+      "areaM2": 86137.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.69,
+      "excellentFraction": 0.756,
+      "visibleFraction": 1.0,
+      "groundElevationM": 450.5,
+      "localProminenceM": 0.12,
+      "vegetationRisk": 0.165,
+      "dataConfidence": 0.998,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 10.4,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-102",
+      "representativePoint": [
+        -3.619393,
+        38.091727
+      ],
+      "representativePointUTM": [
+        445686.5,
+        4216173.5
+      ],
+      "areaM2": 82777.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.81,
+      "excellentFraction": 0.85,
+      "visibleFraction": 1.0,
+      "groundElevationM": 456.3,
+      "localProminenceM": 1.41,
+      "vegetationRisk": 0.07,
+      "dataConfidence": 0.995,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 12.97,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-103",
+      "representativePoint": [
+        -3.610475,
+        38.097181
+      ],
+      "representativePointUTM": [
+        446472.5,
+        4216773.5
+      ],
+      "areaM2": 79836.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.68,
+      "excellentFraction": 0.75,
+      "visibleFraction": 1.0,
+      "groundElevationM": 446.4,
+      "localProminenceM": -0.33,
+      "vegetationRisk": 0.017,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 15.42,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-104",
+      "representativePoint": [
+        -3.620732,
+        38.101715
+      ],
+      "representativePointUTM": [
+        445576.5,
+        4217282.5
+      ],
+      "areaM2": 41380.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.84,
+      "excellentFraction": 0.876,
+      "visibleFraction": 1.0,
+      "groundElevationM": 430.5,
+      "localProminenceM": -3.55,
+      "vegetationRisk": 0.102,
+      "dataConfidence": 0.816,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 8.01,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Estadio municipal de Linarejos"
+    },
+    {
+      "id": "zone-105",
+      "representativePoint": [
+        -3.62825,
+        38.111291
+      ],
+      "representativePointUTM": [
+        444924.5,
+        4218349.5
+      ],
+      "areaM2": 38569.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.84,
+      "excellentFraction": 0.85,
+      "visibleFraction": 1.0,
+      "groundElevationM": 442.8,
+      "localProminenceM": 1.68,
+      "vegetationRisk": 0.175,
+      "dataConfidence": 0.97,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 12.31,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-106",
+      "representativePoint": [
+        -3.648854,
+        38.103879
+      ],
+      "representativePointUTM": [
+        443112.5,
+        4217539.5
+      ],
+      "areaM2": 38180.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.63,
+      "excellentFraction": 0.709,
+      "visibleFraction": 1.0,
+      "groundElevationM": 403.7,
+      "localProminenceM": -0.12,
+      "vegetationRisk": 0.209,
+      "dataConfidence": 0.722,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.81,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-107",
+      "representativePoint": [
+        -3.64953,
+        38.09653
+      ],
+      "representativePointUTM": [
+        443047.5,
+        4216724.5
+      ],
+      "areaM2": 29353.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.82,
+      "excellentFraction": 0.858,
+      "visibleFraction": 1.0,
+      "groundElevationM": 384.0,
+      "localProminenceM": -0.44,
+      "vegetationRisk": 0.137,
+      "dataConfidence": 0.943,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 10.72,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.001,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-108",
+      "representativePoint": [
+        -3.640312,
+        38.113128
+      ],
+      "representativePointUTM": [
+        443868.5,
+        4218560.5
+      ],
+      "areaM2": 28257.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.83,
+      "excellentFraction": 0.857,
+      "visibleFraction": 1.0,
+      "groundElevationM": 441.4,
+      "localProminenceM": -0.1,
+      "vegetationRisk": 0.256,
+      "dataConfidence": 0.832,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 9.32,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-109",
+      "representativePoint": [
+        -3.615738,
+        38.080111
+      ],
+      "representativePointUTM": [
+        445998.5,
+        4214882.5
+      ],
+      "areaM2": 20577.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.84,
+      "excellentFraction": 0.884,
+      "visibleFraction": 1.0,
+      "groundElevationM": 450.8,
+      "localProminenceM": 7.91,
+      "vegetationRisk": 0.037,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 18.37,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-110",
+      "representativePoint": [
+        -3.605331,
+        38.101344
+      ],
+      "representativePointUTM": [
+        446926.5,
+        4217232.5
+      ],
+      "areaM2": 19993.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.47,
+      "excellentFraction": 0.56,
+      "visibleFraction": 1.0,
+      "groundElevationM": 477.5,
+      "localProminenceM": 0.65,
+      "vegetationRisk": 0.002,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 11.59,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-111",
+      "representativePoint": [
+        -3.648126,
+        38.101504
+      ],
+      "representativePointUTM": [
+        443174.5,
+        4217275.5
+      ],
+      "areaM2": 19014.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.87,
+      "excellentFraction": 0.896,
+      "visibleFraction": 1.0,
+      "groundElevationM": 406.3,
+      "localProminenceM": -0.84,
+      "vegetationRisk": 0.376,
+      "dataConfidence": 0.689,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.64,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-112",
+      "representativePoint": [
+        -3.65659,
+        38.110605
+      ],
+      "representativePointUTM": [
+        442439.5,
+        4218290.5
+      ],
+      "areaM2": 18800.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.8,
+      "excellentFraction": 0.833,
+      "visibleFraction": 1.0,
+      "groundElevationM": 419.4,
+      "localProminenceM": 3.74,
+      "vegetationRisk": 0.065,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 13.26,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-113",
+      "representativePoint": [
+        -3.636298,
+        38.082975
+      ],
+      "representativePointUTM": [
+        444197.5,
+        4215212.5
+      ],
+      "areaM2": 15553.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.79,
+      "excellentFraction": 0.836,
+      "visibleFraction": 1.0,
+      "groundElevationM": 432.3,
+      "localProminenceM": -0.87,
+      "vegetationRisk": 0.264,
+      "dataConfidence": 0.982,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 13.03,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-114",
+      "representativePoint": [
+        -3.668863,
+        38.090491
+      ],
+      "representativePointUTM": [
+        441347.5,
+        4216066.5
+      ],
+      "areaM2": 14600.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.6,
+      "excellentFraction": 0.68,
+      "visibleFraction": 1.0,
+      "groundElevationM": 343.6,
+      "localProminenceM": -0.19,
+      "vegetationRisk": 0.138,
+      "dataConfidence": 0.638,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.12,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-115",
+      "representativePoint": [
+        -3.656874,
+        38.114289
+      ],
+      "representativePointUTM": [
+        442417.5,
+        4218699.5
+      ],
+      "areaM2": 14322.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.66,
+      "excellentFraction": 0.717,
+      "visibleFraction": 1.0,
+      "groundElevationM": 419.7,
+      "localProminenceM": -0.87,
+      "vegetationRisk": 0.048,
+      "dataConfidence": 0.867,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 9.44,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-116",
+      "representativePoint": [
+        -3.639096,
+        38.086187
+      ],
+      "representativePointUTM": [
+        443954.5,
+        4215570.5
+      ],
+      "areaM2": 14128.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.87,
+      "excellentFraction": 0.897,
+      "visibleFraction": 1.0,
+      "groundElevationM": 420.3,
+      "localProminenceM": -0.25,
+      "vegetationRisk": 0.278,
+      "dataConfidence": 0.716,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.97,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "La Florida"
+    },
+    {
+      "id": "zone-117",
+      "representativePoint": [
+        -3.625223,
+        38.079934
+      ],
+      "representativePointUTM": [
+        445166.5,
+        4214868.5
+      ],
+      "areaM2": 12175.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.67,
+      "excellentFraction": 0.704,
+      "visibleFraction": 1.0,
+      "groundElevationM": 444.5,
+      "localProminenceM": -2.65,
+      "vegetationRisk": 0.021,
+      "dataConfidence": 0.81,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 8.56,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-118",
+      "representativePoint": [
+        -3.616172,
+        38.087021
+      ],
+      "representativePointUTM": [
+        445965.5,
+        4215649.5
+      ],
+      "areaM2": 12033.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.66,
+      "excellentFraction": 0.714,
+      "visibleFraction": 1.0,
+      "groundElevationM": 445.3,
+      "localProminenceM": -2.79,
+      "vegetationRisk": 0.006,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 10.14,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-119",
+      "representativePoint": [
+        -3.643115,
+        38.085426
+      ],
+      "representativePointUTM": [
+        443601.5,
+        4215488.5
+      ],
+      "areaM2": 9888.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.87,
+      "excellentFraction": 0.896,
+      "visibleFraction": 1.0,
+      "groundElevationM": 400.2,
+      "localProminenceM": -0.79,
+      "vegetationRisk": 0.057,
+      "dataConfidence": 0.724,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.72,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-120",
+      "representativePoint": [
+        -3.632213,
+        38.101176
+      ],
+      "representativePointUTM": [
+        444569.5,
+        4217229.5
+      ],
+      "areaM2": 9861.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.69,
+      "excellentFraction": 0.759,
+      "visibleFraction": 1.0,
+      "groundElevationM": 415.3,
+      "localProminenceM": 1.26,
+      "vegetationRisk": 0.071,
+      "dataConfidence": 0.591,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.73,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Jardines de la Estación de Madrid"
+    },
+    {
+      "id": "zone-121",
+      "representativePoint": [
+        -3.664642,
+        38.094048
+      ],
+      "representativePointUTM": [
+        441720.5,
+        4216458.5
+      ],
+      "areaM2": 9087.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.86,
+      "excellentFraction": 0.895,
+      "visibleFraction": 1.0,
+      "groundElevationM": 352.6,
+      "localProminenceM": -1.36,
+      "vegetationRisk": 0.164,
+      "dataConfidence": 0.599,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.8,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-122",
+      "representativePoint": [
+        -3.641207,
+        38.1137
+      ],
+      "representativePointUTM": [
+        443790.5,
+        4218624.5
+      ],
+      "areaM2": 8766.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.37,
+      "excellentFraction": 0.433,
+      "visibleFraction": 1.0,
+      "groundElevationM": 439.0,
+      "localProminenceM": -1.21,
+      "vegetationRisk": 0.171,
+      "dataConfidence": 0.85,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 10.69,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-123",
+      "representativePoint": [
+        -3.625139,
+        38.099628
+      ],
+      "representativePointUTM": [
+        445188.5,
+        4217053.5
+      ],
+      "areaM2": 8277.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.86,
+      "excellentFraction": 0.897,
+      "visibleFraction": 1.0,
+      "groundElevationM": 457.9,
+      "localProminenceM": 8.7,
+      "vegetationRisk": 0.101,
+      "dataConfidence": 0.728,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.53,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Parque León Bueno Ordoño"
+    },
+    {
+      "id": "zone-124",
+      "representativePoint": [
+        -3.645301,
+        38.082494
+      ],
+      "representativePointUTM": [
+        443407.5,
+        4215164.5
+      ],
+      "areaM2": 8124.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.84,
+      "excellentFraction": 0.877,
+      "visibleFraction": 1.0,
+      "groundElevationM": 400.5,
+      "localProminenceM": 0.02,
+      "vegetationRisk": 0.088,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 14.16,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-125",
+      "representativePoint": [
+        -3.632867,
+        38.104291
+      ],
+      "representativePointUTM": [
+        444514.5,
+        4217575.5
+      ],
+      "areaM2": 7719.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.69,
+      "excellentFraction": 0.75,
+      "visibleFraction": 1.0,
+      "groundElevationM": 418.4,
+      "localProminenceM": 2.13,
+      "vegetationRisk": 0.629,
+      "dataConfidence": 0.601,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 4.82,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-126",
+      "representativePoint": [
+        -3.641788,
+        38.100574
+      ],
+      "representativePointUTM": [
+        443729.5,
+        4217168.5
+      ],
+      "areaM2": 7218.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.62,
+      "excellentFraction": 0.682,
+      "visibleFraction": 1.0,
+      "groundElevationM": 405.2,
+      "localProminenceM": 0.3,
+      "vegetationRisk": 0.149,
+      "dataConfidence": 0.654,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.26,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.004,
+      "accessKind": "unverified",
+      "placeName": "La Zarzuela"
+    },
+    {
+      "id": "zone-127",
+      "representativePoint": [
+        -3.656769,
+        38.101257
+      ],
+      "representativePointUTM": [
+        442416.5,
+        4217253.5
+      ],
+      "areaM2": 6520.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.86,
+      "excellentFraction": 0.887,
+      "visibleFraction": 1.0,
+      "groundElevationM": 392.2,
+      "localProminenceM": 1.35,
+      "vegetationRisk": 0.041,
+      "dataConfidence": 0.603,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 4.83,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-128",
+      "representativePoint": [
+        -3.635335,
+        38.104854
+      ],
+      "representativePointUTM": [
+        444298.5,
+        4217639.5
+      ],
+      "areaM2": 6399.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.63,
+      "excellentFraction": 0.714,
+      "visibleFraction": 1.0,
+      "groundElevationM": 420.7,
+      "localProminenceM": 0.69,
+      "vegetationRisk": 0.421,
+      "dataConfidence": 0.731,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 5.91,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Barriada de los Arrayanes"
+    },
+    {
+      "id": "zone-129",
+      "representativePoint": [
+        -3.659689,
+        38.089894
+      ],
+      "representativePointUTM": [
+        442151.5,
+        4215994.5
+      ],
+      "areaM2": 5878.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.84,
+      "excellentFraction": 0.883,
+      "visibleFraction": 1.0,
+      "groundElevationM": 362.7,
+      "localProminenceM": -0.94,
+      "vegetationRisk": 0.502,
+      "dataConfidence": 0.635,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 5.1,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Vega Santa María"
+    },
+    {
+      "id": "zone-130",
+      "representativePoint": [
+        -3.656893,
+        38.10616
+      ],
+      "representativePointUTM": [
+        442409.5,
+        4217797.5
+      ],
+      "areaM2": 5839.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.87,
+      "excellentFraction": 0.889,
+      "visibleFraction": 1.0,
+      "groundElevationM": 405.4,
+      "localProminenceM": 2.27,
+      "vegetationRisk": 0.545,
+      "dataConfidence": 0.638,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.15,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-131",
+      "representativePoint": [
+        -3.647762,
+        38.073224
+      ],
+      "representativePointUTM": [
+        443184.5,
+        4214137.5
+      ],
+      "areaM2": 5814.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.6,
+      "excellentFraction": 0.642,
+      "visibleFraction": 1.0,
+      "groundElevationM": 400.9,
+      "localProminenceM": -0.43,
+      "vegetationRisk": 0.221,
+      "dataConfidence": 0.628,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.06,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-132",
+      "representativePoint": [
+        -3.637499,
+        38.078174
+      ],
+      "representativePointUTM": [
+        444088.5,
+        4214680.5
+      ],
+      "areaM2": 5690.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.79,
+      "excellentFraction": 0.837,
+      "visibleFraction": 1.0,
+      "groundElevationM": 433.3,
+      "localProminenceM": -1.4,
+      "vegetationRisk": 0.069,
+      "dataConfidence": 0.642,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.14,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-133",
+      "representativePoint": [
+        -3.642576,
+        38.086429
+      ],
+      "representativePointUTM": [
+        443649.5,
+        4215599.5
+      ],
+      "areaM2": 5618.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.89,
+      "excellentFraction": 0.896,
+      "visibleFraction": 1.0,
+      "groundElevationM": 407.7,
+      "localProminenceM": -1.2,
+      "vegetationRisk": 0.089,
+      "dataConfidence": 0.744,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.2,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Hospital San Agustin"
+    },
+    {
+      "id": "zone-134",
+      "representativePoint": [
+        -3.617801,
+        38.080064
+      ],
+      "representativePointUTM": [
+        445817.5,
+        4214878.5
+      ],
+      "areaM2": 5368.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.79,
+      "excellentFraction": 0.816,
+      "visibleFraction": 1.0,
+      "groundElevationM": 439.4,
+      "localProminenceM": -1.58,
+      "vegetationRisk": 0.125,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 18.91,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-135",
+      "representativePoint": [
+        -3.662812,
+        38.104838
+      ],
+      "representativePointUTM": [
+        441889.5,
+        4217654.5
+      ],
+      "areaM2": 5115.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.85,
+      "excellentFraction": 0.877,
+      "visibleFraction": 1.0,
+      "groundElevationM": 397.0,
+      "localProminenceM": 3.31,
+      "vegetationRisk": 0.135,
+      "dataConfidence": 0.722,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.81,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-136",
+      "representativePoint": [
+        -3.64271,
+        38.096495
+      ],
+      "representativePointUTM": [
+        443645.5,
+        4216716.5
+      ],
+      "areaM2": 5086.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.66,
+      "excellentFraction": 0.718,
+      "visibleFraction": 1.0,
+      "groundElevationM": 391.1,
+      "localProminenceM": 0.48,
+      "vegetationRisk": 0.564,
+      "dataConfidence": 0.964,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 14.96,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "La Zarzuela"
+    },
+    {
+      "id": "zone-137",
+      "representativePoint": [
+        -3.66079,
+        38.077901
+      ],
+      "representativePointUTM": [
+        442045.5,
+        4214664.5
+      ],
+      "areaM2": 5035.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.75,
+      "excellentFraction": 0.796,
+      "visibleFraction": 1.0,
+      "groundElevationM": 414.8,
+      "localProminenceM": 6.03,
+      "vegetationRisk": 0.03,
+      "dataConfidence": 0.624,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.01,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-138",
+      "representativePoint": [
+        -3.666575,
+        38.109701
+      ],
+      "representativePointUTM": [
+        441563.5,
+        4218196.5
+      ],
+      "areaM2": 4937.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.65,
+      "excellentFraction": 0.721,
+      "visibleFraction": 1.0,
+      "groundElevationM": 402.0,
+      "localProminenceM": -2.18,
+      "vegetationRisk": 0.014,
+      "dataConfidence": 0.888,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 11.29,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Los Salidos"
+    },
+    {
+      "id": "zone-139",
+      "representativePoint": [
+        -3.662823,
+        38.094635
+      ],
+      "representativePointUTM": [
+        441880.5,
+        4216522.5
+      ],
+      "areaM2": 4936.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.74,
+      "excellentFraction": 0.792,
+      "visibleFraction": 1.0,
+      "groundElevationM": 357.1,
+      "localProminenceM": -0.37,
+      "vegetationRisk": 0.126,
+      "dataConfidence": 0.586,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 4.7,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-140",
+      "representativePoint": [
+        -3.669779,
+        38.102121
+      ],
+      "representativePointUTM": [
+        441276.5,
+        4217357.5
+      ],
+      "areaM2": 4841.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.64,
+      "excellentFraction": 0.705,
+      "visibleFraction": 1.0,
+      "groundElevationM": 369.5,
+      "localProminenceM": 0.08,
+      "vegetationRisk": 0.058,
+      "dataConfidence": 0.605,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.84,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-141",
+      "representativePoint": [
+        -3.624339,
+        38.114106
+      ],
+      "representativePointUTM": [
+        445269.5,
+        4218659.5
+      ],
+      "areaM2": 4791.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.69,
+      "excellentFraction": 0.767,
+      "visibleFraction": 1.0,
+      "groundElevationM": 454.8,
+      "localProminenceM": 5.33,
+      "vegetationRisk": 0.024,
+      "dataConfidence": 0.896,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 8.61,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-142",
+      "representativePoint": [
+        -3.619607,
+        38.095448
+      ],
+      "representativePointUTM": [
+        445670.5,
+        4216586.5
+      ],
+      "areaM2": 4488.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.73,
+      "excellentFraction": 0.794,
+      "visibleFraction": 1.0,
+      "groundElevationM": 434.0,
+      "localProminenceM": -2.98,
+      "vegetationRisk": 0.535,
+      "dataConfidence": 0.982,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 10.11,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Estación de Almería"
+    },
+    {
+      "id": "zone-143",
+      "representativePoint": [
+        -3.622078,
+        38.112451
+      ],
+      "representativePointUTM": [
+        445466.5,
+        4218474.5
+      ],
+      "areaM2": 4234.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.59,
+      "excellentFraction": 0.665,
+      "visibleFraction": 1.0,
+      "groundElevationM": 444.9,
+      "localProminenceM": 6.58,
+      "vegetationRisk": 0.221,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 16.53,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-144",
+      "representativePoint": [
+        -3.658049,
+        38.07223
+      ],
+      "representativePointUTM": [
+        442281.5,
+        4214033.5
+      ],
+      "areaM2": 4138.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.79,
+      "excellentFraction": 0.82,
+      "visibleFraction": 1.0,
+      "groundElevationM": 396.8,
+      "localProminenceM": -2.32,
+      "vegetationRisk": 0.426,
+      "dataConfidence": 0.732,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.88,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-145",
+      "representativePoint": [
+        -3.646351,
+        38.095511
+      ],
+      "representativePointUTM": [
+        443325.5,
+        4216609.5
+      ],
+      "areaM2": 4064.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.83,
+      "excellentFraction": 0.866,
+      "visibleFraction": 1.0,
+      "groundElevationM": 390.0,
+      "localProminenceM": 1.54,
+      "vegetationRisk": 0.18,
+      "dataConfidence": 0.708,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.95,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.381,
+      "accessKind": "unverified",
+      "placeName": "Parque Cantarranas"
+    },
+    {
+      "id": "zone-146",
+      "representativePoint": [
+        -3.657684,
+        38.102839
+      ],
+      "representativePointUTM": [
+        442337.5,
+        4217429.5
+      ],
+      "areaM2": 4006.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.79,
+      "excellentFraction": 0.83,
+      "visibleFraction": 1.0,
+      "groundElevationM": 394.8,
+      "localProminenceM": 0.76,
+      "vegetationRisk": 0.045,
+      "dataConfidence": 0.517,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.13,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-147",
+      "representativePoint": [
+        -3.621128,
+        38.090609
+      ],
+      "representativePointUTM": [
+        445533.5,
+        4216050.5
+      ],
+      "areaM2": 3885.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.69,
+      "excellentFraction": 0.749,
+      "visibleFraction": 1.0,
+      "groundElevationM": 455.6,
+      "localProminenceM": 0.69,
+      "vegetationRisk": 0.26,
+      "dataConfidence": 0.996,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 10.63,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Plaza Virgen del Pilar"
+    },
+    {
+      "id": "zone-148",
+      "representativePoint": [
+        -3.664041,
+        38.099441
+      ],
+      "representativePointUTM": [
+        441777.5,
+        4217056.5
+      ],
+      "areaM2": 3876.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.78,
+      "excellentFraction": 0.825,
+      "visibleFraction": 1.0,
+      "groundElevationM": 373.2,
+      "localProminenceM": 0.19,
+      "vegetationRisk": 0.059,
+      "dataConfidence": 0.687,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.89,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-149",
+      "representativePoint": [
+        -3.624735,
+        38.100315
+      ],
+      "representativePointUTM": [
+        445224.5,
+        4217129.5
+      ],
+      "areaM2": 3222.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.87,
+      "excellentFraction": 0.896,
+      "visibleFraction": 1.0,
+      "groundElevationM": 442.8,
+      "localProminenceM": -0.09,
+      "vegetationRisk": 0.028,
+      "dataConfidence": 0.69,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.53,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Parque León Bueno Ordoño"
+    },
+    {
+      "id": "zone-150",
+      "representativePoint": [
+        -3.658414,
+        38.074787
+      ],
+      "representativePointUTM": [
+        442251.5,
+        4214317.5
+      ],
+      "areaM2": 2844.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.72,
+      "excellentFraction": 0.783,
+      "visibleFraction": 1.0,
+      "groundElevationM": 417.1,
+      "localProminenceM": 3.82,
+      "vegetationRisk": 0.001,
+      "dataConfidence": 0.674,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.4,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-151",
+      "representativePoint": [
+        -3.646176,
+        38.096332
+      ],
+      "representativePointUTM": [
+        443341.5,
+        4216700.5
+      ],
+      "areaM2": 2742.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.77,
+      "excellentFraction": 0.821,
+      "visibleFraction": 1.0,
+      "groundElevationM": 392.2,
+      "localProminenceM": 0.49,
+      "vegetationRisk": 0.476,
+      "dataConfidence": 0.967,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 16.32,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Parque Cantarranas"
+    },
+    {
+      "id": "zone-152",
+      "representativePoint": [
+        -3.624327,
+        38.083184
+      ],
+      "representativePointUTM": [
+        445247.5,
+        4215228.5
+      ],
+      "areaM2": 2732.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.65,
+      "excellentFraction": 0.739,
+      "visibleFraction": 1.0,
+      "groundElevationM": 441.3,
+      "localProminenceM": -2.73,
+      "vegetationRisk": 0.272,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 12.55,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-153",
+      "representativePoint": [
+        -3.604454,
+        38.075149
+      ],
+      "representativePointUTM": [
+        446984.5,
+        4214325.5
+      ],
+      "areaM2": 2584.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.91,
+      "excellentFraction": 0.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 356.4,
+      "localProminenceM": 3.03,
+      "vegetationRisk": 0.028,
+      "dataConfidence": 0.98,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 9.79,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-154",
+      "representativePoint": [
+        -3.62215,
+        38.111567
+      ],
+      "representativePointUTM": [
+        445459.5,
+        4218376.5
+      ],
+      "areaM2": 2527.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.84,
+      "excellentFraction": 0.871,
+      "visibleFraction": 1.0,
+      "groundElevationM": 440.3,
+      "localProminenceM": 2.47,
+      "vegetationRisk": 0.053,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 17.19,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-155",
+      "representativePoint": [
+        -3.671264,
+        38.094876
+      ],
+      "representativePointUTM": [
+        441140.5,
+        4216554.5
+      ],
+      "areaM2": 2426.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.87,
+      "excellentFraction": 0.896,
+      "visibleFraction": 1.0,
+      "groundElevationM": 357.3,
+      "localProminenceM": 2.83,
+      "vegetationRisk": 0.122,
+      "dataConfidence": 0.676,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.41,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-156",
+      "representativePoint": [
+        -3.66145,
+        38.108063
+      ],
+      "representativePointUTM": [
+        442011.5,
+        4218011.5
+      ],
+      "areaM2": 2339.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.86,
+      "excellentFraction": 0.883,
+      "visibleFraction": 1.0,
+      "groundElevationM": 409.7,
+      "localProminenceM": 2.22,
+      "vegetationRisk": 0.375,
+      "dataConfidence": 0.797,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.66,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-157",
+      "representativePoint": [
+        -3.624487,
+        38.100722
+      ],
+      "representativePointUTM": [
+        445246.5,
+        4217174.5
+      ],
+      "areaM2": 2293.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.87,
+      "excellentFraction": 0.888,
+      "visibleFraction": 1.0,
+      "groundElevationM": 435.7,
+      "localProminenceM": -1.53,
+      "vegetationRisk": 0.024,
+      "dataConfidence": 0.677,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 5.42,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Parque Pocico de Don Ramón"
+    },
+    {
+      "id": "zone-158",
+      "representativePoint": [
+        -3.66819,
+        38.097931
+      ],
+      "representativePointUTM": [
+        441412.5,
+        4216891.5
+      ],
+      "areaM2": 2178.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.87,
+      "excellentFraction": 0.893,
+      "visibleFraction": 1.0,
+      "groundElevationM": 366.1,
+      "localProminenceM": -0.51,
+      "vegetationRisk": 0.064,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 12.67,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-159",
+      "representativePoint": [
+        -3.667591,
+        38.107334
+      ],
+      "representativePointUTM": [
+        441472.5,
+        4217934.5
+      ],
+      "areaM2": 2040.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.49,
+      "excellentFraction": 0.584,
+      "visibleFraction": 1.0,
+      "groundElevationM": 393.6,
+      "localProminenceM": -2.73,
+      "vegetationRisk": 0.013,
+      "dataConfidence": 0.714,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.72,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Los Salidos"
+    },
+    {
+      "id": "zone-160",
+      "representativePoint": [
+        -3.663333,
+        38.098111
+      ],
+      "representativePointUTM": [
+        441838.5,
+        4216908.5
+      ],
+      "areaM2": 1902.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.83,
+      "excellentFraction": 0.855,
+      "visibleFraction": 1.0,
+      "groundElevationM": 367.1,
+      "localProminenceM": -0.92,
+      "vegetationRisk": 0.203,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 12.18,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-161",
+      "representativePoint": [
+        -3.665622,
+        38.087635
+      ],
+      "representativePointUTM": [
+        441629.5,
+        4215747.5
+      ],
+      "areaM2": 1878.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.72,
+      "excellentFraction": 0.788,
+      "visibleFraction": 1.0,
+      "groundElevationM": 348.0,
+      "localProminenceM": -1.58,
+      "vegetationRisk": 0.264,
+      "dataConfidence": 0.593,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.75,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-162",
+      "representativePoint": [
+        -3.640264,
+        38.097176
+      ],
+      "representativePointUTM": [
+        443860.5,
+        4216790.5
+      ],
+      "areaM2": 1807.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.58,
+      "excellentFraction": 0.608,
+      "visibleFraction": 1.0,
+      "groundElevationM": 396.8,
+      "localProminenceM": 0.95,
+      "vegetationRisk": 0.319,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 11.98,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Mercado de Abastos"
+    },
+    {
+      "id": "zone-163",
+      "representativePoint": [
+        -3.641207,
+        38.108499
+      ],
+      "representativePointUTM": [
+        443786.5,
+        4218047.5
+      ],
+      "areaM2": 1672.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.81,
+      "excellentFraction": 0.878,
+      "visibleFraction": 1.0,
+      "groundElevationM": 431.9,
+      "localProminenceM": 4.36,
+      "vegetationRisk": 0.161,
+      "dataConfidence": 0.714,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.75,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-164",
+      "representativePoint": [
+        -3.608177,
+        38.117129
+      ],
+      "representativePointUTM": [
+        446688.5,
+        4218985.5
+      ],
+      "areaM2": 1610.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.64,
+      "excellentFraction": 0.722,
+      "visibleFraction": 1.0,
+      "groundElevationM": 462.9,
+      "localProminenceM": 7.36,
+      "vegetationRisk": 0.02,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 11.48,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-165",
+      "representativePoint": [
+        -3.662927,
+        38.091066
+      ],
+      "representativePointUTM": [
+        441868.5,
+        4216126.5
+      ],
+      "areaM2": 1599.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.85,
+      "excellentFraction": 0.862,
+      "visibleFraction": 1.0,
+      "groundElevationM": 355.8,
+      "localProminenceM": -0.4,
+      "vegetationRisk": 0.223,
+      "dataConfidence": 0.673,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.43,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Vega Santa María"
+    },
+    {
+      "id": "zone-166",
+      "representativePoint": [
+        -3.664883,
+        38.101726
+      ],
+      "representativePointUTM": [
+        441705.5,
+        4217310.5
+      ],
+      "areaM2": 1545.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.69,
+      "excellentFraction": 0.759,
+      "visibleFraction": 1.0,
+      "groundElevationM": 371.2,
+      "localProminenceM": -3.87,
+      "vegetationRisk": 0.179,
+      "dataConfidence": 0.628,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 5.05,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-167",
+      "representativePoint": [
+        -3.667972,
+        38.09156
+      ],
+      "representativePointUTM": [
+        441426.5,
+        4216184.5
+      ],
+      "areaM2": 1516.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.72,
+      "excellentFraction": 0.771,
+      "visibleFraction": 1.0,
+      "groundElevationM": 347.2,
+      "localProminenceM": 1.25,
+      "vegetationRisk": 0.576,
+      "dataConfidence": 0.638,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.12,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-168",
+      "representativePoint": [
+        -3.628995,
+        38.098417
+      ],
+      "representativePointUTM": [
+        444849.5,
+        4216921.5
+      ],
+      "areaM2": 1508.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.86,
+      "excellentFraction": 0.888,
+      "visibleFraction": 1.0,
+      "groundElevationM": 431.0,
+      "localProminenceM": -1.0,
+      "vegetationRisk": 0.274,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 13.68,
+      "parkingFraction": 0.243,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.49,
+      "accessKind": "unverified",
+      "placeName": "Jardin Polideportivo San José"
+    },
+    {
+      "id": "zone-169",
+      "representativePoint": [
+        -3.617466,
+        38.079597
+      ],
+      "representativePointUTM": [
+        445846.5,
+        4214826.5
+      ],
+      "areaM2": 1486.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.83,
+      "excellentFraction": 0.874,
+      "visibleFraction": 1.0,
+      "groundElevationM": 435.0,
+      "localProminenceM": -1.66,
+      "vegetationRisk": 0.068,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 17.89,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-170",
+      "representativePoint": [
+        -3.627978,
+        38.103524
+      ],
+      "representativePointUTM": [
+        444942.5,
+        4217487.5
+      ],
+      "areaM2": 1472.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.84,
+      "excellentFraction": 0.865,
+      "visibleFraction": 1.0,
+      "groundElevationM": 418.9,
+      "localProminenceM": 1.5,
+      "vegetationRisk": 0.081,
+      "dataConfidence": 0.726,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.83,
+      "parkingFraction": 0.477,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.948,
+      "accessKind": "public",
+      "placeName": "Parque de la Virgen de Linarejos"
+    },
+    {
+      "id": "zone-171",
+      "representativePoint": [
+        -3.633047,
+        38.101352
+      ],
+      "representativePointUTM": [
+        444496.5,
+        4217249.5
+      ],
+      "areaM2": 1456.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.61,
+      "excellentFraction": 0.681,
+      "visibleFraction": 1.0,
+      "groundElevationM": 410.3,
+      "localProminenceM": 0.28,
+      "vegetationRisk": 0.455,
+      "dataConfidence": 0.553,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.43,
+      "parkingFraction": 0.628,
+      "surfaceKind": "car park",
+      "walkableFraction": 0.92,
+      "accessKind": "public",
+      "placeName": "Parque de María Pineda"
+    },
+    {
+      "id": "zone-172",
+      "representativePoint": [
+        -3.620377,
+        38.093497
+      ],
+      "representativePointUTM": [
+        445601.5,
+        4216370.5
+      ],
+      "areaM2": 1172.0,
+      "minClearanceClass": "good",
+      "minClearanceDeg": 1.0,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.72,
+      "excellentFraction": 0.788,
+      "visibleFraction": 1.0,
+      "groundElevationM": 445.1,
+      "localProminenceM": 0.62,
+      "vegetationRisk": 0.381,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 20.95,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.617,
+      "accessKind": "public",
+      "placeName": "Estación de Almería"
+    },
+    {
+      "id": "zone-173",
+      "representativePoint": [
+        -3.660472,
+        38.081842
+      ],
+      "representativePointUTM": [
+        442076.5,
+        4215101.5
+      ],
+      "areaM2": 57413.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.53,
+      "excellentFraction": 0.65,
+      "visibleFraction": 1.0,
+      "groundElevationM": 361.9,
+      "localProminenceM": -1.3,
+      "vegetationRisk": 0.094,
+      "dataConfidence": 0.862,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 10.18,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-174",
+      "representativePoint": [
+        -3.607402,
+        38.099324
+      ],
+      "representativePointUTM": [
+        446743.5,
+        4217009.5
+      ],
+      "areaM2": 41687.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.53,
+      "excellentFraction": 0.651,
+      "visibleFraction": 1.0,
+      "groundElevationM": 474.3,
+      "localProminenceM": 2.01,
+      "vegetationRisk": 0.023,
+      "dataConfidence": 0.999,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 13.78,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-175",
+      "representativePoint": [
+        -3.606186,
+        38.109542
+      ],
+      "representativePointUTM": [
+        446857.5,
+        4218142.5
+      ],
+      "areaM2": 25786.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.23,
+      "excellentFraction": 0.404,
+      "visibleFraction": 1.0,
+      "groundElevationM": 410.3,
+      "localProminenceM": -1.83,
+      "vegetationRisk": 0.131,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 16.79,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-176",
+      "representativePoint": [
+        -3.604894,
+        38.07731
+      ],
+      "representativePointUTM": [
+        446947.5,
+        4214565.5
+      ],
+      "areaM2": 18508.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.72,
+      "excellentFraction": 0.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 383.2,
+      "localProminenceM": 8.74,
+      "vegetationRisk": 0.017,
+      "dataConfidence": 0.991,
+      "mainEdgeObstacle": "none",
+      "pointDensity": 12.18,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-177",
+      "representativePoint": [
+        -3.609685,
+        38.073518
+      ],
+      "representativePointUTM": [
+        446524.5,
+        4214147.5
+      ],
+      "areaM2": 14558.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.84,
+      "excellentFraction": 0.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 349.4,
+      "localProminenceM": -1.53,
+      "vegetationRisk": 0.0,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 12.63,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-178",
+      "representativePoint": [
+        -3.615584,
+        38.080833
+      ],
+      "representativePointUTM": [
+        446012.5,
+        4214962.5
+      ],
+      "areaM2": 7932.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.3,
+      "excellentFraction": 0.457,
+      "visibleFraction": 1.0,
+      "groundElevationM": 446.8,
+      "localProminenceM": 3.22,
+      "vegetationRisk": 0.004,
+      "dataConfidence": 0.99,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 12.24,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-179",
+      "representativePoint": [
+        -3.604645,
+        38.087216
+      ],
+      "representativePointUTM": [
+        446976.5,
+        4215664.5
+      ],
+      "areaM2": 6170.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.24,
+      "excellentFraction": 0.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 405.7,
+      "localProminenceM": 0.27,
+      "vegetationRisk": 0.002,
+      "dataConfidence": 0.971,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 8.86,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-180",
+      "representativePoint": [
+        -3.657457,
+        38.078704
+      ],
+      "representativePointUTM": [
+        442338.5,
+        4214751.5
+      ],
+      "areaM2": 5959.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.87,
+      "excellentFraction": 0.054,
+      "visibleFraction": 1.0,
+      "groundElevationM": 370.0,
+      "localProminenceM": -5.45,
+      "vegetationRisk": 0.008,
+      "dataConfidence": 0.632,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.06,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-181",
+      "representativePoint": [
+        -3.636332,
+        38.080425
+      ],
+      "representativePointUTM": [
+        444192.5,
+        4214929.5
+      ],
+      "areaM2": 5946.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.1,
+      "excellentFraction": 0.28,
+      "visibleFraction": 1.0,
+      "groundElevationM": 441.9,
+      "localProminenceM": 1.94,
+      "vegetationRisk": 0.078,
+      "dataConfidence": 0.751,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.04,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-182",
+      "representativePoint": [
+        -3.667302,
+        38.114474
+      ],
+      "representativePointUTM": [
+        441503.5,
+        4218726.5
+      ],
+      "areaM2": 5147.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.5,
+      "excellentFraction": 0.617,
+      "visibleFraction": 1.0,
+      "groundElevationM": 418.7,
+      "localProminenceM": 0.04,
+      "vegetationRisk": 0.014,
+      "dataConfidence": 0.635,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.36,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-183",
+      "representativePoint": [
+        -3.60461,
+        38.085792
+      ],
+      "representativePointUTM": [
+        446978.5,
+        4215506.5
+      ],
+      "areaM2": 4903.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.22,
+      "excellentFraction": 0.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 394.4,
+      "localProminenceM": 1.8,
+      "vegetationRisk": 0.002,
+      "dataConfidence": 0.971,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 9.09,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-184",
+      "representativePoint": [
+        -3.622258,
+        38.078526
+      ],
+      "representativePointUTM": [
+        445425.5,
+        4214710.5
+      ],
+      "areaM2": 4260.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.19,
+      "excellentFraction": 0.338,
+      "visibleFraction": 1.0,
+      "groundElevationM": 431.7,
+      "localProminenceM": -0.58,
+      "vegetationRisk": 0.008,
+      "dataConfidence": 0.997,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 15.1,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-185",
+      "representativePoint": [
+        -3.657062,
+        38.075345
+      ],
+      "representativePointUTM": [
+        442370.5,
+        4214378.5
+      ],
+      "areaM2": 4135.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.52,
+      "excellentFraction": 0.643,
+      "visibleFraction": 1.0,
+      "groundElevationM": 415.4,
+      "localProminenceM": 2.68,
+      "vegetationRisk": 0.0,
+      "dataConfidence": 0.754,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.04,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-186",
+      "representativePoint": [
+        -3.658147,
+        38.074329
+      ],
+      "representativePointUTM": [
+        442274.5,
+        4214266.5
+      ],
+      "areaM2": 4091.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.4,
+      "excellentFraction": 0.509,
+      "visibleFraction": 1.0,
+      "groundElevationM": 409.9,
+      "localProminenceM": 1.36,
+      "vegetationRisk": 0.009,
+      "dataConfidence": 0.726,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.82,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-187",
+      "representativePoint": [
+        -3.661683,
+        38.094714
+      ],
+      "representativePointUTM": [
+        441980.5,
+        4216530.5
+      ],
+      "areaM2": 3926.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.39,
+      "excellentFraction": 0.521,
+      "visibleFraction": 1.0,
+      "groundElevationM": 352.2,
+      "localProminenceM": -7.11,
+      "vegetationRisk": 0.009,
+      "dataConfidence": 0.623,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.98,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-188",
+      "representativePoint": [
+        -3.639918,
+        38.09807
+      ],
+      "representativePointUTM": [
+        443891.5,
+        4216889.5
+      ],
+      "areaM2": 3619.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.43,
+      "excellentFraction": 0.549,
+      "visibleFraction": 1.0,
+      "groundElevationM": 394.8,
+      "localProminenceM": -1.15,
+      "vegetationRisk": 0.205,
+      "dataConfidence": 0.987,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 11.65,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "La Zarzuela"
+    },
+    {
+      "id": "zone-189",
+      "representativePoint": [
+        -3.630099,
+        38.102079
+      ],
+      "representativePointUTM": [
+        444755.5,
+        4217328.5
+      ],
+      "areaM2": 3467.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.31,
+      "excellentFraction": 0.487,
+      "visibleFraction": 1.0,
+      "groundElevationM": 415.4,
+      "localProminenceM": -0.14,
+      "vegetationRisk": 0.069,
+      "dataConfidence": 0.696,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.58,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Paseo de la Virgen de Linarejos"
+    },
+    {
+      "id": "zone-190",
+      "representativePoint": [
+        -3.604626,
+        38.097401
+      ],
+      "representativePointUTM": [
+        446985.5,
+        4216794.5
+      ],
+      "areaM2": 2976.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.75,
+      "excellentFraction": 0.081,
+      "visibleFraction": 1.0,
+      "groundElevationM": 452.3,
+      "localProminenceM": -2.9,
+      "vegetationRisk": 0.027,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 19.87,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-191",
+      "representativePoint": [
+        -3.631051,
+        38.102678
+      ],
+      "representativePointUTM": [
+        444672.5,
+        4217395.5
+      ],
+      "areaM2": 2893.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.28,
+      "excellentFraction": 0.458,
+      "visibleFraction": 1.0,
+      "groundElevationM": 409.4,
+      "localProminenceM": -1.81,
+      "vegetationRisk": 0.019,
+      "dataConfidence": 0.543,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.35,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Paseo de la Virgen de Linarejos"
+    },
+    {
+      "id": "zone-192",
+      "representativePoint": [
+        -3.667452,
+        38.109633
+      ],
+      "representativePointUTM": [
+        441486.5,
+        4218189.5
+      ],
+      "areaM2": 2849.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.98,
+      "excellentFraction": 0.158,
+      "visibleFraction": 1.0,
+      "groundElevationM": 401.6,
+      "localProminenceM": -0.82,
+      "vegetationRisk": 0.462,
+      "dataConfidence": 0.913,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 11.85,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Los Salidos"
+    },
+    {
+      "id": "zone-193",
+      "representativePoint": [
+        -3.605972,
+        38.076746
+      ],
+      "representativePointUTM": [
+        446852.5,
+        4214503.5
+      ],
+      "areaM2": 2838.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.01,
+      "excellentFraction": 0.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 369.5,
+      "localProminenceM": 1.31,
+      "vegetationRisk": 0.048,
+      "dataConfidence": 0.981,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 9.96,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-194",
+      "representativePoint": [
+        -3.60818,
+        38.116119
+      ],
+      "representativePointUTM": [
+        446687.5,
+        4218873.5
+      ],
+      "areaM2": 2780.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.53,
+      "excellentFraction": 0.649,
+      "visibleFraction": 1.0,
+      "groundElevationM": 457.9,
+      "localProminenceM": 4.9,
+      "vegetationRisk": 0.056,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 11.29,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-195",
+      "representativePoint": [
+        -3.62281,
+        38.103281
+      ],
+      "representativePointUTM": [
+        445395.5,
+        4217457.5
+      ],
+      "areaM2": 2604.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.44,
+      "excellentFraction": 0.547,
+      "visibleFraction": 1.0,
+      "groundElevationM": 421.6,
+      "localProminenceM": -1.5,
+      "vegetationRisk": 0.088,
+      "dataConfidence": 0.788,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 6.36,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 1.0,
+      "accessKind": "public",
+      "placeName": "Estadio municipal de Linarejos"
+    },
+    {
+      "id": "zone-196",
+      "representativePoint": [
+        -3.60542,
+        38.096928
+      ],
+      "representativePointUTM": [
+        446915.5,
+        4216742.5
+      ],
+      "areaM2": 2387.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.12,
+      "excellentFraction": 0.289,
+      "visibleFraction": 1.0,
+      "groundElevationM": 451.9,
+      "localProminenceM": -0.88,
+      "vegetationRisk": 0.221,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 19.74,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-197",
+      "representativePoint": [
+        -3.666867,
+        38.107987
+      ],
+      "representativePointUTM": [
+        441536.5,
+        4218006.5
+      ],
+      "areaM2": 2244.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.46,
+      "excellentFraction": 0.604,
+      "visibleFraction": 1.0,
+      "groundElevationM": 394.9,
+      "localProminenceM": -3.54,
+      "vegetationRisk": 0.021,
+      "dataConfidence": 0.696,
+      "mainEdgeObstacle": "building",
+      "pointDensity": 5.58,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": "Los Salidos"
+    },
+    {
+      "id": "zone-198",
+      "representativePoint": [
+        -3.619727,
+        38.08
+      ],
+      "representativePointUTM": [
+        445648.5,
+        4214872.5
+      ],
+      "areaM2": 2154.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.05,
+      "excellentFraction": 0.194,
+      "visibleFraction": 1.0,
+      "groundElevationM": 446.6,
+      "localProminenceM": 4.46,
+      "vegetationRisk": 0.0,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 20.71,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-199",
+      "representativePoint": [
+        -3.606304,
+        38.075455
+      ],
+      "representativePointUTM": [
+        446822.5,
+        4214360.5
+      ],
+      "areaM2": 2105.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.15,
+      "excellentFraction": 0.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 356.3,
+      "localProminenceM": 0.51,
+      "vegetationRisk": 0.007,
+      "dataConfidence": 0.985,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 10.23,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-200",
+      "representativePoint": [
+        -3.617285,
+        38.097326
+      ],
+      "representativePointUTM": [
+        445875.5,
+        4216793.5
+      ],
+      "areaM2": 1980.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.54,
+      "excellentFraction": 0.018,
+      "visibleFraction": 1.0,
+      "groundElevationM": 443.1,
+      "localProminenceM": -1.56,
+      "vegetationRisk": 0.003,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 18.32,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-201",
+      "representativePoint": [
+        -3.615887,
+        38.096531
+      ],
+      "representativePointUTM": [
+        445997.5,
+        4216704.5
+      ],
+      "areaM2": 1956.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.53,
+      "excellentFraction": 0.635,
+      "visibleFraction": 1.0,
+      "groundElevationM": 439.8,
+      "localProminenceM": -1.31,
+      "vegetationRisk": 0.017,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 21.22,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-202",
+      "representativePoint": [
+        -3.612969,
+        38.073573
+      ],
+      "representativePointUTM": [
+        446236.5,
+        4214155.5
+      ],
+      "areaM2": 1827.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.13,
+      "excellentFraction": 0.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 356.4,
+      "localProminenceM": -2.46,
+      "vegetationRisk": 0.0,
+      "dataConfidence": 0.991,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 10.1,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-203",
+      "representativePoint": [
+        -3.616821,
+        38.081538
+      ],
+      "representativePointUTM": [
+        445904.5,
+        4215041.5
+      ],
+      "areaM2": 1792.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.97,
+      "excellentFraction": 0.261,
+      "visibleFraction": 1.0,
+      "groundElevationM": 444.7,
+      "localProminenceM": -1.05,
+      "vegetationRisk": 0.103,
+      "dataConfidence": 0.965,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 9.26,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-204",
+      "representativePoint": [
+        -3.650737,
+        38.094982
+      ],
+      "representativePointUTM": [
+        442940.5,
+        4216553.5
+      ],
+      "areaM2": 1647.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.84,
+      "excellentFraction": 0.162,
+      "visibleFraction": 1.0,
+      "groundElevationM": 370.3,
+      "localProminenceM": -4.47,
+      "vegetationRisk": 0.058,
+      "dataConfidence": 0.523,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 4.19,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-205",
+      "representativePoint": [
+        -3.610823,
+        38.074621
+      ],
+      "representativePointUTM": [
+        446425.5,
+        4214270.5
+      ],
+      "areaM2": 1556.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 2.0,
+      "excellentFraction": 0.0,
+      "visibleFraction": 1.0,
+      "groundElevationM": 371.6,
+      "localProminenceM": 4.95,
+      "vegetationRisk": 0.027,
+      "dataConfidence": 1.0,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 11.02,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-206",
+      "representativePoint": [
+        -3.613799,
+        38.108691
+      ],
+      "representativePointUTM": [
+        446189.5,
+        4218052.5
+      ],
+      "areaM2": 1506.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.5,
+      "excellentFraction": 0.605,
+      "visibleFraction": 1.0,
+      "groundElevationM": 424.0,
+      "localProminenceM": -0.11,
+      "vegetationRisk": 0.062,
+      "dataConfidence": 0.996,
+      "mainEdgeObstacle": "vegetation",
+      "pointDensity": 9.83,
+      "parkingFraction": 0.0,
+      "surfaceKind": "open space",
+      "walkableFraction": 0.0,
+      "accessKind": "unverified",
+      "placeName": null
+    },
+    {
+      "id": "zone-207",
+      "representativePoint": [
+        -3.643766,
+        38.089424
+      ],
+      "representativePointUTM": [
+        443547.5,
+        4215932.5
+      ],
+      "areaM2": 1349.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.3,
+      "excellentFraction": 0.473,
+      "visibleFraction": 1.0,
+      "groundElevationM": 409.5,
+      "localProminenceM": 0.96,
+      "vegetationRisk": 0.543,
+      "dataConfidence": 0.636,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 5.09,
+      "parkingFraction": 0.93,
+      "surfaceKind": "car park",
+      "walkableFraction": 1.0,
+      "accessKind": "public",
+      "placeName": "Hospital San Agustin"
+    },
+    {
+      "id": "zone-208",
+      "representativePoint": [
+        -3.644366,
+        38.088898
+      ],
+      "representativePointUTM": [
+        443494.5,
+        4215874.5
+      ],
+      "areaM2": 1189.0,
+      "minClearanceClass": "acceptable",
+      "minClearanceDeg": 0.5,
+      "worstClearanceClass": "acceptable",
+      "meanClearanceClass": 3.31,
+      "excellentFraction": 0.457,
+      "visibleFraction": 1.0,
+      "groundElevationM": 410.1,
+      "localProminenceM": 2.45,
+      "vegetationRisk": 0.626,
+      "dataConfidence": 0.606,
+      "mainEdgeObstacle": "terrain",
+      "pointDensity": 4.87,
+      "parkingFraction": 0.944,
+      "surfaceKind": "car park",
+      "walkableFraction": 1.0,
+      "accessKind": "public",
+      "placeName": "Hospital San Agustin"
+    }
+  ]
+}

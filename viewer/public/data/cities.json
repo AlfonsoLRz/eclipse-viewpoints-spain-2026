@@ -1,0 +1,35 @@
+{
+  "generated_by": "pipeline/write_city_index.py",
+  "cities": [
+    {
+      "slug": "zaragoza",
+      "name": "Zaragoza",
+      "isTotal": true,
+      "obscuration": 1.0,
+      "center": [
+        -0.915967,
+        41.663343
+      ]
+    },
+    {
+      "slug": "linares",
+      "name": "Linares",
+      "isTotal": false,
+      "obscuration": 0.9715,
+      "center": [
+        -3.63864,
+        38.094561
+      ]
+    },
+    {
+      "slug": "jaen",
+      "name": "Jaén",
+      "isTotal": false,
+      "obscuration": 0.9658,
+      "center": [
+        -3.754954,
+        37.764879
+      ]
+    }
+  ]
+}

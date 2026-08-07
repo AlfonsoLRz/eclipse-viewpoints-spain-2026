@@ -28,11 +28,10 @@ viewer/public/data/*/tiles/rgb/
 # the committed data advertises a feature the live site does not have.
 viewer/public/data/*/buildings.geojson
 
-# Linares and Jaén are local experiments and are not deployed. Only Zaragoza is
-# published, so their data products stay out of the repository rather than inflating
-# a site that does not serve them.
-viewer/public/data/linares/
-viewer/public/data/jaen/
+# All three cities are published, so their data products are committed alongside
+# Zaragoza's. Together they come to roughly 345 MB against the GitHub Pages 1 GB cap.
+# The orthophoto tile sets are still excluded by the rule above; only the five shadow
+# scales and the JSON products are served.
 
 viewer/dist/
 linares_run.sh

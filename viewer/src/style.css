@@ -147,6 +147,33 @@ header .sub { margin: 0 0 16px; color: var(--muted); font-size: 13px; }
 
 .zone-lines { margin: 7px 0 0; font-size: 12.3px; color: var(--muted); }
 .zone-lines div { margin-bottom: 2px; }
+/* City picker. Anchors rather than buttons: each city is a real URL, so it can be
+   bookmarked, shared, and opened in a new tab like any other link. */
+#city-picker {
+  display: flex;
+  gap: 3px;
+  margin: 12px 0 16px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: rgba(0, 0, 0, .22);
+}
+#city-picker.hidden { display: none; }
+#city-picker .city {
+  flex: 1;
+  text-align: center;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+#city-picker .city:hover { color: var(--text); background: rgba(255, 255, 255, .06); }
+#city-picker .city.active { background: var(--accent); color: #1a1400; }
+
 .zone-why { margin-top: 6px; font-size: 12px; color: #b9c4d6; font-style: italic; }
 
 /* Access-unverified zones: a badge to spot them in a scan, a caveat because a badge

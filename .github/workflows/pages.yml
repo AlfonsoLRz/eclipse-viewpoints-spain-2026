@@ -50,14 +50,23 @@ jobs:
 
       - name: Check the data products made it into the build
         working-directory: viewer
+        # Data is per-city under dist/data/<city>/ so more than one map can be served
+        # from one build. Every city present must be complete: a half-copied city would
+        # otherwise deploy and only fail in the browser.
         run: |
-          test -f dist/data/layers.json
-          test -f dist/data/candidates.json
-          test -f dist/data/laz_coverage.geojson
-          for ramp in classes viridis traffic binary mono; do
-            test -d "dist/data/tiles/$ramp" || { echo "missing tiles: $ramp"; exit 1; }
+          cities=$(find dist/data -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)
+          test -n "$cities" || { echo "no city data in dist/data"; exit 1; }
+          for city in $cities; do
+            for f in layers.json candidates.json eclipse_metadata.json laz_coverage.geojson; do
+              test -f "dist/data/$city/$f" || { echo "$city: missing $f"; exit 1; }
+            done
+            for ramp in classes viridis traffic binary mono; do
+              test -d "dist/data/$city/tiles/$ramp" || { echo "$city: missing tiles $ramp"; exit 1; }
+            done
+            echo "$city: $(find dist/data/$city/tiles -name '*.png' | wc -l) tiles"
           done
-          echo "tiles: $(find dist/data/tiles -name '*.png' | wc -l) png, $(du -sh dist | cut -f1) total"
+          echo "published cities: $(echo $cities | tr '\n' ' ')"
+          echo "total: $(du -sh dist | cut -f1)"
 
       - uses: actions/upload-pages-artifact@v3
         with:

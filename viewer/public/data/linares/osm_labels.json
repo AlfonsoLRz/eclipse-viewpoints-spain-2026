@@ -1,0 +1,381 @@
+{
+  "count": 47,
+  "labels": [
+    {
+      "name": "Los Salidos",
+      "lonlat": [
+        -3.669446,
+        38.10992
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Vega Santa María",
+      "lonlat": [
+        -3.661915,
+        38.090534
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Estación de Almería",
+      "lonlat": [
+        -3.622399,
+        38.094853
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "La Florida",
+      "lonlat": [
+        -3.63884,
+        38.088487
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Barriada de los Arrayanes",
+      "lonlat": [
+        -3.635414,
+        38.107359
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "La Zarzuela",
+      "lonlat": [
+        -3.643297,
+        38.098534
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Santana",
+      "lonlat": [
+        -3.620487,
+        38.105011
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "La Paz",
+      "lonlat": [
+        -3.62523,
+        38.086976
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Hospital San Agustin",
+      "lonlat": [
+        -3.643534,
+        38.088835
+      ],
+      "kind": "hospital"
+    },
+    {
+      "name": "Parque Félix Rodríguez de la Fuente",
+      "lonlat": [
+        -3.644129,
+        38.090193
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza San Juan Bosco",
+      "lonlat": [
+        -3.635199,
+        38.099366
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de María Pineda",
+      "lonlat": [
+        -3.635039,
+        38.101307
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Estadio municipal de Linarejos",
+      "lonlat": [
+        -3.623075,
+        38.103267
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Plaza Virgen del Pilar",
+      "lonlat": [
+        -3.624152,
+        38.089648
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza Poeta Federico García Lorca",
+      "lonlat": [
+        -3.624347,
+        38.086669
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque Blas Infante",
+      "lonlat": [
+        -3.640489,
+        38.091165
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "EUP Linares",
+      "lonlat": [
+        -3.628027,
+        38.092919
+      ],
+      "kind": "university"
+    },
+    {
+      "name": "EUP Linares",
+      "lonlat": [
+        -3.62796,
+        38.092443
+      ],
+      "kind": "university"
+    },
+    {
+      "name": "Paseo de la Virgen de Linarejos",
+      "lonlat": [
+        -3.630879,
+        38.100115
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza San Agustin",
+      "lonlat": [
+        -3.635926,
+        38.099191
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza de Santa María",
+      "lonlat": [
+        -3.635627,
+        38.092881
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza del Ayuntamiento",
+      "lonlat": [
+        -3.635968,
+        38.093549
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Parque de la Soga",
+      "lonlat": [
+        -3.626365,
+        38.097858
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque León Bueno Ordoño",
+      "lonlat": [
+        -3.626067,
+        38.098492
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de la Estación de Almería",
+      "lonlat": [
+        -3.622898,
+        38.096146
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de Ciudad Jardín",
+      "lonlat": [
+        -3.622014,
+        38.098195
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de Ciudad Jardín",
+      "lonlat": [
+        -3.621535,
+        38.098346
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque La Constancia",
+      "lonlat": [
+        -3.628661,
+        38.09644
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de Santa Margarita",
+      "lonlat": [
+        -3.632346,
+        38.097769
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de la Virgen de Linarejos",
+      "lonlat": [
+        -3.625692,
+        38.104921
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque Colón",
+      "lonlat": [
+        -3.62911,
+        38.094804
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque Colón",
+      "lonlat": [
+        -3.629158,
+        38.094383
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Mercado de Abastos",
+      "lonlat": [
+        -3.637648,
+        38.095798
+      ],
+      "kind": "marketplace"
+    },
+    {
+      "name": "Parque La Paz",
+      "lonlat": [
+        -3.626667,
+        38.08807
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de Los Marqueses",
+      "lonlat": [
+        -3.627886,
+        38.088296
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque Pocico de Don Ramón",
+      "lonlat": [
+        -3.625322,
+        38.102589
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque Cantarranas",
+      "lonlat": [
+        -3.646517,
+        38.09391
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza Alfonso XII Nueva",
+      "lonlat": [
+        -3.631857,
+        38.091969
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza San Francisco",
+      "lonlat": [
+        -3.632084,
+        38.094543
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza del Gallo",
+      "lonlat": [
+        -3.632263,
+        38.091535
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza de las 7 Esquinas",
+      "lonlat": [
+        -3.634673,
+        38.091152
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque Santuario",
+      "lonlat": [
+        -3.624227,
+        38.106699
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Jardines San José",
+      "lonlat": [
+        -3.629511,
+        38.097645
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Jardin Polideportivo San José",
+      "lonlat": [
+        -3.628412,
+        38.097753
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque El Silo Pintado",
+      "lonlat": [
+        -3.626423,
+        38.095954
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza de la Basílica",
+      "lonlat": [
+        -3.634983,
+        38.092357
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Jardines de la Estación de Madrid",
+      "lonlat": [
+        -3.631567,
+        38.100129
+      ],
+      "kind": "park"
+    }
+  ]
+}

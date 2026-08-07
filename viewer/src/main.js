@@ -361,6 +361,33 @@ function renderFacts () {
   `
 }
 
+// City picker. The list comes from data/cities.json, written by
+// pipeline/write_city_index.py from each city's own metadata, so a city only appears once
+// its data is actually complete and adding a fourth needs no change here.
+//
+// Switching navigates rather than swapping data in place: every source, layer and tile
+// pyramid on the map belongs to one city, and tearing all that down correctly is more
+// fragile than a reload for something a visitor does once or twice.
+async function renderCityPicker () {
+  let doc
+  try {
+    doc = await (await fetch('./data/cities.json')).json()
+  } catch {
+    return
+  }
+  const cities = doc.cities || []
+  if (cities.length < 2) return
+
+  const nav = document.getElementById('city-picker')
+  nav.innerHTML = cities.map(c => {
+    const on = c.slug === CITY
+    const label = c.isTotal ? 'total eclipse' : `${(c.obscuration * 100).toFixed(1)}% covered`
+    return `<a class="city${on ? ' active' : ''}" href="?city=${c.slug}"
+      title="${c.name}, ${label}"${on ? ' aria-current="page"' : ''}>${c.name}</a>`
+  }).join('')
+  nav.classList.remove('hidden')
+}
+
 // Page title and heading come from the data, so a second city does not need its own HTML.
 function renderIdentity () {
   const m = state.meta
@@ -646,6 +673,7 @@ async function init () {
 
   state.ramp = document.getElementById('ramp').value || 'classes'
 
+  renderCityPicker()
   renderIdentity()
   renderFacts()
   renderSunCard()
