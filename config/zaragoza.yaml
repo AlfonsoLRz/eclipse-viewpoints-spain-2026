@@ -10,7 +10,11 @@ resolution_m: 1.0          # DTM/DSM raster resolution (metres)
 # rectangle [min_easting_km*1000, (max_easting_km+1)*1000] x
 #           [min_northing_km*1000, (max_northing_km+1)*1000]
 laz:
-  glob: "PNOA_2023_ARA_*_H30_NPC02.laz"
+  # 13 x 13 km block (E 667-680, N 4608-4621), 169 tiles. The download covers a wider
+  # 21 x 19 km area, but the visibility scan rotates the whole grid per azimuth and holds
+  # roughly nine of them live, so 399 km2 peaks near 29 GB. 169 km2 peaks near 12 GB,
+  # which fits. Tiles outside this block were deleted; re-download from CNIG to extend.
+  glob: "new_/PNOA_2023_ARA_*_H30_NPC02.laz"
   acquisition_year: 2023
   classes:
     unclassified: [1]

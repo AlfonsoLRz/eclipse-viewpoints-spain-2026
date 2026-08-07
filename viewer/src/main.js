@@ -10,7 +10,7 @@ const DATA = './data'
 // that does not exist; `new URL('.', ...)` strips the filename first.
 const BASE = new URL('.', location.href).pathname.replace(/\/$/, '')
 
-// IGN's public WMTS for PNOA Máxima Actualidad — the same mosaic the offline
+// IGN's public WMTS for PNOA orthophotography, the same imagery the offline
 // pipeline reads, served in GoogleMapsCompatible (EPSG:3857) tiles. It sends
 // `Access-Control-Allow-Origin: *`, so it works from a static host.
 const PNOA_WMTS = 'https://www.ign.es/wmts/pnoa-ma' +
@@ -20,7 +20,7 @@ const PNOA_WMTS = 'https://www.ign.es/wmts/pnoa-ma' +
   '&TileMatrix={z}&TileRow={y}&TileCol={x}'
 
 const CLASS_ORDER = { blocked: 0, fragile: 1, acceptable: 2, good: 3, excellent: 4 }
-const CLASS_DEG = { blocked: '0°', fragile: '0–0.5°', acceptable: '0.5–1°', good: '1–2°', excellent: '2°+' }
+const CLASS_DEG = { blocked: '0°', fragile: '0 to 0.5°', acceptable: '0.5 to 1°', good: '1 to 2°', excellent: '2°+' }
 
 const state = {
   layers: null,
@@ -69,30 +69,30 @@ const RAMPS = {
   classes: {
     label: 'Clearance classes',
     legend: [
-      ['rgba(30,150,70,.75)', 'Excellent — 2°+ clearance'],
-      ['rgba(90,190,90,.75)', 'Good — 1–2°'],
-      ['rgba(180,200,60,.75)', 'Acceptable — 0.5–1°'],
-      ['rgba(230,160,40,.8)', 'Fragile — under 0.5°'],
+      ['rgba(30,150,70,.75)', 'Excellent: over 2° of clearance'],
+      ['rgba(90,190,90,.75)', 'Good: 1 to 2°'],
+      ['rgba(180,200,60,.75)', 'Acceptable: 0.5 to 1°'],
+      ['rgba(230,160,40,.8)', 'Fragile: under 0.5°'],
       ['rgba(40,44,52,.85)', 'Blocked'],
     ],
   },
   viridis: {
     label: 'Viridis (continuous)',
     legend: [
-      ['rgba(253,231,37,.8)', 'Excellent — 2°+'],
-      ['rgba(94,201,98,.8)', 'Good — 1–2°'],
-      ['rgba(33,145,140,.8)', 'Acceptable — 0.5–1°'],
-      ['rgba(59,82,139,.85)', 'Fragile — under 0.5°'],
+      ['rgba(253,231,37,.8)', 'Excellent: over 2°'],
+      ['rgba(94,201,98,.8)', 'Good: 1 to 2°'],
+      ['rgba(33,145,140,.8)', 'Acceptable: 0.5 to 1°'],
+      ['rgba(59,82,139,.85)', 'Fragile: under 0.5°'],
       ['rgba(68,1,84,.9)', 'Blocked'],
     ],
   },
   traffic: {
     label: 'Red → green',
     legend: [
-      ['rgba(26,122,51,.8)', 'Excellent — 2°+'],
-      ['rgba(127,188,65,.8)', 'Good — 1–2°'],
-      ['rgba(230,194,41,.8)', 'Acceptable — 0.5–1°'],
-      ['rgba(217,95,2,.85)', 'Fragile — under 0.5°'],
+      ['rgba(26,122,51,.8)', 'Excellent: over 2°'],
+      ['rgba(127,188,65,.8)', 'Good: 1 to 2°'],
+      ['rgba(230,194,41,.8)', 'Acceptable: 0.5 to 1°'],
+      ['rgba(217,95,2,.85)', 'Fragile: under 0.5°'],
       ['rgba(139,26,26,.9)', 'Blocked'],
     ],
   },
@@ -137,6 +137,12 @@ function rankZones () {
   if (document.getElementById('hide-parking').checked) {
     pool = pool.filter(z => (z.parkingFraction ?? 0) < 0.5)
   }
+  // Zones outside OSM-tagged public space are open, unobstructed ground that nobody has
+  // confirmed you may stand on: field edges, riverside tracks, the land around Juslibol.
+  // Off by default, because the default answer should be somewhere you can simply go.
+  if (!document.getElementById('show-unverified').checked) {
+    pool = pool.filter(z => z.accessKind !== 'unverified')
+  }
 
   const areas = pool.map(z => z.areaM2)
   const maxArea = Math.max(1, ...areas)
@@ -164,6 +170,11 @@ function rankZones () {
     // Car parks are open and usually accessible, but a supermarket apron is a
     // worse place to watch an eclipse than a garden of equal clearance.
     const K = 1 - (z.parkingFraction ?? 0)
+    // Somewhere you can definitely stand beats somewhere you probably cannot. Without
+    // this the size term alone hands the whole ranking to open country the moment
+    // unverified zones are shown: a 19 ha field outscores every park in the city, and
+    // the confirmed public spaces vanish from a list that is supposed to recommend them.
+    const U = z.accessKind === 'unverified' ? 0 : 1
 
     z._score =
       w.clear * V +
@@ -172,7 +183,8 @@ function rankZones () {
       w.area * A +
       w.park * K -
       w.veg * R +
-      0.15 * C
+      0.15 * C +
+      0.45 * U
   }
 
   pool.sort((a, b) => b._score - a._score)
@@ -184,8 +196,8 @@ function rankZones () {
 function zoneWhy (z) {
   const bits = []
   if (z.minClearanceClass === 'excellent') bits.push('over 2° of sky clear above the western horizon')
-  else if (z.minClearanceClass === 'good') bits.push('1–2° of clearance toward the sun')
-  else bits.push('marginal clearance — verify on site')
+  else if (z.minClearanceClass === 'good') bits.push('1 to 2° of clearance toward the sun')
+  else bits.push('marginal clearance, so verify on site')
 
   if (z.areaM2 > 20000) bits.push('plenty of room')
   if (z.vegetationRisk < 0.05) bits.push('almost no tree cover')
@@ -194,9 +206,19 @@ function zoneWhy (z) {
   if (z.mainEdgeObstacle === 'building') bits.push('bounded by buildings')
   else if (z.mainEdgeObstacle === 'vegetation') bits.push('bounded by vegetation')
 
-  if ((z.parkingFraction ?? 0) > 0.5) bits.push('this is a car park — check it is open and quiet')
+  if ((z.parkingFraction ?? 0) > 0.5) bits.push('this is a car park, so check it is open and quiet')
 
   return bits.join(', ')
+}
+
+// Zones outside OSM public space get an explicit caveat rather than only a badge. The
+// badge alone reads as a category label; someone skimming a ranked list will not infer
+// from it that the top result might be a fenced field.
+function accessCaveat (z) {
+  if (z.accessKind !== 'unverified') return ''
+  return `<div class="zone-caveat">Access not confirmed. This is open, clear ground, but it
+    is not tagged as public space and may be private land, a farm track or fenced. Check
+    before relying on it.</div>`
 }
 
 function renderResults () {
@@ -214,7 +236,8 @@ function renderResults () {
     <div class="zone${state.activeZone === z.id ? ' active' : ''}" data-id="${z.id}">
       <div class="zone-head">
         <div class="zone-rank">${i + 1}</div>
-        <div class="zone-title">${z.placeName ? z.placeName : `${fmtArea(z.areaM2)} ${z.surfaceKind || 'open space'}`}</div>
+        <div class="zone-title">${z.placeName ? z.placeName : `${fmtArea(z.areaM2)} ${z.surfaceKind || 'open space'}`}${
+          z.accessKind === 'unverified' ? '<span class="badge-unverified">unverified access</span>' : ''}</div>
         <div class="zone-grade grade-${z.minClearanceClass}">${CLASS_DEG[z.minClearanceClass]}</div>
       </div>
       <div class="zone-lines">
@@ -224,6 +247,7 @@ function renderResults () {
         <div>${fmtArea(z.areaM2)} · ${z.surfaceKind || 'open space'}</div>
       </div>
       <div class="zone-why">${zoneWhy(z)}</div>
+      ${accessCaveat(z)}
     </div>
   `).join('')
 
@@ -327,16 +351,16 @@ function renderLegend () {
   if (state.ramp !== 'mono') {
     html += `<div class="legend-row" style="margin-top:8px">
       <div class="swatch" style="background:rgba(30,150,70,.75)"></div>
-      <span><b>Solid</b> — reachable public space (parks, squares, car parks)</span>
+      <span><b>Solid.</b> Reachable public space (parks, squares, car parks)</span>
     </div>
     <div class="legend-row">
       <div class="swatch" style="background:rgba(30,150,70,.34)"></div>
-      <span><b>Faded</b> — the sun reaches this ground, but it is private,
+      <span><b>Faded.</b> The sun reaches this ground, but it is private,
       fenced, farmland or under trees</span>
     </div>
     <div class="legend-row">
       <div class="swatch" style="background:transparent"></div>
-      <span>Unshaded — building rooftops, not standing positions</span>
+      <span><b>Unshaded.</b> Building rooftops, which are not standing positions</span>
     </div>`
   }
   document.getElementById('legend').innerHTML = html
@@ -371,7 +395,7 @@ function renderSunCard () {
 
   const sel = document.getElementById('sun-moment')
   sel.innerHTML = moments.map(m =>
-    `<option value="${m.key}">${m.label} — ${m.local}</option>`).join('')
+    `<option value="${m.key}">${m.label}, ${m.local}</option>`).join('')
   sel.value = state.sunMoment || 'maximum_eclipse'
   state.sunMoment = sel.value
 
@@ -443,7 +467,7 @@ function drawSunDial () {
   `
 
   document.getElementById('sun-readout').innerHTML =
-    `Look <b style="color:#e8edf6">${compassLabel(az)}</b> — bearing ${az.toFixed(1)}°,
+    `Look <b style="color:#e8edf6">${compassLabel(az)}</b> at bearing ${az.toFixed(1)}°,
      only <b style="color:#e8edf6">${el.toFixed(1)}°</b> above the horizon
      (about ${(el / 0.5).toFixed(0)} sun-widths up).`
 }
@@ -504,16 +528,17 @@ function renderProvenance () {
   const l = state.layers
   document.getElementById('provenance').innerHTML = `
     <strong>Data sources.</strong>
-    Obstacles from PNOA LiDAR (${l.lidar_year}, ~8 pts/m², classes 2/3/4/5/6).
-    Imagery served live from the IGN PNOA Máxima Actualidad WMTS; the mosaic
-    used offline was dated ${l.orthophoto_date} and the live service may now be
-    newer. Imagery and LiDAR were captured in different years either way, so
-    recent construction or tree growth may not be reflected.<br><br>
+    Obstacles come from PNOA LiDAR flown in ${l.lidar_year} (~8 pts/m², classes
+    2/3/4/5/6). The aerial imagery is served live by the IGN, so it is usually
+    newer than the LiDAR and newer than the ${l.orthophoto_date} mosaic the
+    analysis was run against. Anything built or planted since the survey is
+    invisible to the model.<br><br>
     <strong>Coverage.</strong> ${l.coverage_note}<br><br>
-    <strong>Caveats.</strong> Vegetation uses the conservative model (canopy
-    raised and widened). Walkable areas are inferred from LiDAR, not verified
-    against street data — check access before relying on a spot. Temporary
-    obstacles (cranes, stages, parked lorries) are not modelled.
+    <strong>Caveats.</strong> Vegetation uses the conservative model, with the
+    canopy raised and widened, so it errs toward calling a spot blocked.
+    Reachable public space comes from OpenStreetMap, which volunteers maintain
+    and which is not authoritative on who may stand where. Temporary obstacles
+    such as cranes, stages and parked lorries are not modelled at all.
   `
 }
 
@@ -594,8 +619,8 @@ async function init () {
   map.fitBounds([[b[0], b[1]], [b[2], b[3]]], { padding: 24, duration: 0 })
 
   // Orthophoto comes live from the IGN WMTS rather than a baked tile set. The
-  // same PNOA Máxima Actualidad imagery rendered to local tiles was 671 MB —
-  // 86% of the whole site — which does not belong in a git repository. The
+  // same imagery rendered to local tiles was 671 MB, 86% of the whole site,
+  // which does not belong in a git repository. The
   // trade-off is that the WMTS serves the whole country, so imagery no longer
   // stops at the analysed block; `analysis-outline` below draws that edge
   // instead of the clip doing it implicitly.
@@ -604,7 +629,7 @@ async function init () {
     tiles: [PNOA_WMTS],
     tileSize: 256,
     maxzoom: 19,
-    attribution: 'Orthophoto © <a href="https://www.ign.es/">IGN</a> (PNOA Máxima Actualidad)',
+    attribution: 'Orthophoto © <a href="https://www.ign.es/">IGN</a> (PNOA)',
   })
   map.addLayer({ id: 'rgb', type: 'raster', source: 'rgb', paint: { 'raster-opacity': 1 } })
 
@@ -628,7 +653,7 @@ async function init () {
   }
 
   // The analysed block. With the orthophoto now coming from a nationwide WMTS,
-  // nothing else marks where the LiDAR — and therefore the shadow model — stops.
+  // nothing else marks where the LiDAR, and therefore the shadow model, stops.
   // Outside this dashed edge the imagery is real but no visibility was computed.
   map.addSource('analysis-outline', {
     type: 'geojson',
@@ -736,9 +761,12 @@ async function addBuildings () {
 
 function set3DEnabled (on) {
   if (!state.buildings) return
-  const btn = document.getElementById('toggle-3d')
-  btn.setAttribute('aria-pressed', on ? 'true' : 'false')
-  document.getElementById('view3d-hint').classList.toggle('hidden', !on)
+  const b3 = document.getElementById('toggle-3d')
+  const b2 = document.getElementById('view-2d')
+  b3.setAttribute('aria-pressed', on ? 'true' : 'false')
+  b2.setAttribute('aria-pressed', on ? 'false' : 'true')
+  b3.classList.toggle('active', on)
+  b2.classList.toggle('active', !on)
   if (map.getLayer('buildings-3d')) {
     map.setLayoutProperty('buildings-3d', 'visibility', on ? 'visible' : 'none')
   }
@@ -793,6 +821,7 @@ function wireControls () {
 
   document.getElementById('only-robust').addEventListener('change', renderResults)
   document.getElementById('hide-parking').addEventListener('change', renderResults)
+  document.getElementById('show-unverified').addEventListener('change', renderResults)
 
   const op = document.getElementById('op')
   op.addEventListener('input', () => {
@@ -823,10 +852,8 @@ function wireControls () {
   // The 3D control lives over the map rather than in the sidebar: it changes how the
   // map is being looked at, not what is drawn on it. addBuildings unhides it, so when
   // there is no local buildings.geojson it stays hidden and nothing else is needed.
-  document.getElementById('toggle-3d').addEventListener('click', () => {
-    const on = document.getElementById('toggle-3d').getAttribute('aria-pressed') !== 'true'
-    set3DEnabled(on)
-  })
+  document.getElementById('toggle-3d').addEventListener('click', () => set3DEnabled(true))
+  document.getElementById('view-2d').addEventListener('click', () => set3DEnabled(false))
   document.getElementById('ramp').addEventListener('change', (e) => {
     state.ramp = e.target.value
     applyLayerVisibility()
@@ -844,7 +871,7 @@ function wireControls () {
   document.getElementById('clear-home').addEventListener('click', () => {
     state.home = null
     if (state.homeMarker) { state.homeMarker.remove(); state.homeMarker = null }
-    document.getElementById('home-readout').textContent = 'No home set — zones ranked without distance.'
+    document.getElementById('home-readout').textContent = 'No home set, so zones are ranked without distance.'
     renderResults()
   })
 
@@ -881,7 +908,7 @@ function setHome (lngLat) {
   state.homeMarker = new maplibregl.Marker({ element: el }).setLngLat(lngLat).addTo(map)
 
   document.getElementById('home-readout').textContent =
-    `Home at ${lngLat[1].toFixed(5)}, ${lngLat[0].toFixed(5)} — kept in your browser only.`
+    `Home at ${lngLat[1].toFixed(5)}, ${lngLat[0].toFixed(5)} (kept in your browser only).`
   renderResults()
 }
 

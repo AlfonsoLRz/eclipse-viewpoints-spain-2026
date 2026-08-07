@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Zaragoza eclipse visibility — 12 August 2026</title>
+    <title>Zaragoza eclipse visibility, 12 August 2026</title>
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
@@ -35,7 +35,7 @@
             <button id="pick-home" class="btn">Set home from map</button>
             <button id="clear-home" class="btn subtle">Clear</button>
           </div>
-          <div id="home-readout" class="readout">No home set — zones ranked without distance.</div>
+          <div id="home-readout" class="readout">No home set, so zones are ranked without distance.</div>
         </section>
 
         <section class="card">
@@ -74,6 +74,14 @@
             <input type="checkbox" id="hide-parking" />
             <span>Hide car parks entirely</span>
           </label>
+          <label class="check">
+            <input type="checkbox" id="show-unverified" />
+            <span>Include open ground with unverified access</span>
+          </label>
+          <p class="note" id="unverified-note">
+            Adds rural and riverside ground that is open and clear but is not tagged as
+            public space. Often excellent for a low sun, and often a private field.
+          </p>
         </section>
 
         <section class="card">
@@ -124,9 +132,13 @@
       <main id="map-wrap">
         <div id="map"></div>
         <div id="inspect" class="hidden"></div>
-        <div id="view3d" class="hidden">
-          <button id="toggle-3d" type="button" aria-pressed="false">3D buildings</button>
-          <span id="view3d-hint">right-drag to tilt</span>
+        <div id="view3d" class="hidden" role="group" aria-label="Map perspective">
+          <button id="view-2d" type="button" class="seg active" aria-pressed="true">2D</button>
+          <button id="toggle-3d" type="button" class="seg" aria-pressed="false">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.6 14.4 5v6L8 14.4 1.6 11V5L8 1.6Z"/><path d="M1.6 5 8 8.4 14.4 5M8 8.4v6"/></svg>
+            3D
+          </button>
+          <span id="view3d-hint" role="tooltip">Right-drag to tilt, shift-drag to rotate</span>
         </div>
       </main>
     </div>

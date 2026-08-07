@@ -1,11 +1,51 @@
 {
-  "count": 154,
+  "count": 313,
   "labels": [
+    {
+      "name": "Plaza de Andalucía",
+      "lonlat": [
+        -0.891077,
+        41.630159
+      ],
+      "kind": "square"
+    },
     {
       "name": "Juslibol",
       "lonlat": [
         -0.898279,
         41.69316
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "Monzalbarba",
+      "lonlat": [
+        -0.969597,
+        41.703283
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "San Gregorio",
+      "lonlat": [
+        -0.864142,
+        41.692057
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "San Juan de Mozarrifar",
+      "lonlat": [
+        -0.841789,
+        41.717307
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Torre Sirón",
+      "lonlat": [
+        -0.994696,
+        41.680212
       ],
       "kind": "neighbourhood"
     },
@@ -46,6 +86,38 @@
       "lonlat": [
         -0.876502,
         41.660831
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Vadorrey",
+      "lonlat": [
+        -0.85879,
+        41.655574
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "La Jota",
+      "lonlat": [
+        -0.860318,
+        41.662231
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "La Azucarera",
+      "lonlat": [
+        -0.868546,
+        41.663771
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Las Fuentes",
+      "lonlat": [
+        -0.864296,
+        41.645425
       ],
       "kind": "suburb"
     },
@@ -114,12 +186,100 @@
       "kind": "suburb"
     },
     {
+      "name": "Montecanal",
+      "lonlat": [
+        -0.931486,
+        41.62929
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Arcosur",
+      "lonlat": [
+        -0.95848,
+        41.624693
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Valdespartera",
+      "lonlat": [
+        -0.925096,
+        41.622076
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Casablanca",
+      "lonlat": [
+        -0.909774,
+        41.630249
+      ],
+      "kind": "suburb"
+    },
+    {
       "name": "Romareda",
       "lonlat": [
         -0.903775,
         41.636292
       ],
       "kind": "suburb"
+    },
+    {
+      "name": "Torrero",
+      "lonlat": [
+        -0.886633,
+        41.630069
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "La Paz",
+      "lonlat": [
+        -0.876312,
+        41.624713
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Parque Venecia",
+      "lonlat": [
+        -0.873041,
+        41.618177
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Jesús",
+      "lonlat": [
+        -0.870688,
+        41.658132
+      ],
+      "kind": "suburb"
+    },
+    {
+      "name": "Barrio Pinilla",
+      "lonlat": [
+        -0.995498,
+        41.670879
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "Torre La Bernardona",
+      "lonlat": [
+        -0.97988,
+        41.665138
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "Plaza Villafranca",
+      "lonlat": [
+        -0.872321,
+        41.667977
+      ],
+      "kind": "square"
     },
     {
       "name": "Miralbueno",
@@ -130,10 +290,66 @@
       "kind": "suburb"
     },
     {
+      "name": "Urbanización Los Pinos",
+      "lonlat": [
+        -0.870603,
+        41.695853
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "Las Ventas",
+      "lonlat": [
+        -0.98837,
+        41.695496
+      ],
+      "kind": "suburb"
+    },
+    {
       "name": "El Tubo",
       "lonlat": [
         -0.880231,
         41.653139
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "Urbanización El Tomillar",
+      "lonlat": [
+        -0.970305,
+        41.673928
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "Urbanización el Cerezal",
+      "lonlat": [
+        -0.960617,
+        41.667122
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "Urbanización El Alcorce",
+      "lonlat": [
+        -0.967585,
+        41.676891
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "Urbanización Torrebarajas II",
+      "lonlat": [
+        -0.961266,
+        41.672956
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "Urbanización Maitena",
+      "lonlat": [
+        -0.959657,
+        41.671565
       ],
       "kind": "neighbourhood"
     },
@@ -158,6 +374,38 @@
       "lonlat": [
         -0.942861,
         41.664032
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "Barriada del Chan",
+      "lonlat": [
+        -0.836782,
+        41.710078
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "Academia General Militar",
+      "lonlat": [
+        -0.871986,
+        41.699429
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "Urbanización Parque del Sur",
+      "lonlat": [
+        -0.940641,
+        41.627206
+      ],
+      "kind": "neighbourhood"
+    },
+    {
+      "name": "Urbanización Parque de los Príncipes",
+      "lonlat": [
+        -0.935786,
+        41.628816
       ],
       "kind": "neighbourhood"
     },
@@ -202,12 +450,28 @@
       "kind": "square"
     },
     {
+      "name": "Facultad de Veterinaria",
+      "lonlat": [
+        -0.859565,
+        41.634709
+      ],
+      "kind": "university"
+    },
+    {
       "name": "Estadio José Manuel Juan Boix",
       "lonlat": [
         -0.901102,
         41.643015
       ],
       "kind": "pitch"
+    },
+    {
+      "name": "Parque La Granja",
+      "lonlat": [
+        -0.870016,
+        41.635647
+      ],
+      "kind": "park"
     },
     {
       "name": "Plaza de Santo Domingo Savio",
@@ -266,6 +530,38 @@
       "kind": "park"
     },
     {
+      "name": "Plaza Reina Sofía",
+      "lonlat": [
+        -0.872548,
+        41.643268
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque Tenerías",
+      "lonlat": [
+        -0.868629,
+        41.653742
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de las Glorietas de Goya",
+      "lonlat": [
+        -0.867924,
+        41.647996
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque Bruil",
+      "lonlat": [
+        -0.86852,
+        41.650214
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Hospital Clínico Universitario Lozano Blesa",
       "lonlat": [
         -0.903477,
@@ -306,6 +602,30 @@
       "kind": "park"
     },
     {
+      "name": "Plaza Utrillas",
+      "lonlat": [
+        -0.867225,
+        41.640519
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza Pintor Aguayo",
+      "lonlat": [
+        -0.869081,
+        41.641384
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza de las Eras",
+      "lonlat": [
+        -0.871754,
+        41.650099
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Parque de la Palabra",
       "lonlat": [
         -0.939243,
@@ -322,6 +642,14 @@
       "kind": "park"
     },
     {
+      "name": "Parque de los Incrédulos",
+      "lonlat": [
+        -0.908638,
+        41.629075
+      ],
+      "kind": "garden"
+    },
+    {
       "name": "Plaza de los Donantes de Órganos",
       "lonlat": [
         -0.905598,
@@ -336,6 +664,14 @@
         41.635964
       ],
       "kind": "hospital"
+    },
+    {
+      "name": "Parque de El libro de la selva",
+      "lonlat": [
+        -0.940374,
+        41.621966
+      ],
+      "kind": "park"
     },
     {
       "name": "Jardín Vertical",
@@ -370,6 +706,14 @@
       "kind": "park"
     },
     {
+      "name": "Parque Lineal de Plaza",
+      "lonlat": [
+        -0.982011,
+        41.651757
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Parque de Sedetania",
       "lonlat": [
         -0.918628,
@@ -382,6 +726,70 @@
       "lonlat": [
         -0.878076,
         41.65882
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de la Esperanza",
+      "lonlat": [
+        -0.865585,
+        41.661504
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Jardines de José Pablo Arrizabalaga",
+      "lonlat": [
+        -0.867156,
+        41.660609
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Jardines de Tosos",
+      "lonlat": [
+        -0.864493,
+        41.656963
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Jardines de Anento",
+      "lonlat": [
+        -0.863481,
+        41.65728
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Glorieta de Mercedes Cartiel Marín",
+      "lonlat": [
+        -0.868247,
+        41.653082
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de la Razón",
+      "lonlat": [
+        -0.921566,
+        41.626332
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza de Bámbola",
+      "lonlat": [
+        -0.917776,
+        41.623317
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque Félix de Azara",
+      "lonlat": [
+        -0.92334,
+        41.627537
       ],
       "kind": "park"
     },
@@ -418,12 +826,44 @@
       "kind": "park"
     },
     {
+      "name": "Parque de los Caprichos de Goya",
+      "lonlat": [
+        -0.871219,
+        41.688123
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza Ramón Sáinz de Varanda (San Gregorio)",
+      "lonlat": [
+        -0.863231,
+        41.692051
+      ],
+      "kind": "square"
+    },
+    {
       "name": "Plaza de la Armonía",
       "lonlat": [
         -0.932325,
         41.637877
       ],
       "kind": "park"
+    },
+    {
+      "name": "Gregorio Usabel",
+      "lonlat": [
+        -0.910329,
+        41.623879
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Andador Reina Ester",
+      "lonlat": [
+        -0.868139,
+        41.650884
+      ],
+      "kind": "square"
     },
     {
       "name": "Edificio pitch&putt",
@@ -474,10 +914,66 @@
       "kind": "park"
     },
     {
+      "name": "Parque lineal del Huerva",
+      "lonlat": [
+        -0.866903,
+        41.649773
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de Vadorrey",
+      "lonlat": [
+        -0.856529,
+        41.6536
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Jardines de Avempace",
       "lonlat": [
         -0.908689,
         41.643794
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Mercado de Valdespartera",
+      "lonlat": [
+        -0.920437,
+        41.621887
+      ],
+      "kind": "marketplace"
+    },
+    {
+      "name": "Plaza de Nanuk el Esquimal",
+      "lonlat": [
+        -0.918441,
+        41.620844
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Parque Crónica del Alba",
+      "lonlat": [
+        -0.874906,
+        41.622274
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de las Víctimas del Terrorismo",
+      "lonlat": [
+        -0.874741,
+        41.629983
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Esclusas de Valdegurriana",
+      "lonlat": [
+        -0.855839,
+        41.609721
       ],
       "kind": "park"
     },
@@ -498,12 +994,100 @@
       "kind": "pitch"
     },
     {
+      "name": "pista deportiva",
+      "lonlat": [
+        -0.994911,
+        41.704647
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Plaza de Lope de Vega",
+      "lonlat": [
+        -0.995329,
+        41.713033
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza Huerto del Cura",
+      "lonlat": [
+        -0.994145,
+        41.715009
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza de las Máscaras",
+      "lonlat": [
+        -0.889557,
+        41.608562
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Campo de fútbol Giner",
+      "lonlat": [
+        -0.88573,
+        41.625371
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Instalación deportiva elemental Paseo Tierno Galván",
+      "lonlat": [
+        -0.882158,
+        41.632421
+      ],
+      "kind": "pitch"
+    },
+    {
       "name": "Centro formación Arsenio Jimeno",
       "lonlat": [
         -0.891744,
         41.665636
       ],
       "kind": "university"
+    },
+    {
+      "name": "Glorieta Ciudad de Sarajevo",
+      "lonlat": [
+        -0.865156,
+        41.642309
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque Royo del Rabal",
+      "lonlat": [
+        -0.858878,
+        41.663146
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de Vadorrey",
+      "lonlat": [
+        -0.855541,
+        41.656603
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Jardines \"Jesús Gracia\"",
+      "lonlat": [
+        -0.857487,
+        41.655826
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Centro Neuropsiquiátrico Nuestra Señora del Carmen",
+      "lonlat": [
+        -0.986049,
+        41.678106
+      ],
+      "kind": "hospital"
     },
     {
       "name": "Zaragoza Club de Fútbol Femenino",
@@ -530,10 +1114,58 @@
       "kind": "pitch"
     },
     {
+      "name": "Plaza Mayor",
+      "lonlat": [
+        -0.901372,
+        41.694331
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Plaza de El cantor de jazz",
+      "lonlat": [
+        -0.92109,
+        41.622405
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza de El hombre invisible",
+      "lonlat": [
+        -0.920342,
+        41.619029
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Plaza de La señora Miniver",
+      "lonlat": [
+        -0.92291,
+        41.620564
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Plaza de la Memoria Histórica",
+      "lonlat": [
+        -0.887093,
+        41.627381
+      ],
+      "kind": "square"
+    },
+    {
       "name": "Pádel ZGZ",
       "lonlat": [
         -0.927182,
         41.632887
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Pabellón Polideportivo",
+      "lonlat": [
+        -0.860652,
+        41.659465
       ],
       "kind": "pitch"
     },
@@ -544,6 +1176,30 @@
         41.635936
       ],
       "kind": "pitch"
+    },
+    {
+      "name": "ESIC Business Marketing School",
+      "lonlat": [
+        -0.909979,
+        41.626949
+      ],
+      "kind": "university"
+    },
+    {
+      "name": "Plaza de Aragón",
+      "lonlat": [
+        -0.971631,
+        41.701824
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza Piedad Gil",
+      "lonlat": [
+        -0.859309,
+        41.659826
+      ],
+      "kind": "square"
     },
     {
       "name": "Plaza de Bearn",
@@ -578,12 +1234,52 @@
       "kind": "square"
     },
     {
+      "name": "Jardines de la Concordia",
+      "lonlat": [
+        -0.871769,
+        41.673155
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza España",
+      "lonlat": [
+        -0.841327,
+        41.717558
+      ],
+      "kind": "square"
+    },
+    {
       "name": "Potrero Parque Goya",
       "lonlat": [
         -0.876876,
         41.689604
       ],
       "kind": "pitch"
+    },
+    {
+      "name": "Plaza Herrera de los Navarros",
+      "lonlat": [
+        -0.869269,
+        41.653365
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Plaza Mary Poppins",
+      "lonlat": [
+        -0.928351,
+        41.622731
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Jardines Aguilar de Ebro",
+      "lonlat": [
+        -0.870144,
+        41.661844
+      ],
+      "kind": "park"
     },
     {
       "name": "Hospital Viamed Montecanal",
@@ -658,10 +1354,74 @@
       "kind": "park"
     },
     {
+      "name": "Pipa",
+      "lonlat": [
+        -0.867475,
+        41.693908
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Glorieta Berenguer de Entenza",
       "lonlat": [
         -0.916585,
         41.649142
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza de la Edad de Oro",
+      "lonlat": [
+        -0.92482,
+        41.616471
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Pista de BMX",
+      "lonlat": [
+        -0.897457,
+        41.617403
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Plaza de King Kong",
+      "lonlat": [
+        -0.931656,
+        41.623624
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Campo de fûtbol municipal Torre Ramona / Joaquín González",
+      "lonlat": [
+        -0.861841,
+        41.638871
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Campo de fûtbol municipal Torre Ramona / Joaquín González",
+      "lonlat": [
+        -0.861103,
+        41.639271
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Plaza 30 de Septiembre",
+      "lonlat": [
+        -0.970221,
+        41.702763
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza de Wolfgang Amadeus Mozart",
+      "lonlat": [
+        -0.994057,
+        41.710469
       ],
       "kind": "park"
     },
@@ -688,6 +1448,14 @@
         41.688242
       ],
       "kind": "square"
+    },
+    {
+      "name": "Estonoesunsolar Coso",
+      "lonlat": [
+        -0.872265,
+        41.652437
+      ],
+      "kind": "park"
     },
     {
       "name": "Parque del Canódromo",
@@ -722,6 +1490,22 @@
       "kind": "garden"
     },
     {
+      "name": "CMF Salma Paralluelo UD San José",
+      "lonlat": [
+        -0.871819,
+        41.633766
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Parque del Barranco",
+      "lonlat": [
+        -0.882793,
+        41.616906
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Jardines de la Estrella Polar",
       "lonlat": [
         -0.930901,
@@ -746,6 +1530,14 @@
       "kind": "pitch"
     },
     {
+      "name": "Plaza Gallur",
+      "lonlat": [
+        -0.876733,
+        41.62636
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Frontón",
       "lonlat": [
         -0.900393,
@@ -768,6 +1560,38 @@
         41.658086
       ],
       "kind": "pitch"
+    },
+    {
+      "name": "pistas de tenis",
+      "lonlat": [
+        -0.859539,
+        41.658203
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "pistas exteriores",
+      "lonlat": [
+        -0.859976,
+        41.657979
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Parque de las Garzas",
+      "lonlat": [
+        -0.850686,
+        41.651799
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de Las Palmeras",
+      "lonlat": [
+        -0.862173,
+        41.651128
+      ],
+      "kind": "park"
     },
     {
       "name": "Parque de Isaac Newton",
@@ -842,6 +1666,14 @@
       "kind": "garden"
     },
     {
+      "name": "Jardín de Invierno",
+      "lonlat": [
+        -0.892712,
+        41.631779
+      ],
+      "kind": "garden"
+    },
+    {
       "name": "Jardín Francés",
       "lonlat": [
         -0.933113,
@@ -864,6 +1696,22 @@
         41.641438
       ],
       "kind": "university"
+    },
+    {
+      "name": "Parque San Gregorio",
+      "lonlat": [
+        -0.863901,
+        41.690468
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Finca La Alquería - La Bastilla",
+      "lonlat": [
+        -0.988674,
+        41.696214
+      ],
+      "kind": "garden"
     },
     {
       "name": "HC Miraflores",
@@ -898,6 +1746,22 @@
       "kind": "pitch"
     },
     {
+      "name": "Parque los Prados",
+      "lonlat": [
+        -0.993816,
+        41.706919
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Paseo de la Alborada",
+      "lonlat": [
+        -0.995418,
+        41.70347
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Parque de la Cruz Roja",
       "lonlat": [
         -0.901257,
@@ -930,6 +1794,14 @@
       "kind": "park"
     },
     {
+      "name": "Plaza de la Ermita",
+      "lonlat": [
+        -0.911079,
+        41.631255
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Parque de Vistabella",
       "lonlat": [
         -0.934808,
@@ -946,12 +1818,100 @@
       "kind": "park"
     },
     {
+      "name": "Plaza San Marcos",
+      "lonlat": [
+        -0.872025,
+        41.616283
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza Marco Polo",
+      "lonlat": [
+        -0.871866,
+        41.621058
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque Calaverde",
+      "lonlat": [
+        -0.871996,
+        41.624619
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza de Tauste",
+      "lonlat": [
+        -0.867913,
+        41.651612
+      ],
+      "kind": "square"
+    },
+    {
       "name": "Campo de Fútbol Nuevo Ranillas",
       "lonlat": [
         -0.895264,
         41.667881
       ],
       "kind": "pitch"
+    },
+    {
+      "name": "Parque de Valmaseda",
+      "lonlat": [
+        -0.856952,
+        41.660108
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza de la Albada",
+      "lonlat": [
+        -0.862102,
+        41.660182
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Parque del Ojo del Canal",
+      "lonlat": [
+        -0.903183,
+        41.622777
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "pistas exteriores",
+      "lonlat": [
+        -0.860612,
+        41.660384
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Plaza del ayuntamiento",
+      "lonlat": [
+        -0.862892,
+        41.69036
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Tiro con arco",
+      "lonlat": [
+        -0.87905,
+        41.618466
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Plaza de Ángel Liso Chóliz",
+      "lonlat": [
+        -0.888648,
+        41.628552
+      ],
+      "kind": "square"
     },
     {
       "name": "Plaza de Lolita Parra",
@@ -970,6 +1930,14 @@
       "kind": "park"
     },
     {
+      "name": "Hospital MAZ de Zaragoza",
+      "lonlat": [
+        -0.868939,
+        41.68596
+      ],
+      "kind": "hospital"
+    },
+    {
       "name": "Cancha Baloncesto Actur Norte",
       "lonlat": [
         -0.891163,
@@ -986,6 +1954,14 @@
       "kind": "park"
     },
     {
+      "name": "Mercado Avenida América",
+      "lonlat": [
+        -0.886135,
+        41.630679
+      ],
+      "kind": "marketplace"
+    },
+    {
       "name": "Parque del Buen Humor",
       "lonlat": [
         -0.892017,
@@ -1000,6 +1976,14 @@
         41.67061
       ],
       "kind": "park"
+    },
+    {
+      "name": "Campo de fútbol",
+      "lonlat": [
+        -0.855189,
+        41.653351
+      ],
+      "kind": "pitch"
     },
     {
       "name": "Parque de José Luis Grasset",
@@ -1026,12 +2010,84 @@
       "kind": "park"
     },
     {
+      "name": "Campo Municipal de Futbol Fleta",
+      "lonlat": [
+        -0.864439,
+        41.631448
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Plaza de Luis Herrando y José Esperabé",
+      "lonlat": [
+        -0.874895,
+        41.627976
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Hospital Royo Villanova",
+      "lonlat": [
+        -0.861099,
+        41.692287
+      ],
+      "kind": "hospital"
+    },
+    {
+      "name": "Jardín Japonés",
+      "lonlat": [
+        -0.877937,
+        41.629399
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza de Castellar",
+      "lonlat": [
+        -0.994446,
+        41.713816
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Plaza Joaquín Costa",
+      "lonlat": [
+        -0.99489,
+        41.715789
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Parque de Corita Viamonte",
+      "lonlat": [
+        -0.854128,
+        41.666302
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Glorieta de la Balseta",
       "lonlat": [
         -0.881509,
         41.634177
       ],
       "kind": "square"
+    },
+    {
+      "name": "Paseo del Canal",
+      "lonlat": [
+        -0.870003,
+        41.619542
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Paseo del Canal",
+      "lonlat": [
+        -0.866419,
+        41.616945
+      ],
+      "kind": "park"
     },
     {
       "name": "Plaza Basilio Paraíso",
@@ -1082,12 +2138,108 @@
       "kind": "park"
     },
     {
+      "name": "Boulevard Avenida de Cesáreo Alierta",
+      "lonlat": [
+        -0.870091,
+        41.63851
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Jardín de Cenizas",
+      "lonlat": [
+        -0.889469,
+        41.622231
+      ],
+      "kind": "garden"
+    },
+    {
+      "name": "Parque Belle Epoque",
+      "lonlat": [
+        -0.921325,
+        41.623309
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "pista deportiva",
+      "lonlat": [
+        -0.994613,
+        41.704479
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "pista deportiva",
+      "lonlat": [
+        -0.993575,
+        41.703649
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "pista deportiva",
+      "lonlat": [
+        -0.993949,
+        41.703931
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "pista deportiva",
+      "lonlat": [
+        -0.993697,
+        41.70415
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "pistas exteriores",
+      "lonlat": [
+        -0.858341,
+        41.660281
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Plaza Manuel Monterde",
+      "lonlat": [
+        -0.858063,
+        41.661157
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Memorial Víctimas del Franquismo",
+      "lonlat": [
+        -0.889397,
+        41.620593
+      ],
+      "kind": "garden"
+    },
+    {
       "name": "Ibercaja Estadio",
       "lonlat": [
         -0.895737,
         41.68424
       ],
       "kind": "pitch"
+    },
+    {
+      "name": "Plaza España",
+      "lonlat": [
+        -0.994833,
+        41.714957
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "Plaza Castilla",
+      "lonlat": [
+        -0.995795,
+        41.714338
+      ],
+      "kind": "park"
     },
     {
       "name": "Pádel Moncayo",
@@ -1106,6 +2258,38 @@
       "kind": "garden"
     },
     {
+      "name": "Plaza Arzobispo",
+      "lonlat": [
+        -0.902886,
+        41.694847
+      ],
+      "kind": "square"
+    },
+    {
+      "name": "masquehuertos.com",
+      "lonlat": [
+        -0.986637,
+        41.664978
+      ],
+      "kind": "garden"
+    },
+    {
+      "name": "Skatepark Vagapark",
+      "lonlat": [
+        -0.865098,
+        41.630684
+      ],
+      "kind": "pitch"
+    },
+    {
+      "name": "Plaza Antonio Beltrán Martínez",
+      "lonlat": [
+        -0.869655,
+        41.6513
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Parque de los Cineastas",
       "lonlat": [
         -0.882323,
@@ -1118,6 +2302,22 @@
       "lonlat": [
         -0.91113,
         41.647409
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Glorieta de la Selección Española de Fútbol, 'La Roja'",
+      "lonlat": [
+        -0.868092,
+        41.637421
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de la Paz",
+      "lonlat": [
+        -0.879406,
+        41.628575
       ],
       "kind": "park"
     },
@@ -1162,10 +2362,26 @@
       "kind": "park"
     },
     {
+      "name": "Parque de las Mujeres",
+      "lonlat": [
+        -0.870548,
+        41.662675
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Parque de la Chimenea",
       "lonlat": [
         -0.885221,
         41.66076
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de los Pinos",
+      "lonlat": [
+        -0.882645,
+        41.608463
       ],
       "kind": "park"
     },
@@ -1186,6 +2402,46 @@
       "kind": "park"
     },
     {
+      "name": "Parque de Robin de los bosques",
+      "lonlat": [
+        -0.935033,
+        41.622907
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque Torre Ramona",
+      "lonlat": [
+        -0.861716,
+        41.642452
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque de Emilio Lacambra Manzano",
+      "lonlat": [
+        -0.892884,
+        41.628978
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Parque del Conocimiento",
+      "lonlat": [
+        -0.944549,
+        41.627928
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza Ángel Sanz Briz",
+      "lonlat": [
+        -0.867252,
+        41.638313
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Plaza Mayor",
       "lonlat": [
         -0.872988,
@@ -1194,10 +2450,26 @@
       "kind": "park"
     },
     {
+      "name": "Parque de Oriente",
+      "lonlat": [
+        -0.860009,
+        41.65622
+      ],
+      "kind": "park"
+    },
+    {
       "name": "Parque Torre Univérsitas",
       "lonlat": [
         -0.906167,
         41.644588
+      ],
+      "kind": "park"
+    },
+    {
+      "name": "Plaza Crónica del Alba",
+      "lonlat": [
+        -0.880023,
+        41.630306
       ],
       "kind": "park"
     },

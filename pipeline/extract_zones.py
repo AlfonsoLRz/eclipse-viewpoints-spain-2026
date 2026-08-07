@@ -123,8 +123,21 @@ def build_walkable_mask(cfg, out_dir: Path, grid):
     built_fraction = ndimage.uniform_filter(built.astype(np.float32), size=radius)
     urban = built_fraction >= float(zcfg.get("min_built_fraction", 0.08))
 
-    walkable = (known & slope_ok & ~built_buffered & ~under_canopy
-                & well_sampled & urban & ~water)
+    # Two tiers, differing only in how access was established.
+    #
+    #   base       physically standable: known ground, gentle, not on a roof, not under
+    #              canopy, sampled well enough to trust, not water. Hard OSM exclusions
+    #              (river, motorways, rail, industrial, military, farmland) are applied
+    #              below and bind BOTH tiers - nothing here ever recommends the Ebro.
+    #   walkable   base, plus urban surroundings, plus OSM-tagged public space. Somewhere
+    #              a visitor can be confident of standing.
+    #
+    # The gap between them is real ground: open, unobstructed, outside the city and not
+    # tagged as anything. Juslibol is the obvious case. It is genuinely good for watching
+    # a 6 degree sun and genuinely might be a private field, so it is offered separately
+    # and labelled rather than either hidden or silently mixed in with the parks.
+    base = known & slope_ok & ~built_buffered & ~under_canopy & well_sampled & ~water
+    walkable = base & urban
 
     # OpenStreetMap land use is far more reliable than anything inferable from
     # the point cloud: it names the river, the motorways, the railway corridor,
@@ -134,6 +147,8 @@ def build_walkable_mask(cfg, out_dir: Path, grid):
     osm_neg_path = out_dir / "osm_negative.tif"
     if osm_neg_path.exists():
         osm_negative, _ = read_raster(osm_neg_path)
+        # Binds both tiers. Relaxing access never relaxes safety.
+        base &= osm_negative == 0
         walkable &= osm_negative == 0
         print("  applied OSM exclusions (water, roads, rail, industrial, farmland)")
     else:
@@ -158,9 +173,6 @@ def build_walkable_mask(cfg, out_dir: Path, grid):
               + (" and car parks" if bool(zcfg.get("include_parking", True)) else ""))
 
     # Remove speckle, then close pinholes so plazas are not shredded.
-    walkable = ndimage.binary_opening(walkable, iterations=int(zcfg["morphology_opening_iterations"]))
-    walkable = ndimage.binary_closing(walkable, iterations=2)
-
     # Drop narrow corridors. A carriageway or rail line survives the tests above
     # (flat, open, well sampled, inside the city) but is never a viewing spot.
     # Opening by half the minimum useful width erases anything narrower than that
@@ -168,9 +180,21 @@ def build_walkable_mask(cfg, out_dir: Path, grid):
     # OPENING rather than reconstruction: a plaza joined to a road by a path must
     # keep the plaza and lose the road, and reconstruction would restore both.
     half_width = max(1, int(float(zcfg.get("min_usable_width_m", 25)) / (2 * res)))
-    walkable = ndimage.binary_opening(walkable, iterations=half_width)
 
-    return walkable, slope_deg, density, known, parking
+    def tidy(m):
+        m = ndimage.binary_opening(m, iterations=int(zcfg["morphology_opening_iterations"]))
+        m = ndimage.binary_closing(m, iterations=2)
+        return ndimage.binary_opening(m, iterations=half_width)
+
+    walkable = tidy(walkable)
+    # The open tier gets the same treatment, so a farm track is erased by the same
+    # width test that erases a carriageway.
+    base = tidy(base)
+    # Anything confidently walkable is confidently open too; keep them nested so a
+    # zone can never be "open but not walkable" through a morphology artefact alone.
+    base |= walkable
+
+    return walkable, base, slope_deg, density, known, parking
 
 
 def load_places(out_dir: Path) -> list:
@@ -222,9 +246,11 @@ def main():
     out_dir = output_dir(cfg)
 
     print("Building walkable mask...")
-    walkable, slope_deg, density, known, parking = build_walkable_mask(cfg, out_dir, grid)
-    print(f"  walkable: {walkable.mean() * 100:.2f}% of grid")
+    walkable, openground, slope_deg, density, known, parking = build_walkable_mask(cfg, out_dir, grid)
+    print(f"  walkable (confirmed public): {walkable.mean() * 100:.2f}% of grid")
+    print(f"  open ground (access unverified): {openground.mean() * 100:.2f}% of grid")
     write_raster(out_dir / "walkable_mask.tif", walkable.astype(np.uint8), grid, dtype="uint8", nodata=255)
+    write_raster(out_dir / "openground_mask.tif", openground.astype(np.uint8), grid, dtype="uint8", nodata=255)
 
     clearance, _ = read_raster(out_dir / "clearance_class.tif")
     limiting, _ = read_raster(out_dir / "limiting_obstacle.tif")
@@ -237,9 +263,13 @@ def main():
     prominence = local_prominence(dtm, known)
 
     min_class = {v: k for k, v in CLASS_LABELS.items()}[cfg["zones"]["min_clearance_class"]]
-    usable = walkable & (clearance >= min_class)
+    # Label over the wider tier so rural open ground becomes a candidate too. Each zone
+    # is then tagged by which mask it actually sits in, and the viewer decides whether to
+    # show the unverified ones. Labelling only the walkable tier would mean the rural
+    # zones never exist to be offered.
+    usable = openground & (clearance >= min_class)
     usable = ndimage.binary_opening(usable, iterations=1)
-    print(f"  usable (walkable AND clearance >= {cfg['zones']['min_clearance_class']}): "
+    print(f"  usable (open ground AND clearance >= {cfg['zones']['min_clearance_class']}): "
           f"{usable.sum():,} cells")
 
     print("Labelling connected components...")
@@ -284,8 +314,20 @@ def main():
 
     # Rank by size first so the export stays manageable; the plan asks for a
     # handful of distinct zones rather than thousands of markers.
-    keep_ids.sort(key=lambda i: counts[i], reverse=True)
-    keep_ids = keep_ids[:400]
+    #
+    # Take the two access tiers separately. Rural open ground comes in far bigger
+    # pieces than any city square, so a single size-ordered cut hands every slot to
+    # unverified countryside and drops the parks and plazas entirely - the confirmed
+    # public zones, which are the ones most visitors actually want, disappear from
+    # their own map. Filling each tier's quota independently keeps both.
+    walk_frac = ndimage.mean(walkable.astype(np.float32), labels, index=keep_ids) \
+        if keep_ids else []
+    pub_ids = [i for i, f in zip(keep_ids, walk_frac) if f >= 0.5]
+    unv_ids = [i for i, f in zip(keep_ids, walk_frac) if f < 0.5]
+    for group in (pub_ids, unv_ids):
+        group.sort(key=lambda i: counts[i], reverse=True)
+    print(f"    {len(pub_ids):,} confirmed public, {len(unv_ids):,} access unverified")
+    keep_ids = pub_ids[:200] + unv_ids[:200]
 
     import pyproj
 
@@ -344,6 +386,11 @@ def main():
         veg_risk = float(np.clip(np.nanmean(np.nan_to_num(sub_canopy, nan=0.0) > 0.5), 0, 1))
         data_conf = float(np.clip(np.nanmean(np.minimum(sub_density, 8.0) / 8.0), 0, 1))
         parking_fraction = float((parking[sl][sub] > 0).mean())
+        # How much of the zone is confirmed public space rather than merely open ground.
+        # Mostly-walkable zones are the ones a visitor can rely on; the rest are real
+        # places to stand whose access nobody has checked.
+        walkable_fraction = float((walkable[sl][sub] > 0).mean())
+        access_kind = "public" if walkable_fraction >= 0.5 else "unverified"
 
         zones.append({
             "id": f"zone-{rank + 1:03d}",
@@ -364,6 +411,8 @@ def main():
             "pointDensity": round(float(np.nanmean(sub_density)), 2),
             "parkingFraction": round(parking_fraction, 3),
             "surfaceKind": "car park" if parking_fraction > 0.5 else "open space",
+            "walkableFraction": round(walkable_fraction, 3),
+            "accessKind": access_kind,
             "placeName": nearest_place_name(lon, lat, places),
         })
 

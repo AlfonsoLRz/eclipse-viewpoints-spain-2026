@@ -42,7 +42,9 @@ await page.evaluate(() => window.__map.easeTo({ pitch: 65, bearing: -75, zoom: 1
 await page.waitForTimeout(4000)
 await page.screenshot({ path: `${OUT}/b3d-tilted.png` })
 
-await page.click('#toggle-3d')
+// The control is a 2D/3D segmented switch, not a toggle: clicking #toggle-3d again
+// keeps 3D on. Leaving 3D means clicking the 2D segment.
+await page.click('#view-2d')
 await page.waitForTimeout(2500)
 results.afterDisable = await page.evaluate(() => ({
   pressed: document.getElementById('toggle-3d').getAttribute('aria-pressed'),

@@ -83,6 +83,35 @@ def overpass(query: str, retries: int = 4) -> dict:
     raise RuntimeError(f"Overpass failed after {retries} attempts: {last}")
 
 
+def overpass_bbox(query_tpl: str, bbox: str, depth: int = 2) -> dict:
+    """Run a `{bbox}`-templated query, splitting the box when the server gives up.
+
+    Overpass answers a query for the old 7 x 7 km block without complaint but starts
+    returning 504s over a block several times that size, and retrying the same oversized
+    query just fails more slowly. Quartering the box turns one request the server refuses
+    into four it will accept. Elements straddling a cut come back from both halves, so
+    results are deduplicated on (type, id).
+    """
+    try:
+        return overpass(query_tpl.format(bbox=bbox))
+    except RuntimeError:
+        if depth <= 0:
+            raise
+        s, w, n, e = (float(v) for v in bbox.split(","))
+        ms, me = (s + n) / 2, (w + e) / 2
+        quads = [f"{s},{w},{ms},{me}", f"{s},{me},{ms},{e}",
+                 f"{ms},{w},{n},{me}", f"{ms},{me},{n},{e}"]
+        print(f"    splitting bbox into 4 (depth {depth})")
+        seen, merged = set(), []
+        for q in quads:
+            for el in overpass_bbox(query_tpl, q, depth - 1).get("elements", []):
+                key = (el.get("type"), el.get("id"))
+                if key not in seen:
+                    seen.add(key)
+                    merged.append(el)
+        return {"elements": merged}
+
+
 def _rings(el):
     """Yield coordinate rings (lon, lat) for a way or multipolygon relation."""
     if el["type"] == "way" and "geometry" in el:
@@ -145,11 +174,11 @@ def main():
     print(f"Bounding box: {bbox}")
 
     print("Fetching positive (open public space) features...")
-    pos = overpass(POSITIVE_QUERY.format(bbox=bbox))
+    pos = overpass_bbox(POSITIVE_QUERY, bbox)
     print(f"  {len(pos['elements'])} elements")
 
     print("Fetching negative (excluded) features...")
-    neg = overpass(NEGATIVE_QUERY.format(bbox=bbox))
+    neg = overpass_bbox(NEGATIVE_QUERY, bbox)
     print(f"  {len(neg['elements'])} elements")
 
     print("Rasterising...")
@@ -165,7 +194,7 @@ def main():
 
     print("Fetching car parks...")
     try:
-        park = overpass(PARKING_QUERY.format(bbox=bbox))
+        park = overpass_bbox(PARKING_QUERY, bbox)
         parking = rasterise(park["elements"], grid, to_utm)
         print(f"  {len(park['elements'])} elements, {parking.mean() * 100:.2f}% of grid")
     except RuntimeError as exc:
@@ -183,12 +212,13 @@ def main():
     # constrain the recommendations, so a failure here must not lose them.
     print("Fetching named places for labels...")
     try:
-        named = overpass(
-            f'way["name"]["leisure"~"^(park|garden|pitch)$"]({bbox});'
-            f'relation["name"]["leisure"="park"]({bbox});'
-            f'way["name"]["place"="square"]({bbox});'
-            f'node["name"]["place"~"^(square|neighbourhood|suburb)$"]({bbox});'
-            f'way["name"]["amenity"~"^(university|hospital|marketplace)$"]({bbox});'
+        named = overpass_bbox(
+            'way["name"]["leisure"~"^(park|garden|pitch)$"]({bbox});'
+            'relation["name"]["leisure"="park"]({bbox});'
+            'way["name"]["place"="square"]({bbox});'
+            'node["name"]["place"~"^(square|neighbourhood|suburb)$"]({bbox});'
+            'way["name"]["amenity"~"^(university|hospital|marketplace)$"]({bbox});',
+            bbox,
         )
     except RuntimeError as exc:
         print(f"  WARNING: label query failed ({exc}); writing empty label set")

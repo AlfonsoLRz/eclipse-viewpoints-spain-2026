@@ -397,9 +397,11 @@ def main():
     web_dir = ROOT / cfg["paths"]["viewer_public_data"]
     web_dir.mkdir(parents=True, exist_ok=True)
 
-    # Zoom 18 gives ~0.45 m/px at this latitude, so the 1 m shadow model is
-    # displayed at close to its native resolution instead of being smeared.
-    zooms = [13, 14, 15, 16, 17, 18]
+    # Stop at 17, which is 0.89 m/px at this latitude and so already finer than the 1 m
+    # shadow model. Zoom 18 resamples detail the source never had, and it is 74% of the
+    # pyramid: at this block size that is the difference between a site GitHub Pages can
+    # serve and one that blows past its 1 GB cap. MapLibre overzooms past maxzoom.
+    zooms = [13, 14, 15, 16, 17]
 
     if args.with_rgb:
         print("Writing orthophoto tiles (clipped to LiDAR footprint)...")
@@ -431,11 +433,21 @@ def main():
                               buildings=buildings)
 
     # Copy the JSON products the web app consumes.
+    # A missing product here used to be skipped in silence, which left whatever the
+    # previous run had copied sitting in the viewer. Shrinking or moving the block then
+    # produced a map whose dashed outline still described the old extent: wrong, and
+    # wrong in a way that looks deliberate. Warn loudly instead.
     for name in ("candidates.json", "eclipse_metadata.json", "laz_coverage.geojson",
                  "osm_labels.json"):
         src = out_dir / name
+        dst = web_dir / name
         if src.exists():
-            (web_dir / name).write_text(src.read_text(encoding="utf-8"), encoding="utf-8")
+            dst.write_text(src.read_text(encoding="utf-8"), encoding="utf-8")
+        elif dst.exists():
+            print(f"  WARNING: {name} missing from {out_dir}; the viewer is still serving "
+                  f"a copy from an earlier run and it may describe a different block")
+        else:
+            print(f"  WARNING: {name} missing; the viewer will not have it")
 
     import pyproj
 
@@ -455,10 +467,14 @@ def main():
         "clearance_colors": {str(k): list(v) for k, v in CLEARANCE_COLORS.items()},
         "ramps": {name: {str(k): list(v) for k, v in colors.items()}
                   for name, colors in RAMPS.items()},
+        # Derived from the grid rather than hardcoded: the block has already been
+        # resized once, and a fixed "7x7 km" here quietly outlived it.
         "coverage_note": (
-            "Visibility was computed only inside the dashed outline — the "
-            "7x7 km LiDAR block. The orthophoto is served live by the IGN and "
-            "continues past that edge, but nothing outside it has been analysed."
+            f"Visibility was computed only inside the dashed outline, a "
+            f"{(grid.right - grid.left) / 1000:.0f} by "
+            f"{(grid.top - grid.bottom) / 1000:.0f} km block. The aerial imagery is "
+            f"served live and continues past that edge, but nothing outside the "
+            f"outline has been analysed."
         ),
     })
     print(f"Wrote {web_dir / 'layers.json'}")

@@ -2,16 +2,16 @@
   "generated_by": "pipeline/package_tiles.py",
   "tile_size": 256,
   "minzoom": 13,
-  "maxzoom": 18,
+  "maxzoom": 17,
   "bounds_wgs84": [
-    -0.959046,
-    41.632622,
-    -0.872987,
-    41.694107
+    -0.995878,
+    41.606251,
+    -0.836055,
+    41.720436
   ],
   "center": [
-    -0.916017,
-    41.663365
+    -0.915967,
+    41.663343
   ],
   "lidar_year": 2023,
   "orthophoto_date": "2025-07-14",
@@ -209,5 +209,5 @@
       ]
     }
   },
-  "coverage_note": "Visibility was computed only inside the dashed outline — the 7x7 km LiDAR block. The orthophoto is served live by the IGN and continues past that edge, but nothing outside it has been analysed."
+  "coverage_note": "Visibility was computed only inside the dashed outline, a 13 by 13 km block. The aerial imagery is served live and continues past that edge, but nothing outside the outline has been analysed."
 }
