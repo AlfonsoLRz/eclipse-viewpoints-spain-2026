@@ -194,7 +194,12 @@ function rankZones () {
   }
 
   pool.sort((a, b) => b._score - a._score)
-  return pool.slice(0, 12)
+  // How many to show is the reader's call. Each city carries a couple of hundred ranked
+  // zones, but the filters bind long before the slider does in the smaller towns: with
+  // confirmed-public access only, Linares has 8 and Jaén 15, so asking for 50 there
+  // yields what exists rather than what was requested.
+  const want = +(document.getElementById('n-zones')?.value || 12)
+  return pool.slice(0, want)
 }
 
 // ---------------------------------------------------------------- rendering
@@ -888,6 +893,11 @@ function wireControls () {
   document.getElementById('only-robust').addEventListener('change', renderResults)
   document.getElementById('hide-parking').addEventListener('change', renderResults)
   document.getElementById('show-unverified').addEventListener('change', renderResults)
+  const nZones = document.getElementById('n-zones')
+  nZones.addEventListener('input', () => {
+    document.getElementById('n-zones-v').textContent = nZones.value
+    renderResults()
+  })
 
   const op = document.getElementById('op')
   op.addEventListener('input', () => {
