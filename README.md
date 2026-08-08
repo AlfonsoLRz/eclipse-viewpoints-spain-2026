@@ -15,7 +15,7 @@ Three Spanish cities are mapped street by street: **Zaragoza**, which sees 84 se
 totality, and **Linares** and **Jaén**, which sit just outside the path and reach 97.2%
 and 96.6% obscuration.
 
-**[Open the map](https://alfonsolrz.github.io/eclipse-zaragoza-2026/)**
+**[Open the map](https://alfonsolrz.github.io/eclipse-viewpoints-spain-2026/)**
 
 At maximum the sun sits only 6° above the horizon at azimuth 284.5° (WNW), so a single
 tree or a two-storey wall can hide it from hundreds of metres away. Coarse terrain shadow
