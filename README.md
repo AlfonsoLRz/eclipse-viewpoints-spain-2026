@@ -9,21 +9,31 @@
 >
 > Treat the map as a shortlist to go and inspect, not a guarantee.
 
-# Zaragoza urban eclipse visibility
+# Where to stand for the eclipse of 12 August 2026
 
-Where in Zaragoza can you actually see the total eclipse of 12 August 2026?
+Three Spanish cities are mapped street by street: **Zaragoza**, which sees 84 seconds of
+totality, and **Linares** and **Jaén**, which sit just outside the path and reach 97.2%
+and 96.6% obscuration.
 
 **[Open the map](https://alfonsolrz.github.io/eclipse-zaragoza-2026/)**
 
-At maximum the sun sits only 6.1° above the horizon at azimuth 284.5° (WNW), so a single
+At maximum the sun sits only 6° above the horizon at azimuth 284.5° (WNW), so a single
 tree or a two-storey wall can hide it from hundreds of metres away. Coarse terrain shadow
 maps cannot answer this; the question is decided by buildings and vegetation.
 
-This project answers it by ray-scanning a 1 m LiDAR surface model over a 7 × 7 km block of
-the city, then publishing the result as a web map over PNOA orthophotography. It ranks
-places you can actually stand: parks, squares, gardens and other open public space.
+Each city is answered by ray-scanning a 1 m LiDAR surface model over its own block, then
+publishing the result as a web map over aerial imagery. The maps rank places you can
+actually stand: parks, squares, gardens and other open public space, with a separate tier
+for open ground whose access nobody has verified.
 
-![overview](docs/overview.png)
+| | Block | Eclipse | Candidate zones |
+|---|---|---|---|
+| Zaragoza | 13 × 13 km | total, 84 s | 263 |
+| Jaén | 15 × 12 km | 96.6% partial | 215 |
+| Linares | 6 × 5 km | 97.2% partial | 208 |
+
+![The Zaragoza map: the analysed block outlined in dashed amber, clearance shading over
+the evaluated ground, and the ranked candidate zones](docs/overview.png)
 
 ## Why this is hard
 
@@ -46,19 +56,25 @@ above is drawn steeper than the real 6.1°, which would be too shallow to read.
 
 ## Reading the map
 
+Pick a city from the switcher under the title. Each is a plain URL, so a map can be
+bookmarked or shared: `?city=zaragoza`, `?city=linares`, `?city=jaen`.
+
 The viewer shows the sun's direction as a compass dial plus a side profile of its altitude,
 and draws a 600 m dashed ray from any clicked point or selected zone. That ray is the line
-that has to stay clear of buildings and trees. The moment selector switches between C1, C2,
-maximum, C3 and C4.
+that has to stay clear of buildings and trees. In Zaragoza the moment selector switches
+between C1, C2, maximum, C3 and C4; the two partial cities have no C2 or C3, so those
+moments are simply absent.
 
 Five colour scales cover the same data: clearance classes, viridis, red to green, a plain
-visible/blocked split, and a shadow-only grey. The orthophoto, an OpenStreetMap name
-overlay and the dashed analysed-area outline can each be toggled independently, so the
-shadow model can be read on its own or against street names.
+visible/blocked split, and a shadow-only grey. The imagery, an OpenStreetMap name overlay
+and the dashed analysed-area outline can each be toggled independently, so the shadow model
+can be read on its own or against street names. The 3D control in the bottom right stands
+the buildings up at their measured heights.
 
-The overlay covers all evaluated ground (~81% of the block; the rest is building rooftops).
-Reachable public space is drawn solid and everything else at 45% opacity, so the shadow
-model is legible citywide while the places actually worth standing in still stand out.
+The overlay covers all evaluated ground, which is 95% of the block in Zaragoza and 99% in
+Jaén; most of the remainder is building rooftops. Reachable public space is drawn solid and
+everything else at 45% opacity, so the shadow model is legible citywide while the places
+actually worth standing in still stand out.
 
 ### Clearance classes
 
@@ -82,14 +98,13 @@ years of tree growth, or a van parked in the wrong place, flips the answer.
 
 ## Coverage and the analysed area
 
-The PNOA orthophoto mosaic (664.5 to 692.9 km E) is far larger than the LiDAR block
-(670 to 677 km E, 4611 to 4618 km N), so imagery alone says nothing about where the
-analysis holds.
+Aerial imagery covers the whole country, so it says nothing about where the analysis
+actually holds. Only the LiDAR block has been scanned, and it is much smaller.
 
-The map pulls PNOA Máxima Actualidad imagery live from the
-[IGN WMTS](https://www.ign.es/wmts/pnoa-ma) and draws the LiDAR footprint as a dashed
-outline. Imagery continues past the block, so that dashed edge is what marks where
-visibility was computed. Outside it the picture is real but nothing has been analysed.
+The map pulls PNOA imagery live from the [IGN WMTS](https://www.ign.es/wmts/pnoa-ma) and
+draws each city's LiDAR footprint as a dashed outline. Imagery continues past the block, so
+that dashed edge is what marks where visibility was computed. Outside it the picture is
+real but nothing has been analysed.
 
 The WMTS serves current imagery, which may be newer than the LiDAR and newer than the
 2025-07-14 mosaic the offline analysis was run against. If the photo shows a building the
@@ -123,8 +138,10 @@ shadow model does not seem to know about, trust the photo.
 
 ## Data sources
 
-- PNOA LiDAR 2023 (NPC02), 49 tiles, ~8 pts/m², 388 M points.
-- PNOA Máxima Actualidad orthophotography, mosaic dated 2025-07-14, 0.25 m.
+- PNOA LiDAR: 2023 Aragón (NPC02) for Zaragoza, 2024 Andalucía (NPC01) for Jaén and
+  Linares. 379 tiles and 3.29 billion points across the three cities.
+- PNOA aerial orthophotography, served live by the IGN. The offline analysis was run
+  against a mosaic dated 2025-07-14 at 0.25 m.
 - CNIG eclipse rasters (`10bands_2026_3857_COG.tiff`) for contact times and sun geometry.
 
 Bands 1 to 2 and 6 to 10 of the eclipse raster were cross-checked against the
